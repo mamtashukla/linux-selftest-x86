@@ -1,0 +1,599 @@
+make: Entering directory '/home/armorer/development/linux/tools/testing/selftests'
+make[1]: Entering directory '/home/armorer/development/linux/tools/testing/selftests/alsa'
+gcc  -isystem /home/armorer/development/linux/usr/include -L/home/armorer/development/linux/tools/testing/selftests/alsa -Wl,-rpath=./ -D_GNU_SOURCE=  -shared -fPIC conf.c -lasound  -lpthread -o /home/armorer/development/linux/tools/testing/selftests/alsa/libatest.so
+gcc  -isystem /home/armorer/development/linux/usr/include -L/home/armorer/development/linux/tools/testing/selftests/alsa -Wl,-rpath=./ -D_GNU_SOURCE=  mixer-test.c -lasound  -lpthread -latest -o /home/armorer/development/linux/tools/testing/selftests/alsa/mixer-test
+gcc  -isystem /home/armorer/development/linux/usr/include -L/home/armorer/development/linux/tools/testing/selftests/alsa -Wl,-rpath=./ -D_GNU_SOURCE=  pcm-test.c -lasound  -lpthread -latest -o /home/armorer/development/linux/tools/testing/selftests/alsa/pcm-test
+gcc  -isystem /home/armorer/development/linux/usr/include -L/home/armorer/development/linux/tools/testing/selftests/alsa -Wl,-rpath=./ -D_GNU_SOURCE=  test-pcmtest-driver.c -lasound  -lpthread -latest -o /home/armorer/development/linux/tools/testing/selftests/alsa/test-pcmtest-driver
+gcc  -isystem /home/armorer/development/linux/usr/include -L/home/armorer/development/linux/tools/testing/selftests/alsa -Wl,-rpath=./ -D_GNU_SOURCE=  utimer-test.c -lasound  -lpthread -latest -o /home/armorer/development/linux/tools/testing/selftests/alsa/utimer-test
+gcc  -isystem /home/armorer/development/linux/usr/include -L/home/armorer/development/linux/tools/testing/selftests/alsa -Wl,-rpath=./ -D_GNU_SOURCE=  global-timer.c -lasound  -lpthread -latest -o /home/armorer/development/linux/tools/testing/selftests/alsa/global-timer
+make[1]: Leaving directory '/home/armorer/development/linux/tools/testing/selftests/alsa'
+make[1]: Entering directory '/home/armorer/development/linux/tools/testing/selftests/alsa'
+TAP version 13
+1..4
+# timeout set to 45
+# selftests: alsa: mixer-test
+# TAP version 13
+# # Card 0/PCH - HDA Intel PCH (HDA Intel PCH at 0xd1314000 irq 54)
+# # Card 1/HDMI - HDA Intel HDMI (HDA Intel HDMI at 0xd1310000 irq 57)
+# 1..315
+# ok 1 get_value.HDMI.20
+# # HDMI.20 Playback Channel Map
+# ok 2 name.HDMI.20
+# ok 3 write_default.HDMI.20
+# ok 4 write_valid.HDMI.20
+# ok 5 write_invalid.HDMI.20
+# ok 6 event_missing.HDMI.20
+# ok 7 event_spurious.HDMI.20
+# ok 8 get_value.HDMI.19
+# # HDMI.19 Playback Channel Map
+# ok 9 name.HDMI.19
+# ok 10 write_default.HDMI.19
+# ok 11 write_valid.HDMI.19
+# ok 12 write_invalid.HDMI.19
+# ok 13 event_missing.HDMI.19
+# ok 14 event_spurious.HDMI.19
+# ok 15 get_value.HDMI.18
+# # HDMI.18 Playback Channel Map
+# ok 16 name.HDMI.18
+# ok 17 write_default.HDMI.18
+# ok 18 write_valid.HDMI.18
+# ok 19 write_invalid.HDMI.18
+# ok 20 event_missing.HDMI.18
+# ok 21 event_spurious.HDMI.18
+# ok 22 get_value.HDMI.17
+# # HDMI.17 ELD
+# ok 23 name.HDMI.17
+# # ELD is not writeable
+# ok 24 # SKIP write_default.HDMI.17
+# # ELD is not writeable
+# ok 25 # SKIP write_valid.HDMI.17
+# # ELD is not writeable
+# ok 26 # SKIP write_invalid.HDMI.17
+# ok 27 event_missing.HDMI.17
+# ok 28 event_spurious.HDMI.17
+# ok 29 get_value.HDMI.16
+# # HDMI.16 IEC958 Playback Switch
+# ok 30 name.HDMI.16
+# ok 31 write_default.HDMI.16
+# ok 32 write_valid.HDMI.16
+# ok 33 write_invalid.HDMI.16
+# ok 34 event_missing.HDMI.16
+# ok 35 event_spurious.HDMI.16
+# ok 36 get_value.HDMI.15
+# # HDMI.15 IEC958 Playback Default
+# ok 37 name.HDMI.15
+# ok 38 write_default.HDMI.15
+# ok 39 # SKIP write_valid.HDMI.15
+# ok 40 # SKIP write_invalid.HDMI.15
+# ok 41 event_missing.HDMI.15
+# ok 42 event_spurious.HDMI.15
+# ok 43 get_value.HDMI.14
+# # HDMI.14 IEC958 Playback Pro Mask
+# ok 44 name.HDMI.14
+# # IEC958 Playback Pro Mask is not writeable
+# ok 45 # SKIP write_default.HDMI.14
+# # IEC958 Playback Pro Mask is not writeable
+# ok 46 # SKIP write_valid.HDMI.14
+# # IEC958 Playback Pro Mask is not writeable
+# ok 47 # SKIP write_invalid.HDMI.14
+# ok 48 event_missing.HDMI.14
+# ok 49 event_spurious.HDMI.14
+# ok 50 get_value.HDMI.13
+# # HDMI.13 IEC958 Playback Con Mask
+# ok 51 name.HDMI.13
+# # IEC958 Playback Con Mask is not writeable
+# ok 52 # SKIP write_default.HDMI.13
+# # IEC958 Playback Con Mask is not writeable
+# ok 53 # SKIP write_valid.HDMI.13
+# # IEC958 Playback Con Mask is not writeable
+# ok 54 # SKIP write_invalid.HDMI.13
+# ok 55 event_missing.HDMI.13
+# ok 56 event_spurious.HDMI.13
+# ok 57 get_value.HDMI.12
+# # HDMI.12 HDMI/DP,pcm=8 Jack
+# ok 58 name.HDMI.12
+# # HDMI/DP,pcm=8 Jack is not writeable
+# ok 59 # SKIP write_default.HDMI.12
+# # HDMI/DP,pcm=8 Jack is not writeable
+# ok 60 # SKIP write_valid.HDMI.12
+# # HDMI/DP,pcm=8 Jack is not writeable
+# ok 61 # SKIP write_invalid.HDMI.12
+# ok 62 event_missing.HDMI.12
+# ok 63 event_spurious.HDMI.12
+# ok 64 get_value.HDMI.11
+# # HDMI.11 ELD
+# ok 65 name.HDMI.11
+# # ELD is not writeable
+# ok 66 # SKIP write_default.HDMI.11
+# # ELD is not writeable
+# ok 67 # SKIP write_valid.HDMI.11
+# # ELD is not writeable
+# ok 68 # SKIP write_invalid.HDMI.11
+# ok 69 event_missing.HDMI.11
+# ok 70 event_spurious.HDMI.11
+# ok 71 get_value.HDMI.10
+# # HDMI.10 IEC958 Playback Switch
+# ok 72 name.HDMI.10
+# ok 73 write_default.HDMI.10
+# ok 74 write_valid.HDMI.10
+# ok 75 write_invalid.HDMI.10
+# ok 76 event_missing.HDMI.10
+# ok 77 event_spurious.HDMI.10
+# ok 78 get_value.HDMI.9
+# # HDMI.9 IEC958 Playback Default
+# ok 79 name.HDMI.9
+# ok 80 write_default.HDMI.9
+# ok 81 # SKIP write_valid.HDMI.9
+# ok 82 # SKIP write_invalid.HDMI.9
+# ok 83 event_missing.HDMI.9
+# ok 84 event_spurious.HDMI.9
+# ok 85 get_value.HDMI.8
+# # HDMI.8 IEC958 Playback Pro Mask
+# ok 86 name.HDMI.8
+# # IEC958 Playback Pro Mask is not writeable
+# ok 87 # SKIP write_default.HDMI.8
+# # IEC958 Playback Pro Mask is not writeable
+# ok 88 # SKIP write_valid.HDMI.8
+# # IEC958 Playback Pro Mask is not writeable
+# ok 89 # SKIP write_invalid.HDMI.8
+# ok 90 event_missing.HDMI.8
+# ok 91 event_spurious.HDMI.8
+# ok 92 get_value.HDMI.7
+# # HDMI.7 IEC958 Playback Con Mask
+# ok 93 name.HDMI.7
+# # IEC958 Playback Con Mask is not writeable
+# ok 94 # SKIP write_default.HDMI.7
+# # IEC958 Playback Con Mask is not writeable
+# ok 95 # SKIP write_valid.HDMI.7
+# # IEC958 Playback Con Mask is not writeable
+# ok 96 # SKIP write_invalid.HDMI.7
+# ok 97 event_missing.HDMI.7
+# ok 98 event_spurious.HDMI.7
+# ok 99 get_value.HDMI.6
+# # HDMI.6 HDMI/DP,pcm=7 Jack
+# ok 100 name.HDMI.6
+# # HDMI/DP,pcm=7 Jack is not writeable
+# ok 101 # SKIP write_default.HDMI.6
+# # HDMI/DP,pcm=7 Jack is not writeable
+# ok 102 # SKIP write_valid.HDMI.6
+# # HDMI/DP,pcm=7 Jack is not writeable
+# ok 103 # SKIP write_invalid.HDMI.6
+# ok 104 event_missing.HDMI.6
+# ok 105 event_spurious.HDMI.6
+# ok 106 get_value.HDMI.5
+# # HDMI.5 ELD
+# ok 107 name.HDMI.5
+# # ELD is not writeable
+# ok 108 # SKIP write_default.HDMI.5
+# # ELD is not writeable
+# ok 109 # SKIP write_valid.HDMI.5
+# # ELD is not writeable
+# ok 110 # SKIP write_invalid.HDMI.5
+# ok 111 event_missing.HDMI.5
+# ok 112 event_spurious.HDMI.5
+# ok 113 get_value.HDMI.4
+# # HDMI.4 IEC958 Playback Switch
+# ok 114 name.HDMI.4
+# ok 115 write_default.HDMI.4
+# ok 116 write_valid.HDMI.4
+# ok 117 write_invalid.HDMI.4
+# ok 118 event_missing.HDMI.4
+# ok 119 event_spurious.HDMI.4
+# ok 120 get_value.HDMI.3
+# # HDMI.3 IEC958 Playback Default
+# ok 121 name.HDMI.3
+# ok 122 write_default.HDMI.3
+# ok 123 # SKIP write_valid.HDMI.3
+# ok 124 # SKIP write_invalid.HDMI.3
+# ok 125 event_missing.HDMI.3
+# ok 126 event_spurious.HDMI.3
+# ok 127 get_value.HDMI.2
+# # HDMI.2 IEC958 Playback Pro Mask
+# ok 128 name.HDMI.2
+# # IEC958 Playback Pro Mask is not writeable
+# ok 129 # SKIP write_default.HDMI.2
+# # IEC958 Playback Pro Mask is not writeable
+# ok 130 # SKIP write_valid.HDMI.2
+# # IEC958 Playback Pro Mask is not writeable
+# ok 131 # SKIP write_invalid.HDMI.2
+# ok 132 event_missing.HDMI.2
+# ok 133 event_spurious.HDMI.2
+# ok 134 get_value.HDMI.1
+# # HDMI.1 IEC958 Playback Con Mask
+# ok 135 name.HDMI.1
+# # IEC958 Playback Con Mask is not writeable
+# ok 136 # SKIP write_default.HDMI.1
+# # IEC958 Playback Con Mask is not writeable
+# ok 137 # SKIP write_valid.HDMI.1
+# # IEC958 Playback Con Mask is not writeable
+# ok 138 # SKIP write_invalid.HDMI.1
+# ok 139 event_missing.HDMI.1
+# ok 140 event_spurious.HDMI.1
+# ok 141 get_value.HDMI.0
+# # HDMI.0 HDMI/DP,pcm=3 Jack
+# ok 142 name.HDMI.0
+# # HDMI/DP,pcm=3 Jack is not writeable
+# ok 143 # SKIP write_default.HDMI.0
+# # HDMI/DP,pcm=3 Jack is not writeable
+# ok 144 # SKIP write_valid.HDMI.0
+# # HDMI/DP,pcm=3 Jack is not writeable
+# ok 145 # SKIP write_invalid.HDMI.0
+# ok 146 event_missing.HDMI.0
+# ok 147 event_spurious.HDMI.0
+# ok 148 get_value.PCH.23
+# # PCH.23 PCM Playback Volume
+# ok 149 name.PCH.23
+# ok 150 write_default.PCH.23
+# ok 151 write_valid.PCH.23
+# ok 152 write_invalid.PCH.23
+# ok 153 event_missing.PCH.23
+# ok 154 event_spurious.PCH.23
+# ok 155 get_value.PCH.22
+# # PCH.22 Capture Channel Map
+# ok 156 name.PCH.22
+# # Capture Channel Map is not writeable
+# ok 157 # SKIP write_default.PCH.22
+# # Capture Channel Map is not writeable
+# ok 158 # SKIP write_valid.PCH.22
+# # Capture Channel Map is not writeable
+# ok 159 # SKIP write_invalid.PCH.22
+# ok 160 event_missing.PCH.22
+# ok 161 event_spurious.PCH.22
+# ok 162 get_value.PCH.21
+# # PCH.21 Playback Channel Map
+# ok 163 name.PCH.21
+# # Playback Channel Map is not writeable
+# ok 164 # SKIP write_default.PCH.21
+# # Playback Channel Map is not writeable
+# ok 165 # SKIP write_valid.PCH.21
+# # Playback Channel Map is not writeable
+# ok 166 # SKIP write_invalid.PCH.21
+# ok 167 event_missing.PCH.21
+# ok 168 event_spurious.PCH.21
+# ok 169 get_value.PCH.20
+# # PCH.20 Speaker Phantom Jack
+# ok 170 name.PCH.20
+# # Speaker Phantom Jack is not writeable
+# ok 171 # SKIP write_default.PCH.20
+# # Speaker Phantom Jack is not writeable
+# ok 172 # SKIP write_valid.PCH.20
+# # Speaker Phantom Jack is not writeable
+# ok 173 # SKIP write_invalid.PCH.20
+# ok 174 event_missing.PCH.20
+# ok 175 event_spurious.PCH.20
+# ok 176 get_value.PCH.19
+# # PCH.19 Headphone Jack
+# ok 177 name.PCH.19
+# # Headphone Jack is not writeable
+# ok 178 # SKIP write_default.PCH.19
+# # Headphone Jack is not writeable
+# ok 179 # SKIP write_valid.PCH.19
+# # Headphone Jack is not writeable
+# ok 180 # SKIP write_invalid.PCH.19
+# ok 181 event_missing.PCH.19
+# ok 182 event_spurious.PCH.19
+# ok 183 get_value.PCH.18
+# # PCH.18 Mic Jack
+# ok 184 name.PCH.18
+# # Mic Jack is not writeable
+# ok 185 # SKIP write_default.PCH.18
+# # Mic Jack is not writeable
+# ok 186 # SKIP write_valid.PCH.18
+# # Mic Jack is not writeable
+# ok 187 # SKIP write_invalid.PCH.18
+# ok 188 event_missing.PCH.18
+# ok 189 event_spurious.PCH.18
+# ok 190 get_value.PCH.17
+# # PCH.17 Internal Mic Phantom Jack
+# ok 191 name.PCH.17
+# # Internal Mic Phantom Jack is not writeable
+# ok 192 # SKIP write_default.PCH.17
+# # Internal Mic Phantom Jack is not writeable
+# ok 193 # SKIP write_valid.PCH.17
+# # Internal Mic Phantom Jack is not writeable
+# ok 194 # SKIP write_invalid.PCH.17
+# ok 195 event_missing.PCH.17
+# ok 196 event_spurious.PCH.17
+# ok 197 get_value.PCH.16
+# # PCH.16 Master Playback Switch
+# ok 198 name.PCH.16
+# ok 199 write_default.PCH.16
+# ok 200 write_valid.PCH.16
+# ok 201 write_invalid.PCH.16
+# ok 202 event_missing.PCH.16
+# ok 203 event_spurious.PCH.16
+# ok 204 get_value.PCH.15
+# # PCH.15 Master Playback Volume
+# ok 205 name.PCH.15
+# ok 206 write_default.PCH.15
+# ok 207 write_valid.PCH.15
+# ok 208 write_invalid.PCH.15
+# ok 209 event_missing.PCH.15
+# ok 210 event_spurious.PCH.15
+# ok 211 get_value.PCH.14
+# # PCH.14 Mic Boost Volume
+# ok 212 name.PCH.14
+# ok 213 write_default.PCH.14
+# ok 214 write_valid.PCH.14
+# ok 215 write_invalid.PCH.14
+# ok 216 event_missing.PCH.14
+# ok 217 event_spurious.PCH.14
+# ok 218 get_value.PCH.13
+# # PCH.13 Internal Mic Boost Volume
+# ok 219 name.PCH.13
+# ok 220 write_default.PCH.13
+# ok 221 write_valid.PCH.13
+# ok 222 write_invalid.PCH.13
+# ok 223 event_missing.PCH.13
+# ok 224 event_spurious.PCH.13
+# ok 225 get_value.PCH.12
+# # PCH.12 Mic Capture Switch
+# ok 226 name.PCH.12
+# ok 227 write_default.PCH.12
+# ok 228 write_valid.PCH.12
+# ok 229 write_invalid.PCH.12
+# ok 230 event_missing.PCH.12
+# ok 231 event_spurious.PCH.12
+# ok 232 get_value.PCH.11
+# # PCH.11 Mic Capture Volume
+# ok 233 name.PCH.11
+# ok 234 write_default.PCH.11
+# ok 235 write_valid.PCH.11
+# ok 236 write_invalid.PCH.11
+# ok 237 event_missing.PCH.11
+# ok 238 event_spurious.PCH.11
+# ok 239 get_value.PCH.10
+# # PCH.10 Inverted Internal Mic Capture Switch
+# ok 240 name.PCH.10
+# ok 241 write_default.PCH.10
+# ok 242 write_valid.PCH.10
+# ok 243 write_invalid.PCH.10
+# ok 244 event_missing.PCH.10
+# ok 245 event_spurious.PCH.10
+# ok 246 get_value.PCH.9
+# # PCH.9 Internal Mic Capture Switch
+# ok 247 name.PCH.9
+# ok 248 write_default.PCH.9
+# ok 249 write_valid.PCH.9
+# ok 250 write_invalid.PCH.9
+# ok 251 event_missing.PCH.9
+# ok 252 event_spurious.PCH.9
+# ok 253 get_value.PCH.8
+# # PCH.8 Inverted Internal Mic Capture Volume
+# ok 254 name.PCH.8
+# ok 255 write_default.PCH.8
+# ok 256 write_valid.PCH.8
+# ok 257 write_invalid.PCH.8
+# ok 258 event_missing.PCH.8
+# ok 259 event_spurious.PCH.8
+# ok 260 get_value.PCH.7
+# # PCH.7 Internal Mic Capture Volume
+# ok 261 name.PCH.7
+# ok 262 write_default.PCH.7
+# ok 263 write_valid.PCH.7
+# ok 264 write_invalid.PCH.7
+# ok 265 event_missing.PCH.7
+# ok 266 event_spurious.PCH.7
+# ok 267 get_value.PCH.6
+# # PCH.6 Auto-Mute Mode
+# ok 268 name.PCH.6
+# ok 269 write_default.PCH.6
+# ok 270 write_valid.PCH.6
+# ok 271 write_invalid.PCH.6
+# ok 272 event_missing.PCH.6
+# ok 273 event_spurious.PCH.6
+# ok 274 get_value.PCH.5
+# # PCH.5 Speaker Playback Switch
+# ok 275 name.PCH.5
+# ok 276 write_default.PCH.5
+# ok 277 write_valid.PCH.5
+# ok 278 write_invalid.PCH.5
+# ok 279 event_missing.PCH.5
+# ok 280 event_spurious.PCH.5
+# ok 281 get_value.PCH.4
+# # PCH.4 Speaker Playback Volume
+# ok 282 name.PCH.4
+# ok 283 write_default.PCH.4
+# ok 284 write_valid.PCH.4
+# ok 285 write_invalid.PCH.4
+# ok 286 event_missing.PCH.4
+# ok 287 event_spurious.PCH.4
+# ok 288 get_value.PCH.3
+# # PCH.3 Headphone Playback Switch
+# ok 289 name.PCH.3
+# ok 290 write_default.PCH.3
+# ok 291 write_valid.PCH.3
+# ok 292 write_invalid.PCH.3
+# ok 293 event_missing.PCH.3
+# ok 294 event_spurious.PCH.3
+# ok 295 get_value.PCH.2
+# # PCH.2 Headphone Playback Volume
+# ok 296 name.PCH.2
+# ok 297 write_default.PCH.2
+# ok 298 write_valid.PCH.2
+# ok 299 write_invalid.PCH.2
+# ok 300 event_missing.PCH.2
+# ok 301 event_spurious.PCH.2
+# ok 302 get_value.PCH.1
+# # PCH.1 Beep Playback Switch
+# ok 303 name.PCH.1
+# ok 304 write_default.PCH.1
+# # Beep Playback Switch.0 expected 0 but read 1, is_volatile 0
+# not ok 305 write_valid.PCH.1
+# ok 306 write_invalid.PCH.1
+# ok 307 event_missing.PCH.1
+# ok 308 event_spurious.PCH.1
+# ok 309 get_value.PCH.0
+# # PCH.0 Beep Playback Volume
+# ok 310 name.PCH.0
+# ok 311 write_default.PCH.0
+# ok 312 write_valid.PCH.0
+# ok 313 write_invalid.PCH.0
+# ok 314 event_missing.PCH.0
+# ok 315 event_spurious.PCH.0
+# # Totals: pass:254 fail:1 xfail:0 xpass:0 skip:60 error:0
+ok 1 selftests: alsa: mixer-test
+# timeout set to 45
+# selftests: alsa: pcm-test
+# TAP version 13
+# # Card 0/PCH - HDA Intel PCH (HDA Intel PCH at 0xd1314000 irq 54)
+# # PCH.0 - CX20751/2 Analog
+# # PCH.0 - CX20751/2 Analog
+# # Card 1/HDMI - HDA Intel HDMI (HDA Intel HDMI at 0xd1310000 irq 57)
+# # HDMI.0 - HDMI 0
+# # HDMI.0 - HDMI 1
+# # HDMI.0 - HDMI 2
+# 1..35
+# # default.time1.HDMI.8.0.PLAYBACK - 8kHz mono large periods
+# # default.time1.PCH.0.0.CAPTURE - 8kHz mono large periods
+# ok 1 # SKIP default.time1.HDMI.8.0.PLAYBACK
+# # snd_pcm_hw_params_set_channels 1: Invalid argument
+# # default.time2.HDMI.8.0.PLAYBACK - 8kHz stereo large periods
+# ok 2 # SKIP default.time2.HDMI.8.0.PLAYBACK
+# # rate mismatch 8000 != 32000
+# # default.time3.HDMI.8.0.PLAYBACK - 44.1kHz stereo large periods
+# ok 3 # SKIP default.time1.PCH.0.0.CAPTURE
+# # snd_pcm_hw_params_set_channels 1: Invalid argument
+# # default.time2.PCH.0.0.CAPTURE - 8kHz stereo large periods
+# ok 4 # SKIP default.time2.PCH.0.0.CAPTURE
+# # rate mismatch 8000 != 44100
+# # default.time3.PCH.0.0.CAPTURE - 44.1kHz stereo large periods
+# # default.time3.HDMI.8.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.44100.2.22496.202464 sw_params.202464
+# # default.time3.PCH.0.0.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.44100.2.22500.202500 sw_params.22500
+# ok 5 default.time3.HDMI.8.0.PLAYBACK
+# # default.time4.HDMI.8.0.PLAYBACK - 48kHz stereo small periods
+# # default.time4.HDMI.8.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.48000.2.512.4096 sw_params.4096
+# ok 6 default.time3.PCH.0.0.CAPTURE
+# # default.time4.PCH.0.0.CAPTURE - 48kHz stereo small periods
+# # default.time4.PCH.0.0.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.48000.2.512.4096 sw_params.512
+# ok 7 default.time4.HDMI.8.0.PLAYBACK
+# # default.time5.HDMI.8.0.PLAYBACK - 48kHz stereo large periods
+# # default.time5.HDMI.8.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.48000.2.24000.192000 sw_params.192000
+# ok 8 default.time4.PCH.0.0.CAPTURE
+# # default.time5.PCH.0.0.CAPTURE - 48kHz stereo large periods
+# # default.time5.PCH.0.0.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.48000.2.24000.192000 sw_params.24000
+# ok 9 default.time5.HDMI.8.0.PLAYBACK
+# # default.time6.HDMI.8.0.PLAYBACK - 48kHz 6 channel large periods
+# # default.time6.HDMI.8.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.48000.2.48000.576000 sw_params.576000
+# ok 10 default.time5.PCH.0.0.CAPTURE
+# # default.time6.PCH.0.0.CAPTURE - 48kHz 6 channel large periods
+# # default.time6.PCH.0.0.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.48000.2.48000.576000 sw_params.48000
+# ok 11 default.time6.HDMI.8.0.PLAYBACK
+# # default.time7.HDMI.8.0.PLAYBACK - 96kHz stereo large periods
+# # default.time7.HDMI.8.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.96000.2.48000.192000 sw_params.192000
+# ok 12 default.time6.PCH.0.0.CAPTURE
+# # default.time7.PCH.0.0.CAPTURE - 96kHz stereo large periods
+# # default.time7.PCH.0.0.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.96000.2.48000.192000 sw_params.48000
+# ok 13 default.time7.HDMI.8.0.PLAYBACK
+# # default.time1.HDMI.7.0.PLAYBACK - 8kHz mono large periods
+# ok 14 # SKIP default.time1.HDMI.7.0.PLAYBACK
+# # snd_pcm_hw_params_set_channels 1: Invalid argument
+# # default.time2.HDMI.7.0.PLAYBACK - 8kHz stereo large periods
+# ok 15 # SKIP default.time2.HDMI.7.0.PLAYBACK
+# # rate mismatch 8000 != 32000
+# # default.time3.HDMI.7.0.PLAYBACK - 44.1kHz stereo large periods
+# # default.time3.HDMI.7.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.44100.2.22496.202464 sw_params.202464
+# ok 16 default.time7.PCH.0.0.CAPTURE
+# # default.time1.PCH.0.0.PLAYBACK - 8kHz mono large periods
+# ok 17 # SKIP default.time1.PCH.0.0.PLAYBACK
+# # snd_pcm_hw_params_set_channels 1: Invalid argument
+# # default.time2.PCH.0.0.PLAYBACK - 8kHz stereo large periods
+# ok 18 # SKIP default.time2.PCH.0.0.PLAYBACK
+# # rate mismatch 8000 != 44100
+# # default.time3.PCH.0.0.PLAYBACK - 44.1kHz stereo large periods
+# # default.time3.PCH.0.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.44100.2.22500.202500 sw_params.202500
+# ok 19 default.time3.HDMI.7.0.PLAYBACK
+# # default.time4.HDMI.7.0.PLAYBACK - 48kHz stereo small periods
+# # default.time4.HDMI.7.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.48000.2.512.4096 sw_params.4096
+# ok 20 default.time3.PCH.0.0.PLAYBACK
+# # default.time4.PCH.0.0.PLAYBACK - 48kHz stereo small periods
+# # default.time4.PCH.0.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.48000.2.512.4096 sw_params.4096
+# ok 21 default.time4.HDMI.7.0.PLAYBACK
+# # default.time5.HDMI.7.0.PLAYBACK - 48kHz stereo large periods
+# # default.time5.HDMI.7.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.48000.2.24000.192000 sw_params.192000
+# ok 22 default.time4.PCH.0.0.PLAYBACK
+# # default.time5.PCH.0.0.PLAYBACK - 48kHz stereo large periods
+# # default.time5.PCH.0.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.48000.2.24000.192000 sw_params.192000
+# ok 23 default.time5.HDMI.7.0.PLAYBACK
+# # default.time6.HDMI.7.0.PLAYBACK - 48kHz 6 channel large periods
+# # default.time6.HDMI.7.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.48000.2.48000.576000 sw_params.576000
+# ok 24 default.time5.PCH.0.0.PLAYBACK
+# # default.time6.PCH.0.0.PLAYBACK - 48kHz 6 channel large periods
+# # default.time6.PCH.0.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.48000.2.48000.576000 sw_params.576000
+# ok 25 default.time6.HDMI.7.0.PLAYBACK
+# # default.time7.HDMI.7.0.PLAYBACK - 96kHz stereo large periods
+# # default.time7.HDMI.7.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.96000.2.48000.192000 sw_params.192000
+# ok 26 default.time6.PCH.0.0.PLAYBACK
+# # default.time7.PCH.0.0.PLAYBACK - 96kHz stereo large periods
+# # default.time7.PCH.0.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.96000.2.48000.192000 sw_params.192000
+# ok 27 default.time7.HDMI.7.0.PLAYBACK
+# # default.time1.HDMI.3.0.PLAYBACK - 8kHz mono large periods
+# ok 28 # SKIP default.time1.HDMI.3.0.PLAYBACK
+# # snd_pcm_hw_params_set_channels 1: Invalid argument
+# # default.time2.HDMI.3.0.PLAYBACK - 8kHz stereo large periods
+# ok 29 # SKIP default.time2.HDMI.3.0.PLAYBACK
+# # rate mismatch 8000 != 32000
+# # default.time3.HDMI.3.0.PLAYBACK - 44.1kHz stereo large periods
+# # default.time3.HDMI.3.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.44100.2.22496.202464 sw_params.202464
+# ok 30 default.time7.PCH.0.0.PLAYBACK
+# ok 31 default.time3.HDMI.3.0.PLAYBACK
+# # default.time4.HDMI.3.0.PLAYBACK - 48kHz stereo small periods
+# # default.time4.HDMI.3.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.48000.2.512.4096 sw_params.4096
+# ok 32 default.time4.HDMI.3.0.PLAYBACK
+# # default.time5.HDMI.3.0.PLAYBACK - 48kHz stereo large periods
+# # default.time5.HDMI.3.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.48000.2.24000.192000 sw_params.192000
+# ok 33 default.time5.HDMI.3.0.PLAYBACK
+# # default.time6.HDMI.3.0.PLAYBACK - 48kHz 6 channel large periods
+# # default.time6.HDMI.3.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.48000.2.48000.576000 sw_params.576000
+# ok 34 default.time6.HDMI.3.0.PLAYBACK
+# # default.time7.HDMI.3.0.PLAYBACK - 96kHz stereo large periods
+# # default.time7.HDMI.3.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.96000.2.48000.192000 sw_params.192000
+# ok 35 default.time7.HDMI.3.0.PLAYBACK
+# # Totals: pass:25 fail:0 xfail:0 xpass:0 skip:10 error:0
+ok 2 selftests: alsa: pcm-test
+# timeout set to 45
+# selftests: alsa: test-pcmtest-driver
+# TAP version 13
+# 1..5
+# # Starting 5 tests from 1 test cases.
+# #  RUN           pcmtest.playback ...
+# #      SKIP      Can't read patterns. Probably, module isn't loaded
+# #            OK  pcmtest.playback
+# ok 1 pcmtest.playback # SKIP Can't read patterns. Probably, module isn't loaded
+# #  RUN           pcmtest.capture ...
+# #      SKIP      Can't read patterns. Probably, module isn't loaded
+# #            OK  pcmtest.capture
+# ok 2 pcmtest.capture # SKIP Can't read patterns. Probably, module isn't loaded
+# #  RUN           pcmtest.ni_capture ...
+# #      SKIP      Can't read patterns. Probably, module isn't loaded
+# #            OK  pcmtest.ni_capture
+# ok 3 pcmtest.ni_capture # SKIP Can't read patterns. Probably, module isn't loaded
+# #  RUN           pcmtest.ni_playback ...
+# #      SKIP      Can't read patterns. Probably, module isn't loaded
+# #            OK  pcmtest.ni_playback
+# ok 4 pcmtest.ni_playback # SKIP Can't read patterns. Probably, module isn't loaded
+# #  RUN           pcmtest.reset_ioctl ...
+# #      SKIP      Can't read patterns. Probably, module isn't loaded
+# #            OK  pcmtest.reset_ioctl
+# ok 5 pcmtest.reset_ioctl # SKIP Can't read patterns. Probably, module isn't loaded
+# # PASSED: 5 / 5 tests passed.
+# # Totals: pass:0 fail:0 xfail:0 xpass:0 skip:5 error:0
+ok 3 selftests: alsa: test-pcmtest-driver
+# timeout set to 45
+# selftests: alsa: utimer-test
+# TAP version 13
+# 1..2
+# # Starting 2 tests from 2 test cases.
+# #  RUN           global.wrong_timers_test ...
+# #            OK  global.wrong_timers_test
+# ok 1 global.wrong_timers_test
+# #  RUN           timer_f.utimer ...
+# # utimer-test.c:55:utimer:Expected ioctl(timer_dev_fd, SNDRV_TIMER_IOCTL_CREATE, self->utimer_info) (-1) == 0 (0)
+# # utimer: Test terminated by assertion
+# #          FAIL  timer_f.utimer
+# not ok 2 timer_f.utimer
+# # FAILED: 1 / 2 tests passed.
+# # Totals: pass:1 fail:1 xfail:0 xpass:0 skip:0 error:0
+not ok 4 selftests: alsa: utimer-test # exit=1
+make[1]: Leaving directory '/home/armorer/development/linux/tools/testing/selftests/alsa'
+make: Leaving directory '/home/armorer/development/linux/tools/testing/selftests'
