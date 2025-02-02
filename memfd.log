@@ -1,0 +1,70 @@
+make: Entering directory '/home/armorer/development/linux/tools/testing/selftests'
+make[1]: Entering directory '/home/armorer/development/linux/tools/testing/selftests/memfd'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/armorer/development/linux/tools/testing/selftests/memfd'
+make[1]: Entering directory '/home/armorer/development/linux/tools/testing/selftests/memfd'
+TAP version 13
+1..3
+# timeout set to 45
+# selftests: memfd: memfd_test
+# memfd: CREATE
+# memfd: BASIC
+# memfd: SEAL-EXEC
+# memfd:	Apply SEAL_EXEC
+# memfd:	Apply ALL_SEALS
+# memfd: EXEC_NO_SEAL
+# memfd: NOEXEC_SEAL
+# memfd: SEAL-WRITE
+# memfd: SEAL-FUTURE-WRITE
+# memfd: SEAL-WRITE-MAP-READ
+# memfd: SEAL-SHRINK
+# memfd: SEAL-GROW
+# memfd: SEAL-RESIZE
+# memfd: sysctl 0
+# memfd: sysctl 1
+# memfd: sysctl 0
+# memfd: sysctl 2
+# memfd: sysctl 1
+# memfd: sysctl 0
+# memfd: nested sysctl 0
+# memfd: sysctl 0
+# memfd: sysctl 1
+# memfd: sysctl 0
+# memfd: sysctl 2
+# memfd: sysctl 1
+# memfd: sysctl 0
+# memfd: nested sysctl 1
+# memfd: nested sysctl 2
+# memfd: nested sysctl 0 -> 1 after fork
+# memfd: nested sysctl 0 -> 2 after fork
+# memfd: nested sysctl 2 -> 1 after fork
+# memfd: nested sysctl 2 -> 0 after fork
+# memfd: nested sysctl 1 -> 0 after fork
+# memfd: SHARE-DUP 
+# memfd: SHARE-MMAP 
+# memfd: SHARE-OPEN 
+# memfd: SHARE-FORK 
+# memfd: SHARE-DUP (shared file-table)
+# memfd: SHARE-MMAP (shared file-table)
+# memfd: SHARE-OPEN (shared file-table)
+# memfd: SHARE-FORK (shared file-table)
+# memfd: DONE
+ok 1 selftests: memfd: memfd_test
+# timeout set to 45
+# selftests: memfd: run_fuse_test.sh
+# opening: ./mnt/memfd
+# fuse: DONE
+ok 2 selftests: memfd: run_fuse_test.sh
+# timeout set to 45
+# selftests: memfd: run_hugetlbfs_test.sh
+# memfd-hugetlb: CREATE
+# memfd-hugetlb: BASIC
+# memfd-hugetlb: SEAL-EXEC
+# memfd-hugetlb:	Apply SEAL_EXEC
+# fchmod(/memfd:kern_memfd_seal_exec (deleted), 00777) didn't fail as expected
+# ./run_hugetlbfs_test.sh: line 60: 84978 Aborted                 (core dumped) ./memfd_test hugetlbfs
+# opening: ./mnt/memfd
+# fuse: DONE
+ok 3 selftests: memfd: run_hugetlbfs_test.sh
+make[1]: Leaving directory '/home/armorer/development/linux/tools/testing/selftests/memfd'
+make: Leaving directory '/home/armorer/development/linux/tools/testing/selftests'
