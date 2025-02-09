@@ -1,0 +1,1854 @@
+make: Entering directory '/home/armorer/development/linux/tools/testing/selftests'
+make[1]: Entering directory '/home/armorer/development/linux/tools/testing/selftests/x86'
+Warning: you seem to have a broken 32-bit build
+environment.  This will reduce test coverage of 64-bit
+kernels.  If you are using a Debian-like distribution,
+try:
+
+  apt-get install gcc-multilib libc6-i386 libc6-dev-i386
+
+If you are using a Fedora-like distribution, try:
+
+  yum install glibc-devel.*i686
+
+If you are using a SUSE-like distribution, try:
+
+  zypper install gcc-32bit glibc-devel-static-32bit
+make[1]: Leaving directory '/home/armorer/development/linux/tools/testing/selftests/x86'
+make[1]: Entering directory '/home/armorer/development/linux/tools/testing/selftests/x86'
+Warning: you seem to have a broken 32-bit build
+environment.  This will reduce test coverage of 64-bit
+kernels.  If you are using a Debian-like distribution,
+try:
+
+  apt-get install gcc-multilib libc6-i386 libc6-dev-i386
+
+If you are using a Fedora-like distribution, try:
+
+  yum install glibc-devel.*i686
+
+If you are using a SUSE-like distribution, try:
+
+  zypper install gcc-32bit glibc-devel-static-32bit
+TAP version 13
+1..21
+# timeout set to 45
+# selftests: x86: single_step_syscall_64
+# [RUN]	Set TF and check nop
+# [OK]	Survived with TF set and 10 traps
+# [RUN]	Set TF and check syscall-less opportunistic sysret
+# [OK]	Survived with TF set and 12 traps
+# [RUN]	Set TF and check a fast syscall
+# [OK]	Survived with TF set and 24 traps
+# [RUN]	Fast syscall with TF cleared
+# [OK]	Nothing unexpected happened
+# [RUN]	Set TF and check SYSENTER
+# 	Got SIGSEGV with RIP=61a0a579, TF=256
+# [RUN]	Fast syscall with TF cleared
+# [OK]	Nothing unexpected happened
+ok 1 selftests: x86: single_step_syscall_64
+# timeout set to 45
+# selftests: x86: sysret_ss_attrs_64
+# [RUN]	Syscalls followed by SS validation
+# [OK]	We survived
+ok 2 selftests: x86: sysret_ss_attrs_64
+# timeout set to 45
+# selftests: x86: syscall_nt_64
+# [RUN]	Set NT and issue a syscall
+# [OK]	The syscall worked and flags are still set
+# [RUN]	Set AC and issue a syscall
+# [OK]	The syscall worked and flags are still set
+# [RUN]	Set NT|AC and issue a syscall
+# [OK]	The syscall worked and flags are still set
+# [RUN]	Set TF and issue a syscall
+# [OK]	The syscall worked and flags are still set
+# [RUN]	Set NT|TF and issue a syscall
+# [OK]	The syscall worked and flags are still set
+# [RUN]	Set AC|TF and issue a syscall
+# [OK]	The syscall worked and flags are still set
+# [RUN]	Set NT|AC|TF and issue a syscall
+# [OK]	The syscall worked and flags are still set
+# [RUN]	Set DF and issue a syscall
+# [OK]	The syscall worked and flags are still set
+# [RUN]	Set TF|DF and issue a syscall
+# [OK]	The syscall worked and flags are still set
+ok 3 selftests: x86: syscall_nt_64
+# timeout set to 45
+# selftests: x86: test_mremap_vdso_64
+# TAP version 13
+# 1..1
+# # AT_SYSINFO_EHDR is 0x75163e8d9000
+# # Moving vDSO: [0x75163e8d9000, 0x75163e8da000] -> [0x75163e8cd000, 0x75163e8ce000]
+# # vDSO partial move failed, will try with bigger size
+# # Moving vDSO: [0x75163e8d9000, 0x75163e8db000] -> [0x75163e8cc000, 0x75163e8ce000]
+# ok 1 main
+# # Totals: pass:1 fail:0 xfail:0 xpass:0 skip:0 error:0
+ok 4 selftests: x86: test_mremap_vdso_64
+# timeout set to 45
+# selftests: x86: check_initial_reg_state_64
+# [OK]	All GPRs except SP are 0
+# [OK]	FLAGS is 0x202
+ok 5 selftests: x86: check_initial_reg_state_64
+# timeout set to 45
+# selftests: x86: sigreturn_64
+# [OK]	set_thread_area refused 16-bit data
+# [OK]	set_thread_area refused 16-bit data
+# [RUN]	Valid sigreturn: 64-bit CS (33), 32-bit SS (2b, GDT)
+# [OK]	all registers okay
+# [RUN]	Valid sigreturn: 32-bit CS (23), 32-bit SS (2b, GDT)
+# [NOTE]	SP: 8badf00d5aadc0de -> 5aadc0de
+# [OK]	all registers okay
+# [RUN]	Valid sigreturn: 16-bit CS (37), 32-bit SS (2b, GDT)
+# [NOTE]	SP: 8badf00d5aadc0de -> 5aadc0de
+# [OK]	all registers okay
+# [RUN]	Valid sigreturn: 64-bit CS (33), 16-bit SS (3f)
+# [OK]	all registers okay
+# [RUN]	Valid sigreturn: 32-bit CS (23), 16-bit SS (3f)
+# [NOTE]	SP: 8badf00d5aadc0de -> 5aadc0de
+# [OK]	all registers okay
+# [RUN]	Valid sigreturn: 16-bit CS (37), 16-bit SS (3f)
+# [NOTE]	SP: 8badf00d5aadc0de -> 5aadc0de
+# [OK]	all registers okay
+# [RUN]	Valid sigreturn: 32-bit CS (23), 32-bit SS (2b, GDT)
+# 	Corrupting SS on return to 64-bit mode
+# [NOTE]	SP: 8badf00d5aadc0de -> 5aadc0de
+# [OK]	all registers okay
+# [RUN]	Valid sigreturn: 32-bit CS (23), 16-bit SS (3f)
+# 	Corrupting SS on return to 64-bit mode
+# [NOTE]	SP: 8badf00d5aadc0de -> 5aadc0de
+# [OK]	all registers okay
+# [RUN]	64-bit CS (33), bogus SS (47)
+# [OK]	Got #GP(0x0) (i.e. Segmentation fault)
+# [RUN]	32-bit CS (23), bogus SS (47)
+# [OK]	Got #GP(0x0) (i.e. Segmentation fault)
+# [RUN]	16-bit CS (37), bogus SS (47)
+# [OK]	Got #GP(0x0) (i.e. Segmentation fault)
+# [RUN]	64-bit CS (33), bogus SS (33)
+# [OK]	Got #GP(0x30) (i.e. GDT index 6, Segmentation fault)
+# [RUN]	32-bit CS (23), bogus SS (33)
+# [OK]	Got #GP(0x30) (i.e. GDT index 6, Segmentation fault)
+# [RUN]	16-bit CS (37), bogus SS (33)
+# [OK]	Got #GP(0x30) (i.e. GDT index 6, Segmentation fault)
+# [RUN]	32-bit CS (4f), bogus SS (2b)
+# [OK]	Got #NP(0x4c) (i.e. LDT index 9, Bus error)
+# [RUN]	32-bit CS (23), bogus SS (57)
+# [OK]	Got #GP(0x0) (i.e. Segmentation fault)
+# [RUN]	Clear UC_STRICT_RESTORE_SS and corrupt SS
+# [OK]	It worked
+ok 6 selftests: x86: sigreturn_64
+# timeout set to 45
+# selftests: x86: iopl_64
+# [OK]	CLI NOPped
+# [OK]	STI NOPped
+# [OK]	outb to 0x80 worked
+# [OK]	outb to 0x80 worked
+# [OK]	outb to 0xed failed
+# 	child: set IOPL to 3
+# [RUN]	child: write to 0x80
+# [OK]	Child succeeded
+# [RUN]	parent: write to 0x80 (should fail)
+# [OK]	outb to 0x80 failed
+# [OK]	CLI faulted
+# [OK]	STI faulted
+# 	iopl(3)
+# 	Drop privileges
+# [RUN]	iopl(3) unprivileged but with IOPL==3
+# [RUN]	iopl(0) unprivileged
+# [RUN]	iopl(3) unprivileged
+# [OK]	Failed as expected
+ok 7 selftests: x86: iopl_64
+# timeout set to 45
+# selftests: x86: ioperm_64
+# [OK]	outb to 0x80 failed
+# [OK]	outb to 0xed failed
+# [RUN]	enable 0x80
+# [OK]	outb to 0x80 worked
+# [OK]	outb to 0xed failed
+# [RUN]	disable 0x80
+# [OK]	outb to 0x80 failed
+# [OK]	outb to 0xed failed
+# [RUN]	child: check that we inherited permissions
+# [OK]	outb to 0x80 worked
+# [OK]	outb to 0xed failed
+# [RUN]	child: Extend permissions to 0x81
+# [RUN]	child: Drop permissions to 0x80
+# [OK]	outb to 0x80 failed
+# [OK]	Child succeeded
+# 	Verify that unsharing the bitmap worked
+# [OK]	outb to 0x80 worked
+# 	Drop privileges
+# [RUN]	disable 0x80
+# [OK]	it worked
+# [RUN]	enable 0x80 again
+# [OK]	it failed
+ok 8 selftests: x86: ioperm_64
+# timeout set to 45
+# selftests: x86: test_vsyscall_64
+# TAP version 13
+# 1..13
+# # vsyscall map: ffffffffff600000-ffffffffff601000 --xp 00000000 00:00 0                  [vsyscall]
+# # vsyscall permissions are --x
+# ok 1 vsyscall map
+# # test gettimeofday()
+# # vDSO time offsets: 0.000058 0.000004
+# ok 2 vDSO gettimeofday()'s timeval
+# # vsyscall time offsets: 0.000060 0.000002
+# ok 3 vsyscall gettimeofday()'s timeval
+# # test time()
+# ok 4 vDSO time() is okay
+# ok 5 vsyscall time() is okay
+# # getcpu() on CPU 0
+# ok 6 vDSO reported correct CPU and node
+# ok 7 vsyscall reported correct CPU and node
+# # getcpu() on CPU 1
+# ok 8 vDSO reported correct CPU and node
+# ok 9 vsyscall reported correct CPU and node
+# # Checking read access to the vsyscall page
+# ok 10 We do not have read access: #PF(0x5)
+# ok 11 vsyscall_map_x is true
+# # process_vm_readv() from vsyscall page
+# ok 12 process_vm_readv() failed (ret = -1, errno = 14)
+# # checking that vsyscalls are emulated
+# ok 13 vsyscalls are emulated (1 instructions in vsyscall page)
+# # Totals: pass:13 fail:0 xfail:0 xpass:0 skip:0 error:0
+ok 9 selftests: x86: test_vsyscall_64
+# timeout set to 45
+# selftests: x86: mov_ss_trap_64
+# 	SS = 0x2b, &SS = 0x0x404188
+# 	PR_SET_PTRACER_ANY succeeded
+# 	Set up a watchpoint
+# 	DR0 = 404188, DR1 = 401583, DR7 = 7000a
+# [RUN]	Read from watched memory (should get SIGTRAP)
+# 	Got SIGTRAP with RIP=4013ff, EFLAGS.RF=0
+# [RUN]	MOV SS; INT3
+# 	Got SIGTRAP with RIP=401412, EFLAGS.RF=0
+# [RUN]	MOV SS; INT 3
+# 	Got SIGTRAP with RIP=401426, EFLAGS.RF=0
+# [RUN]	MOV SS; CS CS INT3
+# 	Got SIGTRAP with RIP=40143b, EFLAGS.RF=0
+# [RUN]	MOV SS; CSx14 INT3
+# 	Got SIGTRAP with RIP=40145c, EFLAGS.RF=0
+# [RUN]	MOV SS; INT 4
+# 	Got SIGSEGV with RIP=401486
+# [RUN]	MOV SS; ICEBP
+# 	Got SIGTRAP with RIP=4014c8, EFLAGS.RF=0
+# [RUN]	MOV SS; CLI
+# 	Got SIGSEGV with RIP=401830
+# [RUN]	MOV SS; #PF
+# 	Got SIGSEGV with RIP=4017f8
+# [RUN]	MOV SS; INT 1
+# 	Got SIGSEGV with RIP=4017c0
+# [RUN]	MOV SS; SYSCALL
+# [RUN]	MOV SS; breakpointed NOP
+# 	Got SIGTRAP with RIP=401584, EFLAGS.RF=0
+# [RUN]	MOV SS; SYSENTER
+# 	Got SIGSEGV with RIP=54188579
+# [RUN]	MOV SS; INT $0x80
+# [OK]	I aten't dead
+ok 10 selftests: x86: mov_ss_trap_64
+# timeout set to 45
+# selftests: x86: syscall_arg_fault_64
+# [RUN]	SYSENTER with invalid state
+# [OK]	Seems okay
+# [RUN]	SYSCALL with invalid state
+# [OK]	SYSCALL returned normally
+# [RUN]	SYSENTER with TF and invalid state
+# [OK]	Seems okay
+# [RUN]	SYSCALL with TF and invalid state
+# [OK]	SYSCALL returned normally
+# [RUN]	SYSENTER with TF, invalid state, and GSBASE < 0
+# [OK]	Seems okay
+ok 11 selftests: x86: syscall_arg_fault_64
+# timeout set to 45
+# selftests: x86: fsgsbase_restore_64
+# 	Setting up a segment
+# 	segment base address = 0x402ff000
+# 	using LDT slot 0
+# [OK]	The segment points to the right place.
+# 	Tracee will take a nap until signaled
+# 	Child GS=0x7, GSBASE=0x402ff000
+# 	Tracer: redirecting tracee to tracee_zap_segment()
+# 	Tracee: in tracee_zap_segment()
+# 	Tracee is going back to sleep
+# 	Tracer: restoring tracee state
+# 	Tracee was resumed.  Will re-check segment.
+# [OK]	The segment points to the right place.
+# [OK]	All is well.
+ok 12 selftests: x86: fsgsbase_restore_64
+# timeout set to 45
+# selftests: x86: sigaltstack_64
+# [RUN]	Test an alternate signal stack of sufficient size.
+# 	Raise SIGALRM. It is expected to be delivered.
+# [OK]	SIGALRM signal delivered.
+ok 13 selftests: x86: sigaltstack_64
+# timeout set to 45
+# selftests: x86: nx_stack_64
+# stack min 7fff916e8000
+# stack max 7fff91ee8000
+# PASS	All stack pages are NX
+ok 14 selftests: x86: nx_stack_64
+# timeout set to 45
+# selftests: x86: fsgsbase_64
+# [RUN]	PTRACE_POKE GS, read GSBASE back
+# [RUN]	ARCH_SET_GS to 1
+# [OK]	GSBASE started at 1
+# [RUN]	Set GS = 0x7, read GSBASE
+# [OK]	GSBASE reads as 0x1 with invalid GS
+# 	FSGSBASE instructions are enabled
+# [RUN]	ARCH_SET_GS to 0x0
+# [OK]	GSBASE was set as expected (selector 0x0)
+# [OK]	ARCH_GET_GS worked as expected (selector 0x0)
+# [RUN]	ARCH_SET_GS to 0x1
+# [OK]	GSBASE was set as expected (selector 0x0)
+# [OK]	ARCH_GET_GS worked as expected (selector 0x0)
+# [RUN]	ARCH_SET_GS to 0x200000000
+# [OK]	GSBASE was set as expected (selector 0x0)
+# [OK]	ARCH_GET_GS worked as expected (selector 0x0)
+# [RUN]	ARCH_SET_GS to 0x0
+# [OK]	GSBASE was set as expected (selector 0x0)
+# [OK]	ARCH_GET_GS worked as expected (selector 0x0)
+# [RUN]	ARCH_SET_GS to 0x200000000
+# [OK]	GSBASE was set as expected (selector 0x0)
+# [OK]	ARCH_GET_GS worked as expected (selector 0x0)
+# [RUN]	ARCH_SET_GS to 0x1
+# [OK]	GSBASE was set as expected (selector 0x0)
+# [OK]	ARCH_GET_GS worked as expected (selector 0x0)
+# [RUN]	ARCH_SET_GS to 0x0 then mov 0 to %gs
+# [OK]	GSBASE is 0x0
+# [RUN]	ARCH_SET_GS to 0x1 then mov 0 to %gs
+# [OK]	GSBASE is 0x0
+# [RUN]	ARCH_SET_GS to 0x200000000 then mov 0 to %gs
+# [OK]	GSBASE is 0x0
+# [RUN]	ARCH_SET_GS to 0x0 then mov 0 to %gs and schedule 
+# [OK]	GSBASE is 0x0
+# [RUN]	ARCH_SET_GS to 0x1 then mov 0 to %gs and schedule 
+# [OK]	GSBASE is 0x0
+# [RUN]	ARCH_SET_GS to 0x200000000 then mov 0 to %gs and schedule 
+# [OK]	GSBASE is 0x0
+# [RUN]	ARCH_SET_GS(0x0), then schedule to 0x0
+# 	other thread: ARCH_SET_GS(0x0) -- sel is 0x0
+# [OK]	GS/BASE remained 0x0/0x0
+# [RUN]	ARCH_SET_GS(0x0), then schedule to 0x0
+# 	Before schedule, set selector to 0x1
+# 	other thread: ARCH_SET_GS(0x0) -- sel is 0x0
+# [OK]	GS/BASE remained 0x1/0x0
+# [RUN]	ARCH_SET_GS(0x0), then schedule to 0x0
+# 	Before schedule, set selector to 0x2
+# 	other thread: ARCH_SET_GS(0x0) -- sel is 0x0
+# [OK]	GS/BASE remained 0x2/0x0
+# [RUN]	ARCH_SET_GS(0x0), then schedule to 0x0
+# 	Before schedule, set selector to 0x3
+# 	other thread: ARCH_SET_GS(0x0) -- sel is 0x0
+# [OK]	GS/BASE remained 0x3/0x0
+# [RUN]	ARCH_SET_GS(0x0), then schedule to 0x0
+# 	Before schedule, set selector to 0x2b
+# 	other thread: ARCH_SET_GS(0x0) -- sel is 0x0
+# [OK]	GS/BASE remained 0x2b/0x0
+# [RUN]	ARCH_SET_GS(0x0), then schedule to 0xa1fa5f343cb85fa4
+# 	other thread: ARCH_SET_GS(0x0) and clear gs -- sel is 0x0
+# [OK]	GS/BASE remained 0x0/0x0
+# [RUN]	ARCH_SET_GS(0x0), then schedule to 0xa1fa5f343cb85fa4
+# 	Before schedule, set selector to 0x1
+# 	other thread: ARCH_SET_GS(0x0) and clear gs -- sel is 0x0
+# [OK]	GS/BASE remained 0x1/0x0
+# [RUN]	ARCH_SET_GS(0x0), then schedule to 0xa1fa5f343cb85fa4
+# 	Before schedule, set selector to 0x2
+# 	other thread: ARCH_SET_GS(0x0) and clear gs -- sel is 0x0
+# [OK]	GS/BASE remained 0x2/0x0
+# [RUN]	ARCH_SET_GS(0x0), then schedule to 0xa1fa5f343cb85fa4
+# 	Before schedule, set selector to 0x3
+# 	other thread: ARCH_SET_GS(0x0) and clear gs -- sel is 0x0
+# [OK]	GS/BASE remained 0x3/0x0
+# [RUN]	ARCH_SET_GS(0x0), then schedule to 0xa1fa5f343cb85fa4
+# 	Before schedule, set selector to 0x2b
+# 	other thread: ARCH_SET_GS(0x0) and clear gs -- sel is 0x0
+# [OK]	GS/BASE remained 0x2b/0x0
+# [RUN]	ARCH_SET_GS(0x0), then schedule to 0x1
+# 	other thread: ARCH_SET_GS(0x1) -- sel is 0x0
+# [OK]	GS/BASE remained 0x0/0x0
+# [RUN]	ARCH_SET_GS(0x0), then schedule to 0x1
+# 	Before schedule, set selector to 0x1
+# 	other thread: ARCH_SET_GS(0x1) -- sel is 0x0
+# [OK]	GS/BASE remained 0x1/0x0
+# [RUN]	ARCH_SET_GS(0x0), then schedule to 0x1
+# 	Before schedule, set selector to 0x2
+# 	other thread: ARCH_SET_GS(0x1) -- sel is 0x0
+# [OK]	GS/BASE remained 0x2/0x0
+# [RUN]	ARCH_SET_GS(0x0), then schedule to 0x1
+# 	Before schedule, set selector to 0x3
+# 	other thread: ARCH_SET_GS(0x1) -- sel is 0x0
+# [OK]	GS/BASE remained 0x3/0x0
+# [RUN]	ARCH_SET_GS(0x0), then schedule to 0x1
+# 	Before schedule, set selector to 0x2b
+# 	other thread: ARCH_SET_GS(0x1) -- sel is 0x0
+# [OK]	GS/BASE remained 0x2b/0x0
+# [RUN]	ARCH_SET_GS(0x0), then schedule to 0x200000000
+# 	other thread: ARCH_SET_GS(0x200000000) -- sel is 0x0
+# [OK]	GS/BASE remained 0x0/0x0
+# [RUN]	ARCH_SET_GS(0x0), then schedule to 0x200000000
+# 	Before schedule, set selector to 0x1
+# 	other thread: ARCH_SET_GS(0x200000000) -- sel is 0x0
+# [OK]	GS/BASE remained 0x1/0x0
+# [RUN]	ARCH_SET_GS(0x0), then schedule to 0x200000000
+# 	Before schedule, set selector to 0x2
+# 	other thread: ARCH_SET_GS(0x200000000) -- sel is 0x0
+# [OK]	GS/BASE remained 0x2/0x0
+# [RUN]	ARCH_SET_GS(0x0), then schedule to 0x200000000
+# 	Before schedule, set selector to 0x3
+# 	other thread: ARCH_SET_GS(0x200000000) -- sel is 0x0
+# [OK]	GS/BASE remained 0x3/0x0
+# [RUN]	ARCH_SET_GS(0x0), then schedule to 0x200000000
+# 	Before schedule, set selector to 0x2b
+# 	other thread: ARCH_SET_GS(0x200000000) -- sel is 0x0
+# [OK]	GS/BASE remained 0x2b/0x0
+# [RUN]	ARCH_SET_GS(0x0) and clear gs, then schedule to 0x0
+# 	other thread: ARCH_SET_GS(0x0) -- sel is 0x0
+# [OK]	GS/BASE remained 0x0/0x0
+# [RUN]	ARCH_SET_GS(0x0) and clear gs, then schedule to 0x0
+# 	Before schedule, set selector to 0x1
+# 	other thread: ARCH_SET_GS(0x0) -- sel is 0x0
+# [OK]	GS/BASE remained 0x1/0x0
+# [RUN]	ARCH_SET_GS(0x0) and clear gs, then schedule to 0x0
+# 	Before schedule, set selector to 0x2
+# 	other thread: ARCH_SET_GS(0x0) -- sel is 0x0
+# [OK]	GS/BASE remained 0x2/0x0
+# [RUN]	ARCH_SET_GS(0x0) and clear gs, then schedule to 0x0
+# 	Before schedule, set selector to 0x3
+# 	other thread: ARCH_SET_GS(0x0) -- sel is 0x0
+# [OK]	GS/BASE remained 0x3/0x0
+# [RUN]	ARCH_SET_GS(0x0) and clear gs, then schedule to 0x0
+# 	Before schedule, set selector to 0x2b
+# 	other thread: ARCH_SET_GS(0x0) -- sel is 0x0
+# [OK]	GS/BASE remained 0x2b/0x0
+# [RUN]	ARCH_SET_GS(0x0) and clear gs, then schedule to 0xa1fa5f343cb85fa4
+# 	other thread: ARCH_SET_GS(0x0) and clear gs -- sel is 0x0
+# [OK]	GS/BASE remained 0x0/0x0
+# [RUN]	ARCH_SET_GS(0x0) and clear gs, then schedule to 0xa1fa5f343cb85fa4
+# 	Before schedule, set selector to 0x1
+# 	other thread: ARCH_SET_GS(0x0) and clear gs -- sel is 0x0
+# [OK]	GS/BASE remained 0x1/0x0
+# [RUN]	ARCH_SET_GS(0x0) and clear gs, then schedule to 0xa1fa5f343cb85fa4
+# 	Before schedule, set selector to 0x2
+# 	other thread: ARCH_SET_GS(0x0) and clear gs -- sel is 0x0
+# [OK]	GS/BASE remained 0x2/0x0
+# [RUN]	ARCH_SET_GS(0x0) and clear gs, then schedule to 0xa1fa5f343cb85fa4
+# 	Before schedule, set selector to 0x3
+# 	other thread: ARCH_SET_GS(0x0) and clear gs -- sel is 0x0
+# [OK]	GS/BASE remained 0x3/0x0
+# [RUN]	ARCH_SET_GS(0x0) and clear gs, then schedule to 0xa1fa5f343cb85fa4
+# 	Before schedule, set selector to 0x2b
+# 	other thread: ARCH_SET_GS(0x0) and clear gs -- sel is 0x0
+# [OK]	GS/BASE remained 0x2b/0x0
+# [RUN]	ARCH_SET_GS(0x0) and clear gs, then schedule to 0x1
+# 	other thread: ARCH_SET_GS(0x1) -- sel is 0x0
+# [OK]	GS/BASE remained 0x0/0x0
+# [RUN]	ARCH_SET_GS(0x0) and clear gs, then schedule to 0x1
+# 	Before schedule, set selector to 0x1
+# 	other thread: ARCH_SET_GS(0x1) -- sel is 0x0
+# [OK]	GS/BASE remained 0x1/0x0
+# [RUN]	ARCH_SET_GS(0x0) and clear gs, then schedule to 0x1
+# 	Before schedule, set selector to 0x2
+# 	other thread: ARCH_SET_GS(0x1) -- sel is 0x0
+# [OK]	GS/BASE remained 0x2/0x0
+# [RUN]	ARCH_SET_GS(0x0) and clear gs, then schedule to 0x1
+# 	Before schedule, set selector to 0x3
+# 	other thread: ARCH_SET_GS(0x1) -- sel is 0x0
+# [OK]	GS/BASE remained 0x3/0x0
+# [RUN]	ARCH_SET_GS(0x0) and clear gs, then schedule to 0x1
+# 	Before schedule, set selector to 0x2b
+# 	other thread: ARCH_SET_GS(0x1) -- sel is 0x0
+# [OK]	GS/BASE remained 0x2b/0x0
+# [RUN]	ARCH_SET_GS(0x0) and clear gs, then schedule to 0x200000000
+# 	other thread: ARCH_SET_GS(0x200000000) -- sel is 0x0
+# [OK]	GS/BASE remained 0x0/0x0
+# [RUN]	ARCH_SET_GS(0x0) and clear gs, then schedule to 0x200000000
+# 	Before schedule, set selector to 0x1
+# 	other thread: ARCH_SET_GS(0x200000000) -- sel is 0x0
+# [OK]	GS/BASE remained 0x1/0x0
+# [RUN]	ARCH_SET_GS(0x0) and clear gs, then schedule to 0x200000000
+# 	Before schedule, set selector to 0x2
+# 	other thread: ARCH_SET_GS(0x200000000) -- sel is 0x0
+# [OK]	GS/BASE remained 0x2/0x0
+# [RUN]	ARCH_SET_GS(0x0) and clear gs, then schedule to 0x200000000
+# 	Before schedule, set selector to 0x3
+# 	other thread: ARCH_SET_GS(0x200000000) -- sel is 0x0
+# [OK]	GS/BASE remained 0x3/0x0
+# [RUN]	ARCH_SET_GS(0x0) and clear gs, then schedule to 0x200000000
+# 	Before schedule, set selector to 0x2b
+# 	other thread: ARCH_SET_GS(0x200000000) -- sel is 0x0
+# [OK]	GS/BASE remained 0x2b/0x0
+# [RUN]	ARCH_SET_GS(0x1), then schedule to 0x0
+# 	other thread: ARCH_SET_GS(0x0) -- sel is 0x0
+# [OK]	GS/BASE remained 0x0/0x1
+# [RUN]	ARCH_SET_GS(0x1), then schedule to 0x0
+# 	Before schedule, set selector to 0x1
+# 	other thread: ARCH_SET_GS(0x0) -- sel is 0x0
+# [OK]	GS/BASE remained 0x1/0x0
+# [RUN]	ARCH_SET_GS(0x1), then schedule to 0x0
+# 	Before schedule, set selector to 0x2
+# 	other thread: ARCH_SET_GS(0x0) -- sel is 0x0
+# [OK]	GS/BASE remained 0x2/0x0
+# [RUN]	ARCH_SET_GS(0x1), then schedule to 0x0
+# 	Before schedule, set selector to 0x3
+# 	other thread: ARCH_SET_GS(0x0) -- sel is 0x0
+# [OK]	GS/BASE remained 0x3/0x0
+# [RUN]	ARCH_SET_GS(0x1), then schedule to 0x0
+# 	Before schedule, set selector to 0x2b
+# 	other thread: ARCH_SET_GS(0x0) -- sel is 0x0
+# [OK]	GS/BASE remained 0x2b/0x0
+# [RUN]	ARCH_SET_GS(0x1), then schedule to 0xa1fa5f343cb85fa4
+# 	other thread: ARCH_SET_GS(0x0) and clear gs -- sel is 0x0
+# [OK]	GS/BASE remained 0x0/0x1
+# [RUN]	ARCH_SET_GS(0x1), then schedule to 0xa1fa5f343cb85fa4
+# 	Before schedule, set selector to 0x1
+# 	other thread: ARCH_SET_GS(0x0) and clear gs -- sel is 0x0
+# [OK]	GS/BASE remained 0x1/0x0
+# [RUN]	ARCH_SET_GS(0x1), then schedule to 0xa1fa5f343cb85fa4
+# 	Before schedule, set selector to 0x2
+# 	other thread: ARCH_SET_GS(0x0) and clear gs -- sel is 0x0
+# [OK]	GS/BASE remained 0x2/0x0
+# [RUN]	ARCH_SET_GS(0x1), then schedule to 0xa1fa5f343cb85fa4
+# 	Before schedule, set selector to 0x3
+# 	other thread: ARCH_SET_GS(0x0) and clear gs -- sel is 0x0
+# [OK]	GS/BASE remained 0x3/0x0
+# [RUN]	ARCH_SET_GS(0x1), then schedule to 0xa1fa5f343cb85fa4
+# 	Before schedule, set selector to 0x2b
+# 	other thread: ARCH_SET_GS(0x0) and clear gs -- sel is 0x0
+# [OK]	GS/BASE remained 0x2b/0x0
+# [RUN]	ARCH_SET_GS(0x1), then schedule to 0x1
+# 	other thread: ARCH_SET_GS(0x1) -- sel is 0x0
+# [OK]	GS/BASE remained 0x0/0x1
+# [RUN]	ARCH_SET_GS(0x1), then schedule to 0x1
+# 	Before schedule, set selector to 0x1
+# 	other thread: ARCH_SET_GS(0x1) -- sel is 0x0
+# [OK]	GS/BASE remained 0x1/0x0
+# [RUN]	ARCH_SET_GS(0x1), then schedule to 0x1
+# 	Before schedule, set selector to 0x2
+# 	other thread: ARCH_SET_GS(0x1) -- sel is 0x0
+# [OK]	GS/BASE remained 0x2/0x0
+# [RUN]	ARCH_SET_GS(0x1), then schedule to 0x1
+# 	Before schedule, set selector to 0x3
+# 	other thread: ARCH_SET_GS(0x1) -- sel is 0x0
+# [OK]	GS/BASE remained 0x3/0x0
+# [RUN]	ARCH_SET_GS(0x1), then schedule to 0x1
+# 	Before schedule, set selector to 0x2b
+# 	other thread: ARCH_SET_GS(0x1) -- sel is 0x0
+# [OK]	GS/BASE remained 0x2b/0x0
+# [RUN]	ARCH_SET_GS(0x1), then schedule to 0x200000000
+# 	other thread: ARCH_SET_GS(0x200000000) -- sel is 0x0
+# [OK]	GS/BASE remained 0x0/0x1
+# [RUN]	ARCH_SET_GS(0x1), then schedule to 0x200000000
+# 	Before schedule, set selector to 0x1
+# 	other thread: ARCH_SET_GS(0x200000000) -- sel is 0x0
+# [OK]	GS/BASE remained 0x1/0x0
+# [RUN]	ARCH_SET_GS(0x1), then schedule to 0x200000000
+# 	Before schedule, set selector to 0x2
+# 	other thread: ARCH_SET_GS(0x200000000) -- sel is 0x0
+# [OK]	GS/BASE remained 0x2/0x0
+# [RUN]	ARCH_SET_GS(0x1), then schedule to 0x200000000
+# 	Before schedule, set selector to 0x3
+# 	other thread: ARCH_SET_GS(0x200000000) -- sel is 0x0
+# [OK]	GS/BASE remained 0x3/0x0
+# [RUN]	ARCH_SET_GS(0x1), then schedule to 0x200000000
+# 	Before schedule, set selector to 0x2b
+# 	other thread: ARCH_SET_GS(0x200000000) -- sel is 0x0
+# [OK]	GS/BASE remained 0x2b/0x0
+# [RUN]	ARCH_SET_GS(0x200000000), then schedule to 0x0
+# 	other thread: ARCH_SET_GS(0x0) -- sel is 0x0
+# [OK]	GS/BASE remained 0x0/0x200000000
+# [RUN]	ARCH_SET_GS(0x200000000), then schedule to 0x0
+# 	Before schedule, set selector to 0x1
+# 	other thread: ARCH_SET_GS(0x0) -- sel is 0x0
+# [OK]	GS/BASE remained 0x1/0x0
+# [RUN]	ARCH_SET_GS(0x200000000), then schedule to 0x0
+# 	Before schedule, set selector to 0x2
+# 	other thread: ARCH_SET_GS(0x0) -- sel is 0x0
+# [OK]	GS/BASE remained 0x2/0x0
+# [RUN]	ARCH_SET_GS(0x200000000), then schedule to 0x0
+# 	Before schedule, set selector to 0x3
+# 	other thread: ARCH_SET_GS(0x0) -- sel is 0x0
+# [OK]	GS/BASE remained 0x3/0x0
+# [RUN]	ARCH_SET_GS(0x200000000), then schedule to 0x0
+# 	Before schedule, set selector to 0x2b
+# 	other thread: ARCH_SET_GS(0x0) -- sel is 0x0
+# [OK]	GS/BASE remained 0x2b/0x0
+# [RUN]	ARCH_SET_GS(0x200000000), then schedule to 0xa1fa5f343cb85fa4
+# 	other thread: ARCH_SET_GS(0x0) and clear gs -- sel is 0x0
+# [OK]	GS/BASE remained 0x0/0x200000000
+# [RUN]	ARCH_SET_GS(0x200000000), then schedule to 0xa1fa5f343cb85fa4
+# 	Before schedule, set selector to 0x1
+# 	other thread: ARCH_SET_GS(0x0) and clear gs -- sel is 0x0
+# [OK]	GS/BASE remained 0x1/0x0
+# [RUN]	ARCH_SET_GS(0x200000000), then schedule to 0xa1fa5f343cb85fa4
+# 	Before schedule, set selector to 0x2
+# 	other thread: ARCH_SET_GS(0x0) and clear gs -- sel is 0x0
+# [OK]	GS/BASE remained 0x2/0x0
+# [RUN]	ARCH_SET_GS(0x200000000), then schedule to 0xa1fa5f343cb85fa4
+# 	Before schedule, set selector to 0x3
+# 	other thread: ARCH_SET_GS(0x0) and clear gs -- sel is 0x0
+# [OK]	GS/BASE remained 0x3/0x0
+# [RUN]	ARCH_SET_GS(0x200000000), then schedule to 0xa1fa5f343cb85fa4
+# 	Before schedule, set selector to 0x2b
+# 	other thread: ARCH_SET_GS(0x0) and clear gs -- sel is 0x0
+# [OK]	GS/BASE remained 0x2b/0x0
+# [RUN]	ARCH_SET_GS(0x200000000), then schedule to 0x1
+# 	other thread: ARCH_SET_GS(0x1) -- sel is 0x0
+# [OK]	GS/BASE remained 0x0/0x200000000
+# [RUN]	ARCH_SET_GS(0x200000000), then schedule to 0x1
+# 	Before schedule, set selector to 0x1
+# 	other thread: ARCH_SET_GS(0x1) -- sel is 0x0
+# [OK]	GS/BASE remained 0x1/0x0
+# [RUN]	ARCH_SET_GS(0x200000000), then schedule to 0x1
+# 	Before schedule, set selector to 0x2
+# 	other thread: ARCH_SET_GS(0x1) -- sel is 0x0
+# [OK]	GS/BASE remained 0x2/0x0
+# [RUN]	ARCH_SET_GS(0x200000000), then schedule to 0x1
+# 	Before schedule, set selector to 0x3
+# 	other thread: ARCH_SET_GS(0x1) -- sel is 0x0
+# [OK]	GS/BASE remained 0x3/0x0
+# [RUN]	ARCH_SET_GS(0x200000000), then schedule to 0x1
+# 	Before schedule, set selector to 0x2b
+# 	other thread: ARCH_SET_GS(0x1) -- sel is 0x0
+# [OK]	GS/BASE remained 0x2b/0x0
+# [RUN]	ARCH_SET_GS(0x200000000), then schedule to 0x200000000
+# 	other thread: ARCH_SET_GS(0x200000000) -- sel is 0x0
+# [OK]	GS/BASE remained 0x0/0x200000000
+# [RUN]	ARCH_SET_GS(0x200000000), then schedule to 0x200000000
+# 	Before schedule, set selector to 0x1
+# 	other thread: ARCH_SET_GS(0x200000000) -- sel is 0x0
+# [OK]	GS/BASE remained 0x1/0x0
+# [RUN]	ARCH_SET_GS(0x200000000), then schedule to 0x200000000
+# 	Before schedule, set selector to 0x2
+# 	other thread: ARCH_SET_GS(0x200000000) -- sel is 0x0
+# [OK]	GS/BASE remained 0x2/0x0
+# [RUN]	ARCH_SET_GS(0x200000000), then schedule to 0x200000000
+# 	Before schedule, set selector to 0x3
+# 	other thread: ARCH_SET_GS(0x200000000) -- sel is 0x0
+# [OK]	GS/BASE remained 0x3/0x0
+# [RUN]	ARCH_SET_GS(0x200000000), then schedule to 0x200000000
+# 	Before schedule, set selector to 0x2b
+# 	other thread: ARCH_SET_GS(0x200000000) -- sel is 0x0
+# [OK]	GS/BASE remained 0x2b/0x0
+# [RUN]	ARCH_SET_GS(0), clear gs, then manipulate GSBASE in a different thread
+# 	using LDT slot 0
+# [OK]	GSBASE remained 0
+# [RUN]	GS = 0x0, GSBASE = 0x0
+# 	other thread: ARCH_SET_GS(0x0) -- sel is 0x0
+# [OK]	Index and base were preserved
+# [RUN]	GS = 0x0, GSBASE = 0x1
+# 	other thread: ARCH_SET_GS(0x0) -- sel is 0x0
+# [OK]	Index and base were preserved
+# [RUN]	GS = 0x0, GSBASE = 0x200000000
+# 	other thread: ARCH_SET_GS(0x0) -- sel is 0x0
+# [OK]	Index and base were preserved
+# [RUN]	GS = 0x0, GSBASE = 0xffffffffffffffff
+# 	other thread: ARCH_SET_GS(0x0) -- sel is 0x0
+# [OK]	Index and base were preserved
+# [RUN]	GS = 0x2b, GSBASE = 0x0
+# 	other thread: ARCH_SET_GS(0x0) -- sel is 0x0
+# [OK]	Index and base were preserved
+# [RUN]	GS = 0x2b, GSBASE = 0x1
+# 	other thread: ARCH_SET_GS(0x0) -- sel is 0x0
+# [OK]	Index and base were preserved
+# [RUN]	GS = 0x2b, GSBASE = 0x200000000
+# 	other thread: ARCH_SET_GS(0x0) -- sel is 0x0
+# [OK]	Index and base were preserved
+# [RUN]	GS = 0x2b, GSBASE = 0xffffffffffffffff
+# 	other thread: ARCH_SET_GS(0x0) -- sel is 0x0
+# [OK]	Index and base were preserved
+# [RUN]	PTRACE_POKE(), write GSBASE from ptracer
+# 	using LDT slot 0
+# [OK]	GS remained 0x7 and GSBASE changed to 0xFF
+ok 15 selftests: x86: fsgsbase_64
+# timeout set to 45
+# selftests: x86: sysret_rip_64
+# [RUN]	sigreturn to 0x800000000000
+# [OK]	Got SIGSEGV at RIP=0x800000000000
+# [RUN]	sigreturn to 0x1000000000000
+# [OK]	Got SIGSEGV at RIP=0x1000000000000
+# [RUN]	sigreturn to 0x2000000000000
+# [OK]	Got SIGSEGV at RIP=0x2000000000000
+# [RUN]	sigreturn to 0x4000000000000
+# [OK]	Got SIGSEGV at RIP=0x4000000000000
+# [RUN]	sigreturn to 0x8000000000000
+# [OK]	Got SIGSEGV at RIP=0x8000000000000
+# [RUN]	sigreturn to 0x10000000000000
+# [OK]	Got SIGSEGV at RIP=0x10000000000000
+# [RUN]	sigreturn to 0x20000000000000
+# [OK]	Got SIGSEGV at RIP=0x20000000000000
+# [RUN]	sigreturn to 0x40000000000000
+# [OK]	Got SIGSEGV at RIP=0x40000000000000
+# [RUN]	sigreturn to 0x80000000000000
+# [OK]	Got SIGSEGV at RIP=0x80000000000000
+# [RUN]	sigreturn to 0x100000000000000
+# [OK]	Got SIGSEGV at RIP=0x100000000000000
+# [RUN]	sigreturn to 0x200000000000000
+# [OK]	Got SIGSEGV at RIP=0x200000000000000
+# [RUN]	sigreturn to 0x400000000000000
+# [OK]	Got SIGSEGV at RIP=0x400000000000000
+# [RUN]	sigreturn to 0x800000000000000
+# [OK]	Got SIGSEGV at RIP=0x800000000000000
+# [RUN]	sigreturn to 0x1000000000000000
+# [OK]	Got SIGSEGV at RIP=0x1000000000000000
+# [RUN]	sigreturn to 0x2000000000000000
+# [OK]	Got SIGSEGV at RIP=0x2000000000000000
+# [RUN]	sigreturn to 0x4000000000000000
+# [OK]	Got SIGSEGV at RIP=0x4000000000000000
+# [RUN]	sigreturn to 0x8000000000000000
+# [OK]	Got SIGSEGV at RIP=0x8000000000000000
+# [RUN]	Trying a SYSCALL that falls through to 0x7fffffffe000
+# [OK]	We survived
+# [RUN]	Trying a SYSCALL that falls through to 0x7ffffffff000
+# [OK]	We survived
+# [RUN]	Trying a SYSCALL that falls through to 0x800000000000
+# [OK]	mremap to 0x7ffffffff000 failed
+# [RUN]	Trying a SYSCALL that falls through to 0xfffffffff000
+# [OK]	mremap to 0xffffffffe000 failed
+# [RUN]	Trying a SYSCALL that falls through to 0x1000000000000
+# [OK]	mremap to 0xfffffffff000 failed
+# [RUN]	Trying a SYSCALL that falls through to 0x1fffffffff000
+# [OK]	mremap to 0x1ffffffffe000 failed
+# [RUN]	Trying a SYSCALL that falls through to 0x2000000000000
+# [OK]	mremap to 0x1fffffffff000 failed
+# [RUN]	Trying a SYSCALL that falls through to 0x3fffffffff000
+# [OK]	mremap to 0x3ffffffffe000 failed
+# [RUN]	Trying a SYSCALL that falls through to 0x4000000000000
+# [OK]	mremap to 0x3fffffffff000 failed
+# [RUN]	Trying a SYSCALL that falls through to 0x7fffffffff000
+# [OK]	mremap to 0x7ffffffffe000 failed
+# [RUN]	Trying a SYSCALL that falls through to 0x8000000000000
+# [OK]	mremap to 0x7fffffffff000 failed
+# [RUN]	Trying a SYSCALL that falls through to 0xffffffffff000
+# [OK]	mremap to 0xfffffffffe000 failed
+# [RUN]	Trying a SYSCALL that falls through to 0x10000000000000
+# [OK]	mremap to 0xffffffffff000 failed
+# [RUN]	Trying a SYSCALL that falls through to 0x1ffffffffff000
+# [OK]	mremap to 0x1fffffffffe000 failed
+# [RUN]	Trying a SYSCALL that falls through to 0x20000000000000
+# [OK]	mremap to 0x1ffffffffff000 failed
+# [RUN]	Trying a SYSCALL that falls through to 0x3ffffffffff000
+# [OK]	mremap to 0x3fffffffffe000 failed
+# [RUN]	Trying a SYSCALL that falls through to 0x40000000000000
+# [OK]	mremap to 0x3ffffffffff000 failed
+# [RUN]	Trying a SYSCALL that falls through to 0x7ffffffffff000
+# [OK]	mremap to 0x7fffffffffe000 failed
+# [RUN]	Trying a SYSCALL that falls through to 0x80000000000000
+# [OK]	mremap to 0x7ffffffffff000 failed
+# [RUN]	Trying a SYSCALL that falls through to 0xfffffffffff000
+# [OK]	mremap to 0xffffffffffe000 failed
+# [RUN]	Trying a SYSCALL that falls through to 0x100000000000000
+# [OK]	mremap to 0xfffffffffff000 failed
+# [RUN]	Trying a SYSCALL that falls through to 0x1fffffffffff000
+# [OK]	mremap to 0x1ffffffffffe000 failed
+# [RUN]	Trying a SYSCALL that falls through to 0x200000000000000
+# [OK]	mremap to 0x1fffffffffff000 failed
+# [RUN]	Trying a SYSCALL that falls through to 0x3fffffffffff000
+# [OK]	mremap to 0x3ffffffffffe000 failed
+# [RUN]	Trying a SYSCALL that falls through to 0x400000000000000
+# [OK]	mremap to 0x3fffffffffff000 failed
+# [RUN]	Trying a SYSCALL that falls through to 0x7fffffffffff000
+# [OK]	mremap to 0x7ffffffffffe000 failed
+# [RUN]	Trying a SYSCALL that falls through to 0x800000000000000
+# [OK]	mremap to 0x7fffffffffff000 failed
+# [RUN]	Trying a SYSCALL that falls through to 0xffffffffffff000
+# [OK]	mremap to 0xfffffffffffe000 failed
+# [RUN]	Trying a SYSCALL that falls through to 0x1000000000000000
+# [OK]	mremap to 0xffffffffffff000 failed
+# [RUN]	Trying a SYSCALL that falls through to 0x1ffffffffffff000
+# [OK]	mremap to 0x1fffffffffffe000 failed
+# [RUN]	Trying a SYSCALL that falls through to 0x2000000000000000
+# [OK]	mremap to 0x1ffffffffffff000 failed
+# [RUN]	Trying a SYSCALL that falls through to 0x3ffffffffffff000
+# [OK]	mremap to 0x3fffffffffffe000 failed
+# [RUN]	Trying a SYSCALL that falls through to 0x4000000000000000
+# [OK]	mremap to 0x3ffffffffffff000 failed
+# [RUN]	Trying a SYSCALL that falls through to 0x7ffffffffffff000
+# [OK]	mremap to 0x7fffffffffffe000 failed
+# [RUN]	Trying a SYSCALL that falls through to 0x8000000000000000
+# [OK]	mremap to 0x7ffffffffffff000 failed
+ok 16 selftests: x86: sysret_rip_64
+# timeout set to 45
+# selftests: x86: syscall_numbering_64
+# [RUN]   Checking for x32 by calling x32 getpid()
+# [INFO]      x32 is not supported
+# [RUN]   Running tests without ptrace...
+# [RUN]       Checking system calls with msb = 0 (0x0)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall 0:0 returned 0 as expected
+# [OK]                x64 syscall 0:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall 0:19 returned 0 as expected
+# [OK]                x64 syscall 0:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls 0:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall 0:-1 returned -ENOSYS as expected
+# [OK]                x64 syscalls 0:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls 0:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls 0:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls 0:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = 1 (0x1)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall 1:0 returned 0 as expected
+# [OK]                x64 syscall 1:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall 1:19 returned 0 as expected
+# [OK]                x64 syscall 1:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls 1:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall 1:-1 returned -ENOSYS as expected
+# [OK]                x64 syscalls 1:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls 1:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls 1:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls 1:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = -1 (0xffffffff)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall -1:0 returned 0 as expected
+# [OK]                x64 syscall -1:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall -1:19 returned 0 as expected
+# [OK]                x64 syscall -1:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls -1:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall -1:-1 returned -ENOSYS as expected
+# [OK]                x64 syscalls -1:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls -1:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls -1:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls -1:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = 1073741823 (0x3fffffff)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall 1073741823:0 returned 0 as expected
+# [OK]                x64 syscall 1073741823:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall 1073741823:19 returned 0 as expected
+# [OK]                x64 syscall 1073741823:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls 1073741823:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall 1073741823:-1 returned -ENOSYS as expected
+# [OK]                x64 syscalls 1073741823:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls 1073741823:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls 1073741823:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls 1073741823:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = 1073741824 (0x40000000)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall 1073741824:0 returned 0 as expected
+# [OK]                x64 syscall 1073741824:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall 1073741824:19 returned 0 as expected
+# [OK]                x64 syscall 1073741824:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls 1073741824:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall 1073741824:-1 returned -ENOSYS as expected
+# [OK]                x64 syscalls 1073741824:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls 1073741824:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls 1073741824:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls 1073741824:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = 1073741823 (0x3fffffff)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall 1073741823:0 returned 0 as expected
+# [OK]                x64 syscall 1073741823:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall 1073741823:19 returned 0 as expected
+# [OK]                x64 syscall 1073741823:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls 1073741823:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall 1073741823:-1 returned -ENOSYS as expected
+# [OK]                x64 syscalls 1073741823:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls 1073741823:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls 1073741823:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls 1073741823:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = -1073741824 (0xc0000000)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall -1073741824:0 returned 0 as expected
+# [OK]                x64 syscall -1073741824:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall -1073741824:19 returned 0 as expected
+# [OK]                x64 syscall -1073741824:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls -1073741824:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall -1073741824:-1 returned -ENOSYS as expected
+# [OK]                x64 syscalls -1073741824:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls -1073741824:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls -1073741824:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls -1073741824:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = 2147483647 (0x7fffffff)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall 2147483647:0 returned 0 as expected
+# [OK]                x64 syscall 2147483647:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall 2147483647:19 returned 0 as expected
+# [OK]                x64 syscall 2147483647:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls 2147483647:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall 2147483647:-1 returned -ENOSYS as expected
+# [OK]                x64 syscalls 2147483647:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls 2147483647:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls 2147483647:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls 2147483647:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = -2147483648 (0x80000000)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall -2147483648:0 returned 0 as expected
+# [OK]                x64 syscall -2147483648:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall -2147483648:19 returned 0 as expected
+# [OK]                x64 syscall -2147483648:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls -2147483648:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall -2147483648:-1 returned -ENOSYS as expected
+# [OK]                x64 syscalls -2147483648:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls -2147483648:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls -2147483648:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls -2147483648:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = -2147483647 (0x80000001)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall -2147483647:0 returned 0 as expected
+# [OK]                x64 syscall -2147483647:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall -2147483647:19 returned 0 as expected
+# [OK]                x64 syscall -2147483647:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls -2147483647:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall -2147483647:-1 returned -ENOSYS as expected
+# [OK]                x64 syscalls -2147483647:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls -2147483647:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls -2147483647:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls -2147483647:0..999 returned -ENOSYS as expected
+# [RUN]   Running tests under ptrace: just stop, no data read
+# [RUN]       Checking system calls with msb = 0 (0x0)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall 0:0 returned 0 as expected
+# [OK]                x64 syscall 0:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall 0:19 returned 0 as expected
+# [OK]                x64 syscall 0:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls 0:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall 0:-1 returned -ENOSYS as expected
+# [OK]                x64 syscalls 0:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls 0:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls 0:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls 0:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = 1 (0x1)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall 1:0 returned 0 as expected
+# [OK]                x64 syscall 1:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall 1:19 returned 0 as expected
+# [OK]                x64 syscall 1:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls 1:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall 1:-1 returned -ENOSYS as expected
+# [OK]                x64 syscalls 1:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls 1:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls 1:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls 1:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = -1 (0xffffffff)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall -1:0 returned 0 as expected
+# [OK]                x64 syscall -1:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall -1:19 returned 0 as expected
+# [OK]                x64 syscall -1:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls -1:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall -1:-1 returned -ENOSYS as expected
+# [OK]                x64 syscalls -1:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls -1:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls -1:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls -1:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = 1073741823 (0x3fffffff)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall 1073741823:0 returned 0 as expected
+# [OK]                x64 syscall 1073741823:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall 1073741823:19 returned 0 as expected
+# [OK]                x64 syscall 1073741823:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls 1073741823:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall 1073741823:-1 returned -ENOSYS as expected
+# [OK]                x64 syscalls 1073741823:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls 1073741823:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls 1073741823:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls 1073741823:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = 1073741824 (0x40000000)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall 1073741824:0 returned 0 as expected
+# [OK]                x64 syscall 1073741824:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall 1073741824:19 returned 0 as expected
+# [OK]                x64 syscall 1073741824:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls 1073741824:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall 1073741824:-1 returned -ENOSYS as expected
+# [OK]                x64 syscalls 1073741824:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls 1073741824:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls 1073741824:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls 1073741824:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = 1073741823 (0x3fffffff)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall 1073741823:0 returned 0 as expected
+# [OK]                x64 syscall 1073741823:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall 1073741823:19 returned 0 as expected
+# [OK]                x64 syscall 1073741823:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls 1073741823:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall 1073741823:-1 returned -ENOSYS as expected
+# [OK]                x64 syscalls 1073741823:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls 1073741823:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls 1073741823:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls 1073741823:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = -1073741824 (0xc0000000)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall -1073741824:0 returned 0 as expected
+# [OK]                x64 syscall -1073741824:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall -1073741824:19 returned 0 as expected
+# [OK]                x64 syscall -1073741824:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls -1073741824:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall -1073741824:-1 returned -ENOSYS as expected
+# [OK]                x64 syscalls -1073741824:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls -1073741824:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls -1073741824:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls -1073741824:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = 2147483647 (0x7fffffff)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall 2147483647:0 returned 0 as expected
+# [OK]                x64 syscall 2147483647:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall 2147483647:19 returned 0 as expected
+# [OK]                x64 syscall 2147483647:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls 2147483647:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall 2147483647:-1 returned -ENOSYS as expected
+# [OK]                x64 syscalls 2147483647:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls 2147483647:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls 2147483647:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls 2147483647:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = -2147483648 (0x80000000)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall -2147483648:0 returned 0 as expected
+# [OK]                x64 syscall -2147483648:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall -2147483648:19 returned 0 as expected
+# [OK]                x64 syscall -2147483648:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls -2147483648:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall -2147483648:-1 returned -ENOSYS as expected
+# [OK]                x64 syscalls -2147483648:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls -2147483648:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls -2147483648:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls -2147483648:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = -2147483647 (0x80000001)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall -2147483647:0 returned 0 as expected
+# [OK]                x64 syscall -2147483647:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall -2147483647:19 returned 0 as expected
+# [OK]                x64 syscall -2147483647:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls -2147483647:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall -2147483647:-1 returned -ENOSYS as expected
+# [OK]                x64 syscalls -2147483647:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls -2147483647:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls -2147483647:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls -2147483647:0..999 returned -ENOSYS as expected
+# [RUN]   Running tests under ptrace: only getregs
+# [RUN]       Checking system calls with msb = 0 (0x0)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall 0:0 returned 0 as expected
+# [OK]                x64 syscall 0:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall 0:19 returned 0 as expected
+# [OK]                x64 syscall 0:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls 0:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall 0:-1 returned -ENOSYS as expected
+# [OK]                x64 syscalls 0:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls 0:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls 0:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls 0:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = 1 (0x1)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall 1:0 returned 0 as expected
+# [OK]                x64 syscall 1:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall 1:19 returned 0 as expected
+# [OK]                x64 syscall 1:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls 1:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall 1:-1 returned -ENOSYS as expected
+# [OK]                x64 syscalls 1:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls 1:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls 1:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls 1:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = -1 (0xffffffff)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall -1:0 returned 0 as expected
+# [OK]                x64 syscall -1:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall -1:19 returned 0 as expected
+# [OK]                x64 syscall -1:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls -1:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall -1:-1 returned -ENOSYS as expected
+# [OK]                x64 syscalls -1:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls -1:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls -1:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls -1:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = 1073741823 (0x3fffffff)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall 1073741823:0 returned 0 as expected
+# [OK]                x64 syscall 1073741823:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall 1073741823:19 returned 0 as expected
+# [OK]                x64 syscall 1073741823:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls 1073741823:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall 1073741823:-1 returned -ENOSYS as expected
+# [OK]                x64 syscalls 1073741823:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls 1073741823:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls 1073741823:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls 1073741823:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = 1073741824 (0x40000000)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall 1073741824:0 returned 0 as expected
+# [OK]                x64 syscall 1073741824:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall 1073741824:19 returned 0 as expected
+# [OK]                x64 syscall 1073741824:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls 1073741824:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall 1073741824:-1 returned -ENOSYS as expected
+# [OK]                x64 syscalls 1073741824:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls 1073741824:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls 1073741824:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls 1073741824:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = 1073741823 (0x3fffffff)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall 1073741823:0 returned 0 as expected
+# [OK]                x64 syscall 1073741823:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall 1073741823:19 returned 0 as expected
+# [OK]                x64 syscall 1073741823:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls 1073741823:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall 1073741823:-1 returned -ENOSYS as expected
+# [OK]                x64 syscalls 1073741823:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls 1073741823:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls 1073741823:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls 1073741823:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = -1073741824 (0xc0000000)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall -1073741824:0 returned 0 as expected
+# [OK]                x64 syscall -1073741824:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall -1073741824:19 returned 0 as expected
+# [OK]                x64 syscall -1073741824:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls -1073741824:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall -1073741824:-1 returned -ENOSYS as expected
+# [OK]                x64 syscalls -1073741824:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls -1073741824:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls -1073741824:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls -1073741824:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = 2147483647 (0x7fffffff)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall 2147483647:0 returned 0 as expected
+# [OK]                x64 syscall 2147483647:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall 2147483647:19 returned 0 as expected
+# [OK]                x64 syscall 2147483647:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls 2147483647:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall 2147483647:-1 returned -ENOSYS as expected
+# [OK]                x64 syscalls 2147483647:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls 2147483647:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls 2147483647:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls 2147483647:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = -2147483648 (0x80000000)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall -2147483648:0 returned 0 as expected
+# [OK]                x64 syscall -2147483648:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall -2147483648:19 returned 0 as expected
+# [OK]                x64 syscall -2147483648:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls -2147483648:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall -2147483648:-1 returned -ENOSYS as expected
+# [OK]                x64 syscalls -2147483648:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls -2147483648:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls -2147483648:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls -2147483648:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = -2147483647 (0x80000001)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall -2147483647:0 returned 0 as expected
+# [OK]                x64 syscall -2147483647:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall -2147483647:19 returned 0 as expected
+# [OK]                x64 syscall -2147483647:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls -2147483647:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall -2147483647:-1 returned -ENOSYS as expected
+# [OK]                x64 syscalls -2147483647:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls -2147483647:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls -2147483647:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls -2147483647:0..999 returned -ENOSYS as expected
+# [RUN]   Running tests under ptrace: getregs, unmodified setregs
+# [RUN]       Checking system calls with msb = 0 (0x0)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall 0:0 returned 0 as expected
+# [OK]                x64 syscall 0:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall 0:19 returned 0 as expected
+# [OK]                x64 syscall 0:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls 0:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall 0:-1 returned -ENOSYS as expected
+# [OK]                x64 syscalls 0:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls 0:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls 0:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls 0:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = 1 (0x1)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall 1:0 returned 0 as expected
+# [OK]                x64 syscall 1:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall 1:19 returned 0 as expected
+# [OK]                x64 syscall 1:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls 1:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall 1:-1 returned -ENOSYS as expected
+# [OK]                x64 syscalls 1:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls 1:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls 1:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls 1:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = -1 (0xffffffff)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall -1:0 returned 0 as expected
+# [OK]                x64 syscall -1:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall -1:19 returned 0 as expected
+# [OK]                x64 syscall -1:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls -1:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall -1:-1 returned -ENOSYS as expected
+# [OK]                x64 syscalls -1:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls -1:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls -1:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls -1:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = 1073741823 (0x3fffffff)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall 1073741823:0 returned 0 as expected
+# [OK]                x64 syscall 1073741823:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall 1073741823:19 returned 0 as expected
+# [OK]                x64 syscall 1073741823:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls 1073741823:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall 1073741823:-1 returned -ENOSYS as expected
+# [OK]                x64 syscalls 1073741823:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls 1073741823:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls 1073741823:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls 1073741823:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = 1073741824 (0x40000000)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall 1073741824:0 returned 0 as expected
+# [OK]                x64 syscall 1073741824:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall 1073741824:19 returned 0 as expected
+# [OK]                x64 syscall 1073741824:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls 1073741824:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall 1073741824:-1 returned -ENOSYS as expected
+# [OK]                x64 syscalls 1073741824:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls 1073741824:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls 1073741824:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls 1073741824:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = 1073741823 (0x3fffffff)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall 1073741823:0 returned 0 as expected
+# [OK]                x64 syscall 1073741823:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall 1073741823:19 returned 0 as expected
+# [OK]                x64 syscall 1073741823:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls 1073741823:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall 1073741823:-1 returned -ENOSYS as expected
+# [OK]                x64 syscalls 1073741823:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls 1073741823:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls 1073741823:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls 1073741823:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = -1073741824 (0xc0000000)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall -1073741824:0 returned 0 as expected
+# [OK]                x64 syscall -1073741824:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall -1073741824:19 returned 0 as expected
+# [OK]                x64 syscall -1073741824:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls -1073741824:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall -1073741824:-1 returned -ENOSYS as expected
+# [OK]                x64 syscalls -1073741824:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls -1073741824:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls -1073741824:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls -1073741824:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = 2147483647 (0x7fffffff)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall 2147483647:0 returned 0 as expected
+# [OK]                x64 syscall 2147483647:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall 2147483647:19 returned 0 as expected
+# [OK]                x64 syscall 2147483647:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls 2147483647:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall 2147483647:-1 returned -ENOSYS as expected
+# [OK]                x64 syscalls 2147483647:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls 2147483647:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls 2147483647:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls 2147483647:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = -2147483648 (0x80000000)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall -2147483648:0 returned 0 as expected
+# [OK]                x64 syscall -2147483648:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall -2147483648:19 returned 0 as expected
+# [OK]                x64 syscall -2147483648:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls -2147483648:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall -2147483648:-1 returned -ENOSYS as expected
+# [OK]                x64 syscalls -2147483648:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls -2147483648:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls -2147483648:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls -2147483648:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = -2147483647 (0x80000001)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall -2147483647:0 returned 0 as expected
+# [OK]                x64 syscall -2147483647:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall -2147483647:19 returned 0 as expected
+# [OK]                x64 syscall -2147483647:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls -2147483647:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall -2147483647:-1 returned -ENOSYS as expected
+# [OK]                x64 syscalls -2147483647:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls -2147483647:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls -2147483647:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls -2147483647:0..999 returned -ENOSYS as expected
+# [RUN]   Running tests under ptrace: modifying the default return
+# [RUN]       Checking system calls with msb = 0 (0x0)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall 0:0 returned 0 as expected
+# [OK]                x64 syscall 0:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall 0:19 returned 0 as expected
+# [OK]                x64 syscall 0:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls 0:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall 0:-1 returned MODIFIED_BY_PTRACE as expected
+# [OK]                x64 syscalls 0:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls 0:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls 0:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls 0:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = 1 (0x1)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall 1:0 returned 0 as expected
+# [OK]                x64 syscall 1:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall 1:19 returned 0 as expected
+# [OK]                x64 syscall 1:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls 1:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall 1:-1 returned MODIFIED_BY_PTRACE as expected
+# [OK]                x64 syscalls 1:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls 1:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls 1:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls 1:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = -1 (0xffffffff)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall -1:0 returned 0 as expected
+# [OK]                x64 syscall -1:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall -1:19 returned 0 as expected
+# [OK]                x64 syscall -1:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls -1:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall -1:-1 returned MODIFIED_BY_PTRACE as expected
+# [OK]                x64 syscalls -1:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls -1:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls -1:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls -1:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = 1073741823 (0x3fffffff)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall 1073741823:0 returned 0 as expected
+# [OK]                x64 syscall 1073741823:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall 1073741823:19 returned 0 as expected
+# [OK]                x64 syscall 1073741823:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls 1073741823:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall 1073741823:-1 returned MODIFIED_BY_PTRACE as expected
+# [OK]                x64 syscalls 1073741823:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls 1073741823:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls 1073741823:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls 1073741823:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = 1073741824 (0x40000000)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall 1073741824:0 returned 0 as expected
+# [OK]                x64 syscall 1073741824:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall 1073741824:19 returned 0 as expected
+# [OK]                x64 syscall 1073741824:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls 1073741824:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall 1073741824:-1 returned MODIFIED_BY_PTRACE as expected
+# [OK]                x64 syscalls 1073741824:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls 1073741824:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls 1073741824:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls 1073741824:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = 1073741823 (0x3fffffff)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall 1073741823:0 returned 0 as expected
+# [OK]                x64 syscall 1073741823:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall 1073741823:19 returned 0 as expected
+# [OK]                x64 syscall 1073741823:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls 1073741823:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall 1073741823:-1 returned MODIFIED_BY_PTRACE as expected
+# [OK]                x64 syscalls 1073741823:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls 1073741823:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls 1073741823:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls 1073741823:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = -1073741824 (0xc0000000)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall -1073741824:0 returned 0 as expected
+# [OK]                x64 syscall -1073741824:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall -1073741824:19 returned 0 as expected
+# [OK]                x64 syscall -1073741824:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls -1073741824:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall -1073741824:-1 returned MODIFIED_BY_PTRACE as expected
+# [OK]                x64 syscalls -1073741824:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls -1073741824:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls -1073741824:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls -1073741824:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = 2147483647 (0x7fffffff)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall 2147483647:0 returned 0 as expected
+# [OK]                x64 syscall 2147483647:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall 2147483647:19 returned 0 as expected
+# [OK]                x64 syscall 2147483647:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls 2147483647:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall 2147483647:-1 returned MODIFIED_BY_PTRACE as expected
+# [OK]                x64 syscalls 2147483647:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls 2147483647:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls 2147483647:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls 2147483647:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = -2147483648 (0x80000000)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall -2147483648:0 returned 0 as expected
+# [OK]                x64 syscall -2147483648:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall -2147483648:19 returned 0 as expected
+# [OK]                x64 syscall -2147483648:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls -2147483648:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall -2147483648:-1 returned MODIFIED_BY_PTRACE as expected
+# [OK]                x64 syscalls -2147483648:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls -2147483648:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls -2147483648:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls -2147483648:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = -2147483647 (0x80000001)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall -2147483647:0 returned 0 as expected
+# [OK]                x64 syscall -2147483647:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall -2147483647:19 returned 0 as expected
+# [OK]                x64 syscall -2147483647:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls -2147483647:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall -2147483647:-1 returned MODIFIED_BY_PTRACE as expected
+# [OK]                x64 syscalls -2147483647:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls -2147483647:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls -2147483647:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls -2147483647:0..999 returned -ENOSYS as expected
+# [RUN]   Running tests under ptrace: clobbering the top 32 bits
+# [RUN]       Checking system calls with msb = 0 (0x0)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall 0:0 returned 0 as expected
+# [OK]                x64 syscall 0:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall 0:19 returned 0 as expected
+# [OK]                x64 syscall 0:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls 0:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall 0:-1 returned MODIFIED_BY_PTRACE as expected
+# [OK]                x64 syscalls 0:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls 0:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls 0:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls 0:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = 1 (0x1)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall 1:0 returned 0 as expected
+# [OK]                x64 syscall 1:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall 1:19 returned 0 as expected
+# [OK]                x64 syscall 1:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls 1:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall 1:-1 returned MODIFIED_BY_PTRACE as expected
+# [OK]                x64 syscalls 1:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls 1:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls 1:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls 1:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = -1 (0xffffffff)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall -1:0 returned 0 as expected
+# [OK]                x64 syscall -1:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall -1:19 returned 0 as expected
+# [OK]                x64 syscall -1:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls -1:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall -1:-1 returned MODIFIED_BY_PTRACE as expected
+# [OK]                x64 syscalls -1:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls -1:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls -1:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls -1:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = 1073741823 (0x3fffffff)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall 1073741823:0 returned 0 as expected
+# [OK]                x64 syscall 1073741823:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall 1073741823:19 returned 0 as expected
+# [OK]                x64 syscall 1073741823:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls 1073741823:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall 1073741823:-1 returned MODIFIED_BY_PTRACE as expected
+# [OK]                x64 syscalls 1073741823:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls 1073741823:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls 1073741823:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls 1073741823:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = 1073741824 (0x40000000)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall 1073741824:0 returned 0 as expected
+# [OK]                x64 syscall 1073741824:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall 1073741824:19 returned 0 as expected
+# [OK]                x64 syscall 1073741824:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls 1073741824:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall 1073741824:-1 returned MODIFIED_BY_PTRACE as expected
+# [OK]                x64 syscalls 1073741824:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls 1073741824:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls 1073741824:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls 1073741824:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = 1073741823 (0x3fffffff)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall 1073741823:0 returned 0 as expected
+# [OK]                x64 syscall 1073741823:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall 1073741823:19 returned 0 as expected
+# [OK]                x64 syscall 1073741823:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls 1073741823:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall 1073741823:-1 returned MODIFIED_BY_PTRACE as expected
+# [OK]                x64 syscalls 1073741823:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls 1073741823:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls 1073741823:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls 1073741823:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = -1073741824 (0xc0000000)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall -1073741824:0 returned 0 as expected
+# [OK]                x64 syscall -1073741824:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall -1073741824:19 returned 0 as expected
+# [OK]                x64 syscall -1073741824:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls -1073741824:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall -1073741824:-1 returned MODIFIED_BY_PTRACE as expected
+# [OK]                x64 syscalls -1073741824:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls -1073741824:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls -1073741824:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls -1073741824:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = 2147483647 (0x7fffffff)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall 2147483647:0 returned 0 as expected
+# [OK]                x64 syscall 2147483647:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall 2147483647:19 returned 0 as expected
+# [OK]                x64 syscall 2147483647:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls 2147483647:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall 2147483647:-1 returned MODIFIED_BY_PTRACE as expected
+# [OK]                x64 syscalls 2147483647:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls 2147483647:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls 2147483647:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls 2147483647:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = -2147483648 (0x80000000)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall -2147483648:0 returned 0 as expected
+# [OK]                x64 syscall -2147483648:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall -2147483648:19 returned 0 as expected
+# [OK]                x64 syscall -2147483648:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls -2147483648:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall -2147483648:-1 returned MODIFIED_BY_PTRACE as expected
+# [OK]                x64 syscalls -2147483648:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls -2147483648:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls -2147483648:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls -2147483648:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = -2147483647 (0x80000001)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall -2147483647:0 returned 0 as expected
+# [OK]                x64 syscall -2147483647:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall -2147483647:19 returned 0 as expected
+# [OK]                x64 syscall -2147483647:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls -2147483647:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall -2147483647:-1 returned MODIFIED_BY_PTRACE as expected
+# [OK]                x64 syscalls -2147483647:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls -2147483647:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls -2147483647:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls -2147483647:0..999 returned -ENOSYS as expected
+# [RUN]   Running tests under ptrace: sign-extending the syscall number
+# [RUN]       Checking system calls with msb = 0 (0x0)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall 0:0 returned 0 as expected
+# [OK]                x64 syscall 0:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall 0:19 returned 0 as expected
+# [OK]                x64 syscall 0:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls 0:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall 0:-1 returned MODIFIED_BY_PTRACE as expected
+# [OK]                x64 syscalls 0:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls 0:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls 0:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls 0:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = 1 (0x1)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall 1:0 returned 0 as expected
+# [OK]                x64 syscall 1:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall 1:19 returned 0 as expected
+# [OK]                x64 syscall 1:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls 1:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall 1:-1 returned MODIFIED_BY_PTRACE as expected
+# [OK]                x64 syscalls 1:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls 1:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls 1:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls 1:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = -1 (0xffffffff)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall -1:0 returned 0 as expected
+# [OK]                x64 syscall -1:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall -1:19 returned 0 as expected
+# [OK]                x64 syscall -1:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls -1:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall -1:-1 returned MODIFIED_BY_PTRACE as expected
+# [OK]                x64 syscalls -1:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls -1:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls -1:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls -1:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = 1073741823 (0x3fffffff)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall 1073741823:0 returned 0 as expected
+# [OK]                x64 syscall 1073741823:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall 1073741823:19 returned 0 as expected
+# [OK]                x64 syscall 1073741823:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls 1073741823:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall 1073741823:-1 returned MODIFIED_BY_PTRACE as expected
+# [OK]                x64 syscalls 1073741823:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls 1073741823:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls 1073741823:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls 1073741823:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = 1073741824 (0x40000000)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall 1073741824:0 returned 0 as expected
+# [OK]                x64 syscall 1073741824:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall 1073741824:19 returned 0 as expected
+# [OK]                x64 syscall 1073741824:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls 1073741824:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall 1073741824:-1 returned MODIFIED_BY_PTRACE as expected
+# [OK]                x64 syscalls 1073741824:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls 1073741824:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls 1073741824:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls 1073741824:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = 1073741823 (0x3fffffff)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall 1073741823:0 returned 0 as expected
+# [OK]                x64 syscall 1073741823:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall 1073741823:19 returned 0 as expected
+# [OK]                x64 syscall 1073741823:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls 1073741823:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall 1073741823:-1 returned MODIFIED_BY_PTRACE as expected
+# [OK]                x64 syscalls 1073741823:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls 1073741823:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls 1073741823:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls 1073741823:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = -1073741824 (0xc0000000)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall -1073741824:0 returned 0 as expected
+# [OK]                x64 syscall -1073741824:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall -1073741824:19 returned 0 as expected
+# [OK]                x64 syscall -1073741824:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls -1073741824:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall -1073741824:-1 returned MODIFIED_BY_PTRACE as expected
+# [OK]                x64 syscalls -1073741824:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls -1073741824:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls -1073741824:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls -1073741824:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = 2147483647 (0x7fffffff)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall 2147483647:0 returned 0 as expected
+# [OK]                x64 syscall 2147483647:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall 2147483647:19 returned 0 as expected
+# [OK]                x64 syscall 2147483647:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls 2147483647:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall 2147483647:-1 returned MODIFIED_BY_PTRACE as expected
+# [OK]                x64 syscalls 2147483647:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls 2147483647:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls 2147483647:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls 2147483647:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = -2147483648 (0x80000000)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall -2147483648:0 returned 0 as expected
+# [OK]                x64 syscall -2147483648:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall -2147483648:19 returned 0 as expected
+# [OK]                x64 syscall -2147483648:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls -2147483648:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall -2147483648:-1 returned MODIFIED_BY_PTRACE as expected
+# [OK]                x64 syscalls -2147483648:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls -2147483648:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls -2147483648:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls -2147483648:0..999 returned -ENOSYS as expected
+# [RUN]       Checking system calls with msb = -2147483647 (0x80000001)
+# [RUN]           Checking some common syscalls as 64 bit
+# [OK]                x64 syscall -2147483647:0 returned 0 as expected
+# [OK]                x64 syscall -2147483647:1 returned 0 as expected
+# [RUN]           Checking some 64-bit only syscalls as 64 bit
+# [OK]                x64 syscall -2147483647:19 returned 0 as expected
+# [OK]                x64 syscall -2147483647:20 returned 0 as expected
+# [RUN]           Checking out of range system calls
+# [OK]                x32 syscalls -2147483647:-64..-2 returned -ENOSYS as expected
+# [OK]                x32 syscall -2147483647:-1 returned MODIFIED_BY_PTRACE as expected
+# [OK]                x64 syscalls -2147483647:1073741760..1073741823 returned -ENOSYS as expected
+# [OK]                x64 syscalls -2147483647:-64..-1 returned -ENOSYS as expected
+# [OK]                x32 syscalls -2147483647:1073741759..1073741822 returned -ENOSYS as expected
+# [RUN]           Checking for absence of x32 system calls
+# [OK]                x32 syscalls -2147483647:0..999 returned -ENOSYS as expected
+# [OK]    All system calls succeeded or failed as expected
+ok 17 selftests: x86: syscall_numbering_64
+# timeout set to 45
+# selftests: x86: corrupt_xstate_header_64
+# [RUN]	Send ourselves a signal
+# 	Wreck XSTATE header
+# 	Got SIGSEGV
+# [OK]	Back from the signal.  Now schedule.
+# [OK]	Back in the main thread.
+ok 18 selftests: x86: corrupt_xstate_header_64
+# timeout set to 45
+# selftests: x86: amx_64
+# # no AMX support
+ok 19 selftests: x86: amx_64 # SKIP
+# timeout set to 45
+# selftests: x86: lam_64
+# # Unsupported LAM feature!
+ok 20 selftests: x86: lam_64 # SKIP
+# timeout set to 45
+# selftests: x86: test_shadow_stack_64
+# [SKIP]	Could not enable Shadow stack
+not ok 21 selftests: x86: test_shadow_stack_64 # exit=1
+make[1]: Leaving directory '/home/armorer/development/linux/tools/testing/selftests/x86'
+make: Leaving directory '/home/armorer/development/linux/tools/testing/selftests'
