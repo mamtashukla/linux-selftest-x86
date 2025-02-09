@@ -1,0 +1,55 @@
+make: Entering directory '/home/armorer/development/linux/tools/testing/selftests'
+make[1]: Entering directory '/home/armorer/development/linux/tools/testing/selftests/core'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/armorer/development/linux/tools/testing/selftests/core'
+make[1]: Entering directory '/home/armorer/development/linux/tools/testing/selftests/core'
+TAP version 13
+1..2
+# timeout set to 45
+# selftests: core: close_range_test
+# TAP version 13
+# 1..9
+# # Starting 9 tests from 1 test cases.
+# #  RUN           global.core_close_range ...
+# #            OK  global.core_close_range
+# ok 1 global.core_close_range
+# #  RUN           global.close_range_unshare ...
+# #            OK  global.close_range_unshare
+# ok 2 global.close_range_unshare
+# #  RUN           global.close_range_unshare_capped ...
+# #            OK  global.close_range_unshare_capped
+# ok 3 global.close_range_unshare_capped
+# #  RUN           global.close_range_cloexec ...
+# #            OK  global.close_range_cloexec
+# ok 4 global.close_range_cloexec
+# #  RUN           global.close_range_cloexec_unshare ...
+# #            OK  global.close_range_cloexec_unshare
+# ok 5 global.close_range_cloexec_unshare
+# #  RUN           global.close_range_cloexec_syzbot ...
+# #            OK  global.close_range_cloexec_syzbot
+# ok 6 global.close_range_cloexec_syzbot
+# #  RUN           global.close_range_cloexec_unshare_syzbot ...
+# #            OK  global.close_range_cloexec_unshare_syzbot
+# ok 7 global.close_range_cloexec_unshare_syzbot
+# #  RUN           global.close_range_bitmap_corruption ...
+# #            OK  global.close_range_bitmap_corruption
+# ok 8 global.close_range_bitmap_corruption
+# #  RUN           global.fcntl_created ...
+# #            OK  global.fcntl_created
+# ok 9 global.fcntl_created
+# # PASSED: 9 / 9 tests passed.
+# # Totals: pass:9 fail:0 xfail:0 xpass:0 skip:0 error:0
+ok 1 selftests: core: close_range_test
+# timeout set to 45
+# selftests: core: unshare_test
+# TAP version 13
+# 1..1
+# # Starting 1 tests from 1 test cases.
+# #  RUN           global.unshare_EMFILE ...
+# #            OK  global.unshare_EMFILE
+# ok 1 global.unshare_EMFILE
+# # PASSED: 1 / 1 tests passed.
+# # Totals: pass:1 fail:0 xfail:0 xpass:0 skip:0 error:0
+ok 2 selftests: core: unshare_test
+make[1]: Leaving directory '/home/armorer/development/linux/tools/testing/selftests/core'
+make: Leaving directory '/home/armorer/development/linux/tools/testing/selftests'
