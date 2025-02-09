@@ -1,11 +1,6 @@
 make: Entering directory '/home/armorer/development/linux/tools/testing/selftests'
 make[1]: Entering directory '/home/armorer/development/linux/tools/testing/selftests/alsa'
-gcc  -isystem /home/armorer/development/linux/usr/include -L/home/armorer/development/linux/tools/testing/selftests/alsa -Wl,-rpath=./ -D_GNU_SOURCE=  -shared -fPIC conf.c -lasound  -lpthread -o /home/armorer/development/linux/tools/testing/selftests/alsa/libatest.so
-gcc  -isystem /home/armorer/development/linux/usr/include -L/home/armorer/development/linux/tools/testing/selftests/alsa -Wl,-rpath=./ -D_GNU_SOURCE=  mixer-test.c -lasound  -lpthread -latest -o /home/armorer/development/linux/tools/testing/selftests/alsa/mixer-test
-gcc  -isystem /home/armorer/development/linux/usr/include -L/home/armorer/development/linux/tools/testing/selftests/alsa -Wl,-rpath=./ -D_GNU_SOURCE=  pcm-test.c -lasound  -lpthread -latest -o /home/armorer/development/linux/tools/testing/selftests/alsa/pcm-test
-gcc  -isystem /home/armorer/development/linux/usr/include -L/home/armorer/development/linux/tools/testing/selftests/alsa -Wl,-rpath=./ -D_GNU_SOURCE=  test-pcmtest-driver.c -lasound  -lpthread -latest -o /home/armorer/development/linux/tools/testing/selftests/alsa/test-pcmtest-driver
-gcc  -isystem /home/armorer/development/linux/usr/include -L/home/armorer/development/linux/tools/testing/selftests/alsa -Wl,-rpath=./ -D_GNU_SOURCE=  utimer-test.c -lasound  -lpthread -latest -o /home/armorer/development/linux/tools/testing/selftests/alsa/utimer-test
-gcc  -isystem /home/armorer/development/linux/usr/include -L/home/armorer/development/linux/tools/testing/selftests/alsa -Wl,-rpath=./ -D_GNU_SOURCE=  global-timer.c -lasound  -lpthread -latest -o /home/armorer/development/linux/tools/testing/selftests/alsa/global-timer
+make[1]: Nothing to be done for 'all'.
 make[1]: Leaving directory '/home/armorer/development/linux/tools/testing/selftests/alsa'
 make[1]: Entering directory '/home/armorer/development/linux/tools/testing/selftests/alsa'
 TAP version 13
@@ -13,9 +8,12 @@ TAP version 13
 # timeout set to 45
 # selftests: alsa: mixer-test
 # TAP version 13
-# # Card 0/PCH - HDA Intel PCH (HDA Intel PCH at 0xd1314000 irq 54)
-# # Card 1/HDMI - HDA Intel HDMI (HDA Intel HDMI at 0xd1310000 irq 57)
-# 1..315
+# # Card 0/Loopback - Loopback (Loopback 1)
+# # Card 1/VirMIDI - VirMIDI (Virtual MIDI Card 1)
+# # Card 2/pcmtest - PCM-Test (PCM-Test virtual driver)
+# # Card 3/PCH - HDA Intel PCH (HDA Intel PCH at 0xd1314000 irq 53)
+# # Card 4/HDMI - HDA Intel HDMI (HDA Intel HDMI at 0xd1310000 irq 57)
+# 1..1106
 # ok 1 get_value.HDMI.20
 # # HDMI.20 Playback Channel Map
 # ok 2 name.HDMI.20
@@ -431,21 +429,1258 @@ TAP version 13
 # ok 313 write_invalid.PCH.0
 # ok 314 event_missing.PCH.0
 # ok 315 event_spurious.PCH.0
-# # Totals: pass:254 fail:1 xfail:0 xpass:0 skip:60 error:0
+# ok 316 get_value.Loopback.112
+# # Loopback.112 PCM Playback Volume
+# ok 317 name.Loopback.112
+# ok 318 write_default.Loopback.112
+# ok 319 write_valid.Loopback.112
+# ok 320 write_invalid.Loopback.112
+# ok 321 event_missing.Loopback.112
+# ok 322 event_spurious.Loopback.112
+# ok 323 get_value.Loopback.111
+# # Loopback.111 PCM Slave Access Mode
+# ok 324 name.Loopback.111
+# # PCM Slave Access Mode is not writeable
+# ok 325 # SKIP write_default.Loopback.111
+# # PCM Slave Access Mode is not writeable
+# ok 326 # SKIP write_valid.Loopback.111
+# # PCM Slave Access Mode is not writeable
+# ok 327 # SKIP write_invalid.Loopback.111
+# ok 328 event_missing.Loopback.111
+# ok 329 event_spurious.Loopback.111
+# # PCM Slave Channels.0 value 2 invalid for step 1 minimum 1
+# not ok 330 get_value.Loopback.110
+# # Loopback.110 PCM Slave Channels
+# ok 331 name.Loopback.110
+# # PCM Slave Channels is not writeable
+# ok 332 # SKIP write_default.Loopback.110
+# # PCM Slave Channels is not writeable
+# ok 333 # SKIP write_valid.Loopback.110
+# # PCM Slave Channels is not writeable
+# ok 334 # SKIP write_invalid.Loopback.110
+# ok 335 event_missing.Loopback.110
+# ok 336 event_spurious.Loopback.110
+# # PCM Slave Rate.0 value 48000 invalid for step 1 minimum 0
+# not ok 337 get_value.Loopback.109
+# # Loopback.109 PCM Slave Rate
+# ok 338 name.Loopback.109
+# # PCM Slave Rate is not writeable
+# ok 339 # SKIP write_default.Loopback.109
+# # PCM Slave Rate is not writeable
+# ok 340 # SKIP write_valid.Loopback.109
+# # PCM Slave Rate is not writeable
+# ok 341 # SKIP write_invalid.Loopback.109
+# ok 342 event_missing.Loopback.109
+# ok 343 event_spurious.Loopback.109
+# # PCM Slave Format.0 value 2 invalid for step 1 minimum 0
+# not ok 344 get_value.Loopback.108
+# # Loopback.108 PCM Slave Format
+# ok 345 name.Loopback.108
+# # PCM Slave Format is not writeable
+# ok 346 # SKIP write_default.Loopback.108
+# # PCM Slave Format is not writeable
+# ok 347 # SKIP write_valid.Loopback.108
+# # PCM Slave Format is not writeable
+# ok 348 # SKIP write_invalid.Loopback.108
+# ok 349 event_missing.Loopback.108
+# ok 350 event_spurious.Loopback.108
+# ok 351 get_value.Loopback.107
+# # Loopback.107 PCM Slave Active
+# ok 352 name.Loopback.107
+# # PCM Slave Active is not writeable
+# ok 353 # SKIP write_default.Loopback.107
+# # PCM Slave Active is not writeable
+# ok 354 # SKIP write_valid.Loopback.107
+# # PCM Slave Active is not writeable
+# ok 355 # SKIP write_invalid.Loopback.107
+# ok 356 event_missing.Loopback.107
+# ok 357 event_spurious.Loopback.107
+# ok 358 get_value.Loopback.106
+# # Loopback.106 PCM Notify
+# # 0.106 PCM Notify is a writeable boolean but not a Switch
+# not ok 359 name.Loopback.106
+# ok 360 write_default.Loopback.106
+# ok 361 write_valid.Loopback.106
+# ok 362 write_invalid.Loopback.106
+# ok 363 event_missing.Loopback.106
+# ok 364 event_spurious.Loopback.106
+# # PCM Rate Shift 100000.0 value 100000 invalid for step 1 minimum 80000
+# not ok 365 get_value.Loopback.105
+# # Loopback.105 PCM Rate Shift 100000
+# ok 366 name.Loopback.105
+# ok 367 write_default.Loopback.105
+# ok 368 write_valid.Loopback.105
+# ok 369 write_invalid.Loopback.105
+# ok 370 event_missing.Loopback.105
+# ok 371 event_spurious.Loopback.105
+# ok 372 get_value.Loopback.104
+# # Loopback.104 PCM Slave Access Mode
+# ok 373 name.Loopback.104
+# # PCM Slave Access Mode is not writeable
+# ok 374 # SKIP write_default.Loopback.104
+# # PCM Slave Access Mode is not writeable
+# ok 375 # SKIP write_valid.Loopback.104
+# # PCM Slave Access Mode is not writeable
+# ok 376 # SKIP write_invalid.Loopback.104
+# ok 377 event_missing.Loopback.104
+# ok 378 event_spurious.Loopback.104
+# # PCM Slave Channels.0 value 2 invalid for step 1 minimum 1
+# not ok 379 get_value.Loopback.103
+# # Loopback.103 PCM Slave Channels
+# ok 380 name.Loopback.103
+# # PCM Slave Channels is not writeable
+# ok 381 # SKIP write_default.Loopback.103
+# # PCM Slave Channels is not writeable
+# ok 382 # SKIP write_valid.Loopback.103
+# # PCM Slave Channels is not writeable
+# ok 383 # SKIP write_invalid.Loopback.103
+# ok 384 event_missing.Loopback.103
+# ok 385 event_spurious.Loopback.103
+# # PCM Slave Rate.0 value 48000 invalid for step 1 minimum 0
+# not ok 386 get_value.Loopback.102
+# # Loopback.102 PCM Slave Rate
+# ok 387 name.Loopback.102
+# # PCM Slave Rate is not writeable
+# ok 388 # SKIP write_default.Loopback.102
+# # PCM Slave Rate is not writeable
+# ok 389 # SKIP write_valid.Loopback.102
+# # PCM Slave Rate is not writeable
+# ok 390 # SKIP write_invalid.Loopback.102
+# ok 391 event_missing.Loopback.102
+# ok 392 event_spurious.Loopback.102
+# # PCM Slave Format.0 value 2 invalid for step 1 minimum 0
+# not ok 393 get_value.Loopback.101
+# # Loopback.101 PCM Slave Format
+# ok 394 name.Loopback.101
+# # PCM Slave Format is not writeable
+# ok 395 # SKIP write_default.Loopback.101
+# # PCM Slave Format is not writeable
+# ok 396 # SKIP write_valid.Loopback.101
+# # PCM Slave Format is not writeable
+# ok 397 # SKIP write_invalid.Loopback.101
+# ok 398 event_missing.Loopback.101
+# ok 399 event_spurious.Loopback.101
+# ok 400 get_value.Loopback.100
+# # Loopback.100 PCM Slave Active
+# ok 401 name.Loopback.100
+# # PCM Slave Active is not writeable
+# ok 402 # SKIP write_default.Loopback.100
+# # PCM Slave Active is not writeable
+# ok 403 # SKIP write_valid.Loopback.100
+# # PCM Slave Active is not writeable
+# ok 404 # SKIP write_invalid.Loopback.100
+# ok 405 event_missing.Loopback.100
+# ok 406 event_spurious.Loopback.100
+# ok 407 get_value.Loopback.99
+# # Loopback.99 PCM Notify
+# # 0.99 PCM Notify is a writeable boolean but not a Switch
+# not ok 408 name.Loopback.99
+# ok 409 write_default.Loopback.99
+# ok 410 write_valid.Loopback.99
+# ok 411 write_invalid.Loopback.99
+# ok 412 event_missing.Loopback.99
+# ok 413 event_spurious.Loopback.99
+# # PCM Rate Shift 100000.0 value 100000 invalid for step 1 minimum 80000
+# not ok 414 get_value.Loopback.98
+# # Loopback.98 PCM Rate Shift 100000
+# ok 415 name.Loopback.98
+# ok 416 write_default.Loopback.98
+# ok 417 write_valid.Loopback.98
+# ok 418 write_invalid.Loopback.98
+# ok 419 event_missing.Loopback.98
+# ok 420 event_spurious.Loopback.98
+# ok 421 get_value.Loopback.97
+# # Loopback.97 PCM Slave Access Mode
+# ok 422 name.Loopback.97
+# # PCM Slave Access Mode is not writeable
+# ok 423 # SKIP write_default.Loopback.97
+# # PCM Slave Access Mode is not writeable
+# ok 424 # SKIP write_valid.Loopback.97
+# # PCM Slave Access Mode is not writeable
+# ok 425 # SKIP write_invalid.Loopback.97
+# ok 426 event_missing.Loopback.97
+# ok 427 event_spurious.Loopback.97
+# # PCM Slave Channels.0 value 2 invalid for step 1 minimum 1
+# not ok 428 get_value.Loopback.96
+# # Loopback.96 PCM Slave Channels
+# ok 429 name.Loopback.96
+# # PCM Slave Channels is not writeable
+# ok 430 # SKIP write_default.Loopback.96
+# # PCM Slave Channels is not writeable
+# ok 431 # SKIP write_valid.Loopback.96
+# # PCM Slave Channels is not writeable
+# ok 432 # SKIP write_invalid.Loopback.96
+# ok 433 event_missing.Loopback.96
+# ok 434 event_spurious.Loopback.96
+# # PCM Slave Rate.0 value 48000 invalid for step 1 minimum 0
+# not ok 435 get_value.Loopback.95
+# # Loopback.95 PCM Slave Rate
+# ok 436 name.Loopback.95
+# # PCM Slave Rate is not writeable
+# ok 437 # SKIP write_default.Loopback.95
+# # PCM Slave Rate is not writeable
+# ok 438 # SKIP write_valid.Loopback.95
+# # PCM Slave Rate is not writeable
+# ok 439 # SKIP write_invalid.Loopback.95
+# ok 440 event_missing.Loopback.95
+# ok 441 event_spurious.Loopback.95
+# # PCM Slave Format.0 value 2 invalid for step 1 minimum 0
+# not ok 442 get_value.Loopback.94
+# # Loopback.94 PCM Slave Format
+# ok 443 name.Loopback.94
+# # PCM Slave Format is not writeable
+# ok 444 # SKIP write_default.Loopback.94
+# # PCM Slave Format is not writeable
+# ok 445 # SKIP write_valid.Loopback.94
+# # PCM Slave Format is not writeable
+# ok 446 # SKIP write_invalid.Loopback.94
+# ok 447 event_missing.Loopback.94
+# ok 448 event_spurious.Loopback.94
+# ok 449 get_value.Loopback.93
+# # Loopback.93 PCM Slave Active
+# ok 450 name.Loopback.93
+# # PCM Slave Active is not writeable
+# ok 451 # SKIP write_default.Loopback.93
+# # PCM Slave Active is not writeable
+# ok 452 # SKIP write_valid.Loopback.93
+# # PCM Slave Active is not writeable
+# ok 453 # SKIP write_invalid.Loopback.93
+# ok 454 event_missing.Loopback.93
+# ok 455 event_spurious.Loopback.93
+# ok 456 get_value.Loopback.92
+# # Loopback.92 PCM Notify
+# # 0.92 PCM Notify is a writeable boolean but not a Switch
+# not ok 457 name.Loopback.92
+# ok 458 write_default.Loopback.92
+# ok 459 write_valid.Loopback.92
+# ok 460 write_invalid.Loopback.92
+# ok 461 event_missing.Loopback.92
+# ok 462 event_spurious.Loopback.92
+# # PCM Rate Shift 100000.0 value 100000 invalid for step 1 minimum 80000
+# not ok 463 get_value.Loopback.91
+# # Loopback.91 PCM Rate Shift 100000
+# ok 464 name.Loopback.91
+# ok 465 write_default.Loopback.91
+# ok 466 write_valid.Loopback.91
+# ok 467 write_invalid.Loopback.91
+# ok 468 event_missing.Loopback.91
+# ok 469 event_spurious.Loopback.91
+# ok 470 get_value.Loopback.90
+# # Loopback.90 PCM Slave Access Mode
+# ok 471 name.Loopback.90
+# # PCM Slave Access Mode is not writeable
+# ok 472 # SKIP write_default.Loopback.90
+# # PCM Slave Access Mode is not writeable
+# ok 473 # SKIP write_valid.Loopback.90
+# # PCM Slave Access Mode is not writeable
+# ok 474 # SKIP write_invalid.Loopback.90
+# ok 475 event_missing.Loopback.90
+# ok 476 event_spurious.Loopback.90
+# # PCM Slave Channels.0 value 2 invalid for step 1 minimum 1
+# not ok 477 get_value.Loopback.89
+# # Loopback.89 PCM Slave Channels
+# ok 478 name.Loopback.89
+# # PCM Slave Channels is not writeable
+# ok 479 # SKIP write_default.Loopback.89
+# # PCM Slave Channels is not writeable
+# ok 480 # SKIP write_valid.Loopback.89
+# # PCM Slave Channels is not writeable
+# ok 481 # SKIP write_invalid.Loopback.89
+# ok 482 event_missing.Loopback.89
+# ok 483 event_spurious.Loopback.89
+# # PCM Slave Rate.0 value 48000 invalid for step 1 minimum 0
+# not ok 484 get_value.Loopback.88
+# # Loopback.88 PCM Slave Rate
+# ok 485 name.Loopback.88
+# # PCM Slave Rate is not writeable
+# ok 486 # SKIP write_default.Loopback.88
+# # PCM Slave Rate is not writeable
+# ok 487 # SKIP write_valid.Loopback.88
+# # PCM Slave Rate is not writeable
+# ok 488 # SKIP write_invalid.Loopback.88
+# ok 489 event_missing.Loopback.88
+# ok 490 event_spurious.Loopback.88
+# # PCM Slave Format.0 value 2 invalid for step 1 minimum 0
+# not ok 491 get_value.Loopback.87
+# # Loopback.87 PCM Slave Format
+# ok 492 name.Loopback.87
+# # PCM Slave Format is not writeable
+# ok 493 # SKIP write_default.Loopback.87
+# # PCM Slave Format is not writeable
+# ok 494 # SKIP write_valid.Loopback.87
+# # PCM Slave Format is not writeable
+# ok 495 # SKIP write_invalid.Loopback.87
+# ok 496 event_missing.Loopback.87
+# ok 497 event_spurious.Loopback.87
+# ok 498 get_value.Loopback.86
+# # Loopback.86 PCM Slave Active
+# ok 499 name.Loopback.86
+# # PCM Slave Active is not writeable
+# ok 500 # SKIP write_default.Loopback.86
+# # PCM Slave Active is not writeable
+# ok 501 # SKIP write_valid.Loopback.86
+# # PCM Slave Active is not writeable
+# ok 502 # SKIP write_invalid.Loopback.86
+# ok 503 event_missing.Loopback.86
+# ok 504 event_spurious.Loopback.86
+# ok 505 get_value.Loopback.85
+# # Loopback.85 PCM Notify
+# # 0.85 PCM Notify is a writeable boolean but not a Switch
+# not ok 506 name.Loopback.85
+# ok 507 write_default.Loopback.85
+# ok 508 write_valid.Loopback.85
+# ok 509 write_invalid.Loopback.85
+# ok 510 event_missing.Loopback.85
+# ok 511 event_spurious.Loopback.85
+# # PCM Rate Shift 100000.0 value 100000 invalid for step 1 minimum 80000
+# not ok 512 get_value.Loopback.84
+# # Loopback.84 PCM Rate Shift 100000
+# ok 513 name.Loopback.84
+# ok 514 write_default.Loopback.84
+# ok 515 write_valid.Loopback.84
+# ok 516 write_invalid.Loopback.84
+# ok 517 event_missing.Loopback.84
+# ok 518 event_spurious.Loopback.84
+# ok 519 get_value.Loopback.83
+# # Loopback.83 PCM Slave Access Mode
+# ok 520 name.Loopback.83
+# # PCM Slave Access Mode is not writeable
+# ok 521 # SKIP write_default.Loopback.83
+# # PCM Slave Access Mode is not writeable
+# ok 522 # SKIP write_valid.Loopback.83
+# # PCM Slave Access Mode is not writeable
+# ok 523 # SKIP write_invalid.Loopback.83
+# ok 524 event_missing.Loopback.83
+# ok 525 event_spurious.Loopback.83
+# # PCM Slave Channels.0 value 2 invalid for step 1 minimum 1
+# not ok 526 get_value.Loopback.82
+# # Loopback.82 PCM Slave Channels
+# ok 527 name.Loopback.82
+# # PCM Slave Channels is not writeable
+# ok 528 # SKIP write_default.Loopback.82
+# # PCM Slave Channels is not writeable
+# ok 529 # SKIP write_valid.Loopback.82
+# # PCM Slave Channels is not writeable
+# ok 530 # SKIP write_invalid.Loopback.82
+# ok 531 event_missing.Loopback.82
+# ok 532 event_spurious.Loopback.82
+# # PCM Slave Rate.0 value 48000 invalid for step 1 minimum 0
+# not ok 533 get_value.Loopback.81
+# # Loopback.81 PCM Slave Rate
+# ok 534 name.Loopback.81
+# # PCM Slave Rate is not writeable
+# ok 535 # SKIP write_default.Loopback.81
+# # PCM Slave Rate is not writeable
+# ok 536 # SKIP write_valid.Loopback.81
+# # PCM Slave Rate is not writeable
+# ok 537 # SKIP write_invalid.Loopback.81
+# ok 538 event_missing.Loopback.81
+# ok 539 event_spurious.Loopback.81
+# # PCM Slave Format.0 value 2 invalid for step 1 minimum 0
+# not ok 540 get_value.Loopback.80
+# # Loopback.80 PCM Slave Format
+# ok 541 name.Loopback.80
+# # PCM Slave Format is not writeable
+# ok 542 # SKIP write_default.Loopback.80
+# # PCM Slave Format is not writeable
+# ok 543 # SKIP write_valid.Loopback.80
+# # PCM Slave Format is not writeable
+# ok 544 # SKIP write_invalid.Loopback.80
+# ok 545 event_missing.Loopback.80
+# ok 546 event_spurious.Loopback.80
+# ok 547 get_value.Loopback.79
+# # Loopback.79 PCM Slave Active
+# ok 548 name.Loopback.79
+# # PCM Slave Active is not writeable
+# ok 549 # SKIP write_default.Loopback.79
+# # PCM Slave Active is not writeable
+# ok 550 # SKIP write_valid.Loopback.79
+# # PCM Slave Active is not writeable
+# ok 551 # SKIP write_invalid.Loopback.79
+# ok 552 event_missing.Loopback.79
+# ok 553 event_spurious.Loopback.79
+# ok 554 get_value.Loopback.78
+# # Loopback.78 PCM Notify
+# # 0.78 PCM Notify is a writeable boolean but not a Switch
+# not ok 555 name.Loopback.78
+# ok 556 write_default.Loopback.78
+# ok 557 write_valid.Loopback.78
+# ok 558 write_invalid.Loopback.78
+# ok 559 event_missing.Loopback.78
+# ok 560 event_spurious.Loopback.78
+# # PCM Rate Shift 100000.0 value 100000 invalid for step 1 minimum 80000
+# not ok 561 get_value.Loopback.77
+# # Loopback.77 PCM Rate Shift 100000
+# ok 562 name.Loopback.77
+# ok 563 write_default.Loopback.77
+# ok 564 write_valid.Loopback.77
+# ok 565 write_invalid.Loopback.77
+# ok 566 event_missing.Loopback.77
+# ok 567 event_spurious.Loopback.77
+# ok 568 get_value.Loopback.76
+# # Loopback.76 PCM Slave Access Mode
+# ok 569 name.Loopback.76
+# # PCM Slave Access Mode is not writeable
+# ok 570 # SKIP write_default.Loopback.76
+# # PCM Slave Access Mode is not writeable
+# ok 571 # SKIP write_valid.Loopback.76
+# # PCM Slave Access Mode is not writeable
+# ok 572 # SKIP write_invalid.Loopback.76
+# ok 573 event_missing.Loopback.76
+# ok 574 event_spurious.Loopback.76
+# # PCM Slave Channels.0 value 2 invalid for step 1 minimum 1
+# not ok 575 get_value.Loopback.75
+# # Loopback.75 PCM Slave Channels
+# ok 576 name.Loopback.75
+# # PCM Slave Channels is not writeable
+# ok 577 # SKIP write_default.Loopback.75
+# # PCM Slave Channels is not writeable
+# ok 578 # SKIP write_valid.Loopback.75
+# # PCM Slave Channels is not writeable
+# ok 579 # SKIP write_invalid.Loopback.75
+# ok 580 event_missing.Loopback.75
+# ok 581 event_spurious.Loopback.75
+# # PCM Slave Rate.0 value 48000 invalid for step 1 minimum 0
+# not ok 582 get_value.Loopback.74
+# # Loopback.74 PCM Slave Rate
+# ok 583 name.Loopback.74
+# # PCM Slave Rate is not writeable
+# ok 584 # SKIP write_default.Loopback.74
+# # PCM Slave Rate is not writeable
+# ok 585 # SKIP write_valid.Loopback.74
+# # PCM Slave Rate is not writeable
+# ok 586 # SKIP write_invalid.Loopback.74
+# ok 587 event_missing.Loopback.74
+# ok 588 event_spurious.Loopback.74
+# # PCM Slave Format.0 value 2 invalid for step 1 minimum 0
+# not ok 589 get_value.Loopback.73
+# # Loopback.73 PCM Slave Format
+# ok 590 name.Loopback.73
+# # PCM Slave Format is not writeable
+# ok 591 # SKIP write_default.Loopback.73
+# # PCM Slave Format is not writeable
+# ok 592 # SKIP write_valid.Loopback.73
+# # PCM Slave Format is not writeable
+# ok 593 # SKIP write_invalid.Loopback.73
+# ok 594 event_missing.Loopback.73
+# ok 595 event_spurious.Loopback.73
+# ok 596 get_value.Loopback.72
+# # Loopback.72 PCM Slave Active
+# ok 597 name.Loopback.72
+# # PCM Slave Active is not writeable
+# ok 598 # SKIP write_default.Loopback.72
+# # PCM Slave Active is not writeable
+# ok 599 # SKIP write_valid.Loopback.72
+# # PCM Slave Active is not writeable
+# ok 600 # SKIP write_invalid.Loopback.72
+# ok 601 event_missing.Loopback.72
+# ok 602 event_spurious.Loopback.72
+# ok 603 get_value.Loopback.71
+# # Loopback.71 PCM Notify
+# # 0.71 PCM Notify is a writeable boolean but not a Switch
+# not ok 604 name.Loopback.71
+# ok 605 write_default.Loopback.71
+# ok 606 write_valid.Loopback.71
+# ok 607 write_invalid.Loopback.71
+# ok 608 event_missing.Loopback.71
+# ok 609 event_spurious.Loopback.71
+# # PCM Rate Shift 100000.0 value 100000 invalid for step 1 minimum 80000
+# not ok 610 get_value.Loopback.70
+# # Loopback.70 PCM Rate Shift 100000
+# ok 611 name.Loopback.70
+# ok 612 write_default.Loopback.70
+# ok 613 write_valid.Loopback.70
+# ok 614 write_invalid.Loopback.70
+# ok 615 event_missing.Loopback.70
+# ok 616 event_spurious.Loopback.70
+# ok 617 get_value.Loopback.69
+# # Loopback.69 PCM Slave Access Mode
+# ok 618 name.Loopback.69
+# # PCM Slave Access Mode is not writeable
+# ok 619 # SKIP write_default.Loopback.69
+# # PCM Slave Access Mode is not writeable
+# ok 620 # SKIP write_valid.Loopback.69
+# # PCM Slave Access Mode is not writeable
+# ok 621 # SKIP write_invalid.Loopback.69
+# ok 622 event_missing.Loopback.69
+# ok 623 event_spurious.Loopback.69
+# # PCM Slave Channels.0 value 2 invalid for step 1 minimum 1
+# not ok 624 get_value.Loopback.68
+# # Loopback.68 PCM Slave Channels
+# ok 625 name.Loopback.68
+# # PCM Slave Channels is not writeable
+# ok 626 # SKIP write_default.Loopback.68
+# # PCM Slave Channels is not writeable
+# ok 627 # SKIP write_valid.Loopback.68
+# # PCM Slave Channels is not writeable
+# ok 628 # SKIP write_invalid.Loopback.68
+# ok 629 event_missing.Loopback.68
+# ok 630 event_spurious.Loopback.68
+# # PCM Slave Rate.0 value 48000 invalid for step 1 minimum 0
+# not ok 631 get_value.Loopback.67
+# # Loopback.67 PCM Slave Rate
+# ok 632 name.Loopback.67
+# # PCM Slave Rate is not writeable
+# ok 633 # SKIP write_default.Loopback.67
+# # PCM Slave Rate is not writeable
+# ok 634 # SKIP write_valid.Loopback.67
+# # PCM Slave Rate is not writeable
+# ok 635 # SKIP write_invalid.Loopback.67
+# ok 636 event_missing.Loopback.67
+# ok 637 event_spurious.Loopback.67
+# # PCM Slave Format.0 value 2 invalid for step 1 minimum 0
+# not ok 638 get_value.Loopback.66
+# # Loopback.66 PCM Slave Format
+# ok 639 name.Loopback.66
+# # PCM Slave Format is not writeable
+# ok 640 # SKIP write_default.Loopback.66
+# # PCM Slave Format is not writeable
+# ok 641 # SKIP write_valid.Loopback.66
+# # PCM Slave Format is not writeable
+# ok 642 # SKIP write_invalid.Loopback.66
+# ok 643 event_missing.Loopback.66
+# ok 644 event_spurious.Loopback.66
+# ok 645 get_value.Loopback.65
+# # Loopback.65 PCM Slave Active
+# ok 646 name.Loopback.65
+# # PCM Slave Active is not writeable
+# ok 647 # SKIP write_default.Loopback.65
+# # PCM Slave Active is not writeable
+# ok 648 # SKIP write_valid.Loopback.65
+# # PCM Slave Active is not writeable
+# ok 649 # SKIP write_invalid.Loopback.65
+# ok 650 event_missing.Loopback.65
+# ok 651 event_spurious.Loopback.65
+# ok 652 get_value.Loopback.64
+# # Loopback.64 PCM Notify
+# # 0.64 PCM Notify is a writeable boolean but not a Switch
+# not ok 653 name.Loopback.64
+# ok 654 write_default.Loopback.64
+# ok 655 write_valid.Loopback.64
+# ok 656 write_invalid.Loopback.64
+# ok 657 event_missing.Loopback.64
+# ok 658 event_spurious.Loopback.64
+# # PCM Rate Shift 100000.0 value 100000 invalid for step 1 minimum 80000
+# not ok 659 get_value.Loopback.63
+# # Loopback.63 PCM Rate Shift 100000
+# ok 660 name.Loopback.63
+# ok 661 write_default.Loopback.63
+# ok 662 write_valid.Loopback.63
+# ok 663 write_invalid.Loopback.63
+# ok 664 event_missing.Loopback.63
+# ok 665 event_spurious.Loopback.63
+# ok 666 get_value.Loopback.62
+# # Loopback.62 PCM Slave Access Mode
+# ok 667 name.Loopback.62
+# # PCM Slave Access Mode is not writeable
+# ok 668 # SKIP write_default.Loopback.62
+# # PCM Slave Access Mode is not writeable
+# ok 669 # SKIP write_valid.Loopback.62
+# # PCM Slave Access Mode is not writeable
+# ok 670 # SKIP write_invalid.Loopback.62
+# ok 671 event_missing.Loopback.62
+# ok 672 event_spurious.Loopback.62
+# # PCM Slave Channels.0 value 2 invalid for step 1 minimum 1
+# not ok 673 get_value.Loopback.61
+# # Loopback.61 PCM Slave Channels
+# ok 674 name.Loopback.61
+# # PCM Slave Channels is not writeable
+# ok 675 # SKIP write_default.Loopback.61
+# # PCM Slave Channels is not writeable
+# ok 676 # SKIP write_valid.Loopback.61
+# # PCM Slave Channels is not writeable
+# ok 677 # SKIP write_invalid.Loopback.61
+# ok 678 event_missing.Loopback.61
+# ok 679 event_spurious.Loopback.61
+# # PCM Slave Rate.0 value 48000 invalid for step 1 minimum 0
+# not ok 680 get_value.Loopback.60
+# # Loopback.60 PCM Slave Rate
+# ok 681 name.Loopback.60
+# # PCM Slave Rate is not writeable
+# ok 682 # SKIP write_default.Loopback.60
+# # PCM Slave Rate is not writeable
+# ok 683 # SKIP write_valid.Loopback.60
+# # PCM Slave Rate is not writeable
+# ok 684 # SKIP write_invalid.Loopback.60
+# ok 685 event_missing.Loopback.60
+# ok 686 event_spurious.Loopback.60
+# # PCM Slave Format.0 value 10 invalid for step 1 minimum 0
+# not ok 687 get_value.Loopback.59
+# # Loopback.59 PCM Slave Format
+# ok 688 name.Loopback.59
+# # PCM Slave Format is not writeable
+# ok 689 # SKIP write_default.Loopback.59
+# # PCM Slave Format is not writeable
+# ok 690 # SKIP write_valid.Loopback.59
+# # PCM Slave Format is not writeable
+# ok 691 # SKIP write_invalid.Loopback.59
+# ok 692 event_missing.Loopback.59
+# ok 693 event_spurious.Loopback.59
+# ok 694 get_value.Loopback.58
+# # Loopback.58 PCM Slave Active
+# ok 695 name.Loopback.58
+# # PCM Slave Active is not writeable
+# ok 696 # SKIP write_default.Loopback.58
+# # PCM Slave Active is not writeable
+# ok 697 # SKIP write_valid.Loopback.58
+# # PCM Slave Active is not writeable
+# ok 698 # SKIP write_invalid.Loopback.58
+# ok 699 event_missing.Loopback.58
+# ok 700 event_spurious.Loopback.58
+# ok 701 get_value.Loopback.57
+# # Loopback.57 PCM Notify
+# # 0.57 PCM Notify is a writeable boolean but not a Switch
+# not ok 702 name.Loopback.57
+# ok 703 write_default.Loopback.57
+# ok 704 write_valid.Loopback.57
+# ok 705 write_invalid.Loopback.57
+# ok 706 event_missing.Loopback.57
+# ok 707 event_spurious.Loopback.57
+# # PCM Rate Shift 100000.0 value 100000 invalid for step 1 minimum 80000
+# not ok 708 get_value.Loopback.56
+# # Loopback.56 PCM Rate Shift 100000
+# ok 709 name.Loopback.56
+# ok 710 write_default.Loopback.56
+# ok 711 write_valid.Loopback.56
+# ok 712 write_invalid.Loopback.56
+# ok 713 event_missing.Loopback.56
+# ok 714 event_spurious.Loopback.56
+# ok 715 get_value.Loopback.55
+# # Loopback.55 PCM Slave Access Mode
+# ok 716 name.Loopback.55
+# # PCM Slave Access Mode is not writeable
+# ok 717 # SKIP write_default.Loopback.55
+# # PCM Slave Access Mode is not writeable
+# ok 718 # SKIP write_valid.Loopback.55
+# # PCM Slave Access Mode is not writeable
+# ok 719 # SKIP write_invalid.Loopback.55
+# ok 720 event_missing.Loopback.55
+# ok 721 event_spurious.Loopback.55
+# # PCM Slave Channels.0 value 2 invalid for step 1 minimum 1
+# not ok 722 get_value.Loopback.54
+# # Loopback.54 PCM Slave Channels
+# ok 723 name.Loopback.54
+# # PCM Slave Channels is not writeable
+# ok 724 # SKIP write_default.Loopback.54
+# # PCM Slave Channels is not writeable
+# ok 725 # SKIP write_valid.Loopback.54
+# # PCM Slave Channels is not writeable
+# ok 726 # SKIP write_invalid.Loopback.54
+# ok 727 event_missing.Loopback.54
+# ok 728 event_spurious.Loopback.54
+# # PCM Slave Rate.0 value 48000 invalid for step 1 minimum 0
+# not ok 729 get_value.Loopback.53
+# # Loopback.53 PCM Slave Rate
+# ok 730 name.Loopback.53
+# # PCM Slave Rate is not writeable
+# ok 731 # SKIP write_default.Loopback.53
+# # PCM Slave Rate is not writeable
+# ok 732 # SKIP write_valid.Loopback.53
+# # PCM Slave Rate is not writeable
+# ok 733 # SKIP write_invalid.Loopback.53
+# ok 734 event_missing.Loopback.53
+# ok 735 event_spurious.Loopback.53
+# # PCM Slave Format.0 value 2 invalid for step 1 minimum 0
+# not ok 736 get_value.Loopback.52
+# # Loopback.52 PCM Slave Format
+# ok 737 name.Loopback.52
+# # PCM Slave Format is not writeable
+# ok 738 # SKIP write_default.Loopback.52
+# # PCM Slave Format is not writeable
+# ok 739 # SKIP write_valid.Loopback.52
+# # PCM Slave Format is not writeable
+# ok 740 # SKIP write_invalid.Loopback.52
+# ok 741 event_missing.Loopback.52
+# ok 742 event_spurious.Loopback.52
+# ok 743 get_value.Loopback.51
+# # Loopback.51 PCM Slave Active
+# ok 744 name.Loopback.51
+# # PCM Slave Active is not writeable
+# ok 745 # SKIP write_default.Loopback.51
+# # PCM Slave Active is not writeable
+# ok 746 # SKIP write_valid.Loopback.51
+# # PCM Slave Active is not writeable
+# ok 747 # SKIP write_invalid.Loopback.51
+# ok 748 event_missing.Loopback.51
+# ok 749 event_spurious.Loopback.51
+# ok 750 get_value.Loopback.50
+# # Loopback.50 PCM Notify
+# # 0.50 PCM Notify is a writeable boolean but not a Switch
+# not ok 751 name.Loopback.50
+# ok 752 write_default.Loopback.50
+# ok 753 write_valid.Loopback.50
+# ok 754 write_invalid.Loopback.50
+# ok 755 event_missing.Loopback.50
+# ok 756 event_spurious.Loopback.50
+# # PCM Rate Shift 100000.0 value 100000 invalid for step 1 minimum 80000
+# not ok 757 get_value.Loopback.49
+# # Loopback.49 PCM Rate Shift 100000
+# ok 758 name.Loopback.49
+# ok 759 write_default.Loopback.49
+# ok 760 write_valid.Loopback.49
+# ok 761 write_invalid.Loopback.49
+# ok 762 event_missing.Loopback.49
+# ok 763 event_spurious.Loopback.49
+# ok 764 get_value.Loopback.48
+# # Loopback.48 PCM Slave Access Mode
+# ok 765 name.Loopback.48
+# # PCM Slave Access Mode is not writeable
+# ok 766 # SKIP write_default.Loopback.48
+# # PCM Slave Access Mode is not writeable
+# ok 767 # SKIP write_valid.Loopback.48
+# # PCM Slave Access Mode is not writeable
+# ok 768 # SKIP write_invalid.Loopback.48
+# ok 769 event_missing.Loopback.48
+# ok 770 event_spurious.Loopback.48
+# # PCM Slave Channels.0 value 2 invalid for step 1 minimum 1
+# not ok 771 get_value.Loopback.47
+# # Loopback.47 PCM Slave Channels
+# ok 772 name.Loopback.47
+# # PCM Slave Channels is not writeable
+# ok 773 # SKIP write_default.Loopback.47
+# # PCM Slave Channels is not writeable
+# ok 774 # SKIP write_valid.Loopback.47
+# # PCM Slave Channels is not writeable
+# ok 775 # SKIP write_invalid.Loopback.47
+# ok 776 event_missing.Loopback.47
+# ok 777 event_spurious.Loopback.47
+# # PCM Slave Rate.0 value 48000 invalid for step 1 minimum 0
+# not ok 778 get_value.Loopback.46
+# # Loopback.46 PCM Slave Rate
+# ok 779 name.Loopback.46
+# # PCM Slave Rate is not writeable
+# ok 780 # SKIP write_default.Loopback.46
+# # PCM Slave Rate is not writeable
+# ok 781 # SKIP write_valid.Loopback.46
+# # PCM Slave Rate is not writeable
+# ok 782 # SKIP write_invalid.Loopback.46
+# ok 783 event_missing.Loopback.46
+# ok 784 event_spurious.Loopback.46
+# # PCM Slave Format.0 value 2 invalid for step 1 minimum 0
+# not ok 785 get_value.Loopback.45
+# # Loopback.45 PCM Slave Format
+# ok 786 name.Loopback.45
+# # PCM Slave Format is not writeable
+# ok 787 # SKIP write_default.Loopback.45
+# # PCM Slave Format is not writeable
+# ok 788 # SKIP write_valid.Loopback.45
+# # PCM Slave Format is not writeable
+# ok 789 # SKIP write_invalid.Loopback.45
+# ok 790 event_missing.Loopback.45
+# ok 791 event_spurious.Loopback.45
+# ok 792 get_value.Loopback.44
+# # Loopback.44 PCM Slave Active
+# ok 793 name.Loopback.44
+# # PCM Slave Active is not writeable
+# ok 794 # SKIP write_default.Loopback.44
+# # PCM Slave Active is not writeable
+# ok 795 # SKIP write_valid.Loopback.44
+# # PCM Slave Active is not writeable
+# ok 796 # SKIP write_invalid.Loopback.44
+# ok 797 event_missing.Loopback.44
+# ok 798 event_spurious.Loopback.44
+# ok 799 get_value.Loopback.43
+# # Loopback.43 PCM Notify
+# # 0.43 PCM Notify is a writeable boolean but not a Switch
+# not ok 800 name.Loopback.43
+# ok 801 write_default.Loopback.43
+# ok 802 write_valid.Loopback.43
+# ok 803 write_invalid.Loopback.43
+# ok 804 event_missing.Loopback.43
+# ok 805 event_spurious.Loopback.43
+# # PCM Rate Shift 100000.0 value 100000 invalid for step 1 minimum 80000
+# not ok 806 get_value.Loopback.42
+# # Loopback.42 PCM Rate Shift 100000
+# ok 807 name.Loopback.42
+# ok 808 write_default.Loopback.42
+# ok 809 write_valid.Loopback.42
+# ok 810 write_invalid.Loopback.42
+# ok 811 event_missing.Loopback.42
+# ok 812 event_spurious.Loopback.42
+# ok 813 get_value.Loopback.41
+# # Loopback.41 PCM Slave Access Mode
+# ok 814 name.Loopback.41
+# # PCM Slave Access Mode is not writeable
+# ok 815 # SKIP write_default.Loopback.41
+# # PCM Slave Access Mode is not writeable
+# ok 816 # SKIP write_valid.Loopback.41
+# # PCM Slave Access Mode is not writeable
+# ok 817 # SKIP write_invalid.Loopback.41
+# ok 818 event_missing.Loopback.41
+# ok 819 event_spurious.Loopback.41
+# # PCM Slave Channels.0 value 2 invalid for step 1 minimum 1
+# not ok 820 get_value.Loopback.40
+# # Loopback.40 PCM Slave Channels
+# ok 821 name.Loopback.40
+# # PCM Slave Channels is not writeable
+# ok 822 # SKIP write_default.Loopback.40
+# # PCM Slave Channels is not writeable
+# ok 823 # SKIP write_valid.Loopback.40
+# # PCM Slave Channels is not writeable
+# ok 824 # SKIP write_invalid.Loopback.40
+# ok 825 event_missing.Loopback.40
+# ok 826 event_spurious.Loopback.40
+# # PCM Slave Rate.0 value 48000 invalid for step 1 minimum 0
+# not ok 827 get_value.Loopback.39
+# # Loopback.39 PCM Slave Rate
+# ok 828 name.Loopback.39
+# # PCM Slave Rate is not writeable
+# ok 829 # SKIP write_default.Loopback.39
+# # PCM Slave Rate is not writeable
+# ok 830 # SKIP write_valid.Loopback.39
+# # PCM Slave Rate is not writeable
+# ok 831 # SKIP write_invalid.Loopback.39
+# ok 832 event_missing.Loopback.39
+# ok 833 event_spurious.Loopback.39
+# # PCM Slave Format.0 value 2 invalid for step 1 minimum 0
+# not ok 834 get_value.Loopback.38
+# # Loopback.38 PCM Slave Format
+# ok 835 name.Loopback.38
+# # PCM Slave Format is not writeable
+# ok 836 # SKIP write_default.Loopback.38
+# # PCM Slave Format is not writeable
+# ok 837 # SKIP write_valid.Loopback.38
+# # PCM Slave Format is not writeable
+# ok 838 # SKIP write_invalid.Loopback.38
+# ok 839 event_missing.Loopback.38
+# ok 840 event_spurious.Loopback.38
+# ok 841 get_value.Loopback.37
+# # Loopback.37 PCM Slave Active
+# ok 842 name.Loopback.37
+# # PCM Slave Active is not writeable
+# ok 843 # SKIP write_default.Loopback.37
+# # PCM Slave Active is not writeable
+# ok 844 # SKIP write_valid.Loopback.37
+# # PCM Slave Active is not writeable
+# ok 845 # SKIP write_invalid.Loopback.37
+# ok 846 event_missing.Loopback.37
+# ok 847 event_spurious.Loopback.37
+# ok 848 get_value.Loopback.36
+# # Loopback.36 PCM Notify
+# # 0.36 PCM Notify is a writeable boolean but not a Switch
+# not ok 849 name.Loopback.36
+# ok 850 write_default.Loopback.36
+# ok 851 write_valid.Loopback.36
+# ok 852 write_invalid.Loopback.36
+# ok 853 event_missing.Loopback.36
+# ok 854 event_spurious.Loopback.36
+# # PCM Rate Shift 100000.0 value 100000 invalid for step 1 minimum 80000
+# not ok 855 get_value.Loopback.35
+# # Loopback.35 PCM Rate Shift 100000
+# ok 856 name.Loopback.35
+# ok 857 write_default.Loopback.35
+# ok 858 write_valid.Loopback.35
+# ok 859 write_invalid.Loopback.35
+# ok 860 event_missing.Loopback.35
+# ok 861 event_spurious.Loopback.35
+# ok 862 get_value.Loopback.34
+# # Loopback.34 PCM Slave Access Mode
+# ok 863 name.Loopback.34
+# # PCM Slave Access Mode is not writeable
+# ok 864 # SKIP write_default.Loopback.34
+# # PCM Slave Access Mode is not writeable
+# ok 865 # SKIP write_valid.Loopback.34
+# # PCM Slave Access Mode is not writeable
+# ok 866 # SKIP write_invalid.Loopback.34
+# ok 867 event_missing.Loopback.34
+# ok 868 event_spurious.Loopback.34
+# # PCM Slave Channels.0 value 2 invalid for step 1 minimum 1
+# not ok 869 get_value.Loopback.33
+# # Loopback.33 PCM Slave Channels
+# ok 870 name.Loopback.33
+# # PCM Slave Channels is not writeable
+# ok 871 # SKIP write_default.Loopback.33
+# # PCM Slave Channels is not writeable
+# ok 872 # SKIP write_valid.Loopback.33
+# # PCM Slave Channels is not writeable
+# ok 873 # SKIP write_invalid.Loopback.33
+# ok 874 event_missing.Loopback.33
+# ok 875 event_spurious.Loopback.33
+# # PCM Slave Rate.0 value 48000 invalid for step 1 minimum 0
+# not ok 876 get_value.Loopback.32
+# # Loopback.32 PCM Slave Rate
+# ok 877 name.Loopback.32
+# # PCM Slave Rate is not writeable
+# ok 878 # SKIP write_default.Loopback.32
+# # PCM Slave Rate is not writeable
+# ok 879 # SKIP write_valid.Loopback.32
+# # PCM Slave Rate is not writeable
+# ok 880 # SKIP write_invalid.Loopback.32
+# ok 881 event_missing.Loopback.32
+# ok 882 event_spurious.Loopback.32
+# # PCM Slave Format.0 value 2 invalid for step 1 minimum 0
+# not ok 883 get_value.Loopback.31
+# # Loopback.31 PCM Slave Format
+# ok 884 name.Loopback.31
+# # PCM Slave Format is not writeable
+# ok 885 # SKIP write_default.Loopback.31
+# # PCM Slave Format is not writeable
+# ok 886 # SKIP write_valid.Loopback.31
+# # PCM Slave Format is not writeable
+# ok 887 # SKIP write_invalid.Loopback.31
+# ok 888 event_missing.Loopback.31
+# ok 889 event_spurious.Loopback.31
+# ok 890 get_value.Loopback.30
+# # Loopback.30 PCM Slave Active
+# ok 891 name.Loopback.30
+# # PCM Slave Active is not writeable
+# ok 892 # SKIP write_default.Loopback.30
+# # PCM Slave Active is not writeable
+# ok 893 # SKIP write_valid.Loopback.30
+# # PCM Slave Active is not writeable
+# ok 894 # SKIP write_invalid.Loopback.30
+# ok 895 event_missing.Loopback.30
+# ok 896 event_spurious.Loopback.30
+# ok 897 get_value.Loopback.29
+# # Loopback.29 PCM Notify
+# # 0.29 PCM Notify is a writeable boolean but not a Switch
+# not ok 898 name.Loopback.29
+# ok 899 write_default.Loopback.29
+# ok 900 write_valid.Loopback.29
+# ok 901 write_invalid.Loopback.29
+# ok 902 event_missing.Loopback.29
+# ok 903 event_spurious.Loopback.29
+# # PCM Rate Shift 100000.0 value 100000 invalid for step 1 minimum 80000
+# not ok 904 get_value.Loopback.28
+# # Loopback.28 PCM Rate Shift 100000
+# ok 905 name.Loopback.28
+# ok 906 write_default.Loopback.28
+# ok 907 write_valid.Loopback.28
+# ok 908 write_invalid.Loopback.28
+# ok 909 event_missing.Loopback.28
+# ok 910 event_spurious.Loopback.28
+# ok 911 get_value.Loopback.27
+# # Loopback.27 PCM Slave Access Mode
+# ok 912 name.Loopback.27
+# # PCM Slave Access Mode is not writeable
+# ok 913 # SKIP write_default.Loopback.27
+# # PCM Slave Access Mode is not writeable
+# ok 914 # SKIP write_valid.Loopback.27
+# # PCM Slave Access Mode is not writeable
+# ok 915 # SKIP write_invalid.Loopback.27
+# ok 916 event_missing.Loopback.27
+# ok 917 event_spurious.Loopback.27
+# # PCM Slave Channels.0 value 2 invalid for step 1 minimum 1
+# not ok 918 get_value.Loopback.26
+# # Loopback.26 PCM Slave Channels
+# ok 919 name.Loopback.26
+# # PCM Slave Channels is not writeable
+# ok 920 # SKIP write_default.Loopback.26
+# # PCM Slave Channels is not writeable
+# ok 921 # SKIP write_valid.Loopback.26
+# # PCM Slave Channels is not writeable
+# ok 922 # SKIP write_invalid.Loopback.26
+# ok 923 event_missing.Loopback.26
+# ok 924 event_spurious.Loopback.26
+# # PCM Slave Rate.0 value 48000 invalid for step 1 minimum 0
+# not ok 925 get_value.Loopback.25
+# # Loopback.25 PCM Slave Rate
+# ok 926 name.Loopback.25
+# # PCM Slave Rate is not writeable
+# ok 927 # SKIP write_default.Loopback.25
+# # PCM Slave Rate is not writeable
+# ok 928 # SKIP write_valid.Loopback.25
+# # PCM Slave Rate is not writeable
+# ok 929 # SKIP write_invalid.Loopback.25
+# ok 930 event_missing.Loopback.25
+# ok 931 event_spurious.Loopback.25
+# # PCM Slave Format.0 value 2 invalid for step 1 minimum 0
+# not ok 932 get_value.Loopback.24
+# # Loopback.24 PCM Slave Format
+# ok 933 name.Loopback.24
+# # PCM Slave Format is not writeable
+# ok 934 # SKIP write_default.Loopback.24
+# # PCM Slave Format is not writeable
+# ok 935 # SKIP write_valid.Loopback.24
+# # PCM Slave Format is not writeable
+# ok 936 # SKIP write_invalid.Loopback.24
+# ok 937 event_missing.Loopback.24
+# ok 938 event_spurious.Loopback.24
+# ok 939 get_value.Loopback.23
+# # Loopback.23 PCM Slave Active
+# ok 940 name.Loopback.23
+# # PCM Slave Active is not writeable
+# ok 941 # SKIP write_default.Loopback.23
+# # PCM Slave Active is not writeable
+# ok 942 # SKIP write_valid.Loopback.23
+# # PCM Slave Active is not writeable
+# ok 943 # SKIP write_invalid.Loopback.23
+# ok 944 event_missing.Loopback.23
+# ok 945 event_spurious.Loopback.23
+# ok 946 get_value.Loopback.22
+# # Loopback.22 PCM Notify
+# # 0.22 PCM Notify is a writeable boolean but not a Switch
+# not ok 947 name.Loopback.22
+# ok 948 write_default.Loopback.22
+# ok 949 write_valid.Loopback.22
+# ok 950 write_invalid.Loopback.22
+# ok 951 event_missing.Loopback.22
+# ok 952 event_spurious.Loopback.22
+# # PCM Rate Shift 100000.0 value 100000 invalid for step 1 minimum 80000
+# not ok 953 get_value.Loopback.21
+# # Loopback.21 PCM Rate Shift 100000
+# ok 954 name.Loopback.21
+# ok 955 write_default.Loopback.21
+# ok 956 write_valid.Loopback.21
+# ok 957 write_invalid.Loopback.21
+# ok 958 event_missing.Loopback.21
+# ok 959 event_spurious.Loopback.21
+# ok 960 get_value.Loopback.20
+# # Loopback.20 PCM Slave Access Mode
+# ok 961 name.Loopback.20
+# # PCM Slave Access Mode is not writeable
+# ok 962 # SKIP write_default.Loopback.20
+# # PCM Slave Access Mode is not writeable
+# ok 963 # SKIP write_valid.Loopback.20
+# # PCM Slave Access Mode is not writeable
+# ok 964 # SKIP write_invalid.Loopback.20
+# ok 965 event_missing.Loopback.20
+# ok 966 event_spurious.Loopback.20
+# # PCM Slave Channels.0 value 2 invalid for step 1 minimum 1
+# not ok 967 get_value.Loopback.19
+# # Loopback.19 PCM Slave Channels
+# ok 968 name.Loopback.19
+# # PCM Slave Channels is not writeable
+# ok 969 # SKIP write_default.Loopback.19
+# # PCM Slave Channels is not writeable
+# ok 970 # SKIP write_valid.Loopback.19
+# # PCM Slave Channels is not writeable
+# ok 971 # SKIP write_invalid.Loopback.19
+# ok 972 event_missing.Loopback.19
+# ok 973 event_spurious.Loopback.19
+# # PCM Slave Rate.0 value 48000 invalid for step 1 minimum 0
+# not ok 974 get_value.Loopback.18
+# # Loopback.18 PCM Slave Rate
+# ok 975 name.Loopback.18
+# # PCM Slave Rate is not writeable
+# ok 976 # SKIP write_default.Loopback.18
+# # PCM Slave Rate is not writeable
+# ok 977 # SKIP write_valid.Loopback.18
+# # PCM Slave Rate is not writeable
+# ok 978 # SKIP write_invalid.Loopback.18
+# ok 979 event_missing.Loopback.18
+# ok 980 event_spurious.Loopback.18
+# # PCM Slave Format.0 value 2 invalid for step 1 minimum 0
+# not ok 981 get_value.Loopback.17
+# # Loopback.17 PCM Slave Format
+# ok 982 name.Loopback.17
+# # PCM Slave Format is not writeable
+# ok 983 # SKIP write_default.Loopback.17
+# # PCM Slave Format is not writeable
+# ok 984 # SKIP write_valid.Loopback.17
+# # PCM Slave Format is not writeable
+# ok 985 # SKIP write_invalid.Loopback.17
+# ok 986 event_missing.Loopback.17
+# ok 987 event_spurious.Loopback.17
+# ok 988 get_value.Loopback.16
+# # Loopback.16 PCM Slave Active
+# ok 989 name.Loopback.16
+# # PCM Slave Active is not writeable
+# ok 990 # SKIP write_default.Loopback.16
+# # PCM Slave Active is not writeable
+# ok 991 # SKIP write_valid.Loopback.16
+# # PCM Slave Active is not writeable
+# ok 992 # SKIP write_invalid.Loopback.16
+# ok 993 event_missing.Loopback.16
+# ok 994 event_spurious.Loopback.16
+# ok 995 get_value.Loopback.15
+# # Loopback.15 PCM Notify
+# # 0.15 PCM Notify is a writeable boolean but not a Switch
+# not ok 996 name.Loopback.15
+# ok 997 write_default.Loopback.15
+# ok 998 write_valid.Loopback.15
+# ok 999 write_invalid.Loopback.15
+# ok 1000 event_missing.Loopback.15
+# ok 1001 event_spurious.Loopback.15
+# # PCM Rate Shift 100000.0 value 100000 invalid for step 1 minimum 80000
+# not ok 1002 get_value.Loopback.14
+# # Loopback.14 PCM Rate Shift 100000
+# ok 1003 name.Loopback.14
+# ok 1004 write_default.Loopback.14
+# ok 1005 write_valid.Loopback.14
+# ok 1006 write_invalid.Loopback.14
+# ok 1007 event_missing.Loopback.14
+# ok 1008 event_spurious.Loopback.14
+# ok 1009 get_value.Loopback.13
+# # Loopback.13 PCM Slave Access Mode
+# ok 1010 name.Loopback.13
+# # PCM Slave Access Mode is not writeable
+# ok 1011 # SKIP write_default.Loopback.13
+# # PCM Slave Access Mode is not writeable
+# ok 1012 # SKIP write_valid.Loopback.13
+# # PCM Slave Access Mode is not writeable
+# ok 1013 # SKIP write_invalid.Loopback.13
+# ok 1014 event_missing.Loopback.13
+# ok 1015 event_spurious.Loopback.13
+# # PCM Slave Channels.0 value 2 invalid for step 1 minimum 1
+# not ok 1016 get_value.Loopback.12
+# # Loopback.12 PCM Slave Channels
+# ok 1017 name.Loopback.12
+# # PCM Slave Channels is not writeable
+# ok 1018 # SKIP write_default.Loopback.12
+# # PCM Slave Channels is not writeable
+# ok 1019 # SKIP write_valid.Loopback.12
+# # PCM Slave Channels is not writeable
+# ok 1020 # SKIP write_invalid.Loopback.12
+# ok 1021 event_missing.Loopback.12
+# ok 1022 event_spurious.Loopback.12
+# # PCM Slave Rate.0 value 48000 invalid for step 1 minimum 0
+# not ok 1023 get_value.Loopback.11
+# # Loopback.11 PCM Slave Rate
+# ok 1024 name.Loopback.11
+# # PCM Slave Rate is not writeable
+# ok 1025 # SKIP write_default.Loopback.11
+# # PCM Slave Rate is not writeable
+# ok 1026 # SKIP write_valid.Loopback.11
+# # PCM Slave Rate is not writeable
+# ok 1027 # SKIP write_invalid.Loopback.11
+# ok 1028 event_missing.Loopback.11
+# ok 1029 event_spurious.Loopback.11
+# # PCM Slave Format.0 value 2 invalid for step 1 minimum 0
+# not ok 1030 get_value.Loopback.10
+# # Loopback.10 PCM Slave Format
+# ok 1031 name.Loopback.10
+# # PCM Slave Format is not writeable
+# ok 1032 # SKIP write_default.Loopback.10
+# # PCM Slave Format is not writeable
+# ok 1033 # SKIP write_valid.Loopback.10
+# # PCM Slave Format is not writeable
+# ok 1034 # SKIP write_invalid.Loopback.10
+# ok 1035 event_missing.Loopback.10
+# ok 1036 event_spurious.Loopback.10
+# ok 1037 get_value.Loopback.9
+# # Loopback.9 PCM Slave Active
+# ok 1038 name.Loopback.9
+# # PCM Slave Active is not writeable
+# ok 1039 # SKIP write_default.Loopback.9
+# # PCM Slave Active is not writeable
+# ok 1040 # SKIP write_valid.Loopback.9
+# # PCM Slave Active is not writeable
+# ok 1041 # SKIP write_invalid.Loopback.9
+# ok 1042 event_missing.Loopback.9
+# ok 1043 event_spurious.Loopback.9
+# ok 1044 get_value.Loopback.8
+# # Loopback.8 PCM Notify
+# # 0.8 PCM Notify is a writeable boolean but not a Switch
+# not ok 1045 name.Loopback.8
+# ok 1046 write_default.Loopback.8
+# ok 1047 write_valid.Loopback.8
+# ok 1048 write_invalid.Loopback.8
+# ok 1049 event_missing.Loopback.8
+# ok 1050 event_spurious.Loopback.8
+# # PCM Rate Shift 100000.0 value 100000 invalid for step 1 minimum 80000
+# not ok 1051 get_value.Loopback.7
+# # Loopback.7 PCM Rate Shift 100000
+# ok 1052 name.Loopback.7
+# ok 1053 write_default.Loopback.7
+# ok 1054 write_valid.Loopback.7
+# ok 1055 write_invalid.Loopback.7
+# ok 1056 event_missing.Loopback.7
+# ok 1057 event_spurious.Loopback.7
+# ok 1058 get_value.Loopback.6
+# # Loopback.6 PCM Slave Access Mode
+# ok 1059 name.Loopback.6
+# # PCM Slave Access Mode is not writeable
+# ok 1060 # SKIP write_default.Loopback.6
+# # PCM Slave Access Mode is not writeable
+# ok 1061 # SKIP write_valid.Loopback.6
+# # PCM Slave Access Mode is not writeable
+# ok 1062 # SKIP write_invalid.Loopback.6
+# ok 1063 event_missing.Loopback.6
+# ok 1064 event_spurious.Loopback.6
+# # PCM Slave Channels.0 value 2 invalid for step 1 minimum 1
+# not ok 1065 get_value.Loopback.5
+# # Loopback.5 PCM Slave Channels
+# ok 1066 name.Loopback.5
+# # PCM Slave Channels is not writeable
+# ok 1067 # SKIP write_default.Loopback.5
+# # PCM Slave Channels is not writeable
+# ok 1068 # SKIP write_valid.Loopback.5
+# # PCM Slave Channels is not writeable
+# ok 1069 # SKIP write_invalid.Loopback.5
+# ok 1070 event_missing.Loopback.5
+# ok 1071 event_spurious.Loopback.5
+# # PCM Slave Rate.0 value 48000 invalid for step 1 minimum 0
+# not ok 1072 get_value.Loopback.4
+# # Loopback.4 PCM Slave Rate
+# ok 1073 name.Loopback.4
+# # PCM Slave Rate is not writeable
+# ok 1074 # SKIP write_default.Loopback.4
+# # PCM Slave Rate is not writeable
+# ok 1075 # SKIP write_valid.Loopback.4
+# # PCM Slave Rate is not writeable
+# ok 1076 # SKIP write_invalid.Loopback.4
+# ok 1077 event_missing.Loopback.4
+# ok 1078 event_spurious.Loopback.4
+# # PCM Slave Format.0 value 2 invalid for step 1 minimum 0
+# not ok 1079 get_value.Loopback.3
+# # Loopback.3 PCM Slave Format
+# ok 1080 name.Loopback.3
+# # PCM Slave Format is not writeable
+# ok 1081 # SKIP write_default.Loopback.3
+# # PCM Slave Format is not writeable
+# ok 1082 # SKIP write_valid.Loopback.3
+# # PCM Slave Format is not writeable
+# ok 1083 # SKIP write_invalid.Loopback.3
+# ok 1084 event_missing.Loopback.3
+# ok 1085 event_spurious.Loopback.3
+# ok 1086 get_value.Loopback.2
+# # Loopback.2 PCM Slave Active
+# ok 1087 name.Loopback.2
+# # PCM Slave Active is not writeable
+# ok 1088 # SKIP write_default.Loopback.2
+# # PCM Slave Active is not writeable
+# ok 1089 # SKIP write_valid.Loopback.2
+# # PCM Slave Active is not writeable
+# ok 1090 # SKIP write_invalid.Loopback.2
+# ok 1091 event_missing.Loopback.2
+# ok 1092 event_spurious.Loopback.2
+# ok 1093 get_value.Loopback.1
+# # Loopback.1 PCM Notify
+# # 0.1 PCM Notify is a writeable boolean but not a Switch
+# not ok 1094 name.Loopback.1
+# ok 1095 write_default.Loopback.1
+# ok 1096 write_valid.Loopback.1
+# ok 1097 write_invalid.Loopback.1
+# ok 1098 event_missing.Loopback.1
+# ok 1099 event_spurious.Loopback.1
+# # PCM Rate Shift 100000.0 value 100000 invalid for step 1 minimum 80000
+# not ok 1100 get_value.Loopback.0
+# # Loopback.0 PCM Rate Shift 100000
+# ok 1101 name.Loopback.0
+# ok 1102 write_default.Loopback.0
+# ok 1103 write_valid.Loopback.0
+# ok 1104 write_invalid.Loopback.0
+# ok 1105 event_missing.Loopback.0
+# ok 1106 event_spurious.Loopback.0
+# # Totals: pass:725 fail:81 xfail:0 xpass:0 skip:300 error:0
 ok 1 selftests: alsa: mixer-test
 # timeout set to 45
 # selftests: alsa: pcm-test
 # TAP version 13
-# # Card 0/PCH - HDA Intel PCH (HDA Intel PCH at 0xd1314000 irq 54)
+# # Card 0/Loopback - Loopback (Loopback 1)
+# # Loopback.0 - Loopback PCM
+# # Loopback.0 - Loopback PCM
+# # Loopback.0 - Loopback PCM
+# # Loopback.0 - Loopback PCM
+# # Card 1/VirMIDI - VirMIDI (Virtual MIDI Card 1)
+# # Card 2/pcmtest - PCM-Test (PCM-Test virtual driver)
+# # pcmtest.0 - PCMTest
+# # pcmtest.0 - PCMTest
+# # Card 3/PCH - HDA Intel PCH (HDA Intel PCH at 0xd1314000 irq 53)
 # # PCH.0 - CX20751/2 Analog
 # # PCH.0 - CX20751/2 Analog
-# # Card 1/HDMI - HDA Intel HDMI (HDA Intel HDMI at 0xd1310000 irq 57)
+# # Card 4/HDMI - HDA Intel HDMI (HDA Intel HDMI at 0xd1310000 irq 57)
 # # HDMI.0 - HDMI 0
 # # HDMI.0 - HDMI 1
 # # HDMI.0 - HDMI 2
-# 1..35
+# 1..371
 # # default.time1.HDMI.8.0.PLAYBACK - 8kHz mono large periods
+# # default.time1.pcmtest.0.7.CAPTURE - 8kHz mono large periods
 # # default.time1.PCH.0.0.CAPTURE - 8kHz mono large periods
+# # default.time1.Loopback.1.7.CAPTURE - 8kHz mono large periods
+# # default.time1.Loopback.1.7.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.8000.1.8000.32000 sw_params.8000
+# # default.time1.pcmtest.0.7.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.8000.1.8000.32000 sw_params.8000
 # ok 1 # SKIP default.time1.HDMI.8.0.PLAYBACK
 # # snd_pcm_hw_params_set_channels 1: Invalid argument
 # # default.time2.HDMI.8.0.PLAYBACK - 8kHz stereo large periods
@@ -455,129 +1690,281 @@ ok 1 selftests: alsa: mixer-test
 # ok 3 # SKIP default.time1.PCH.0.0.CAPTURE
 # # snd_pcm_hw_params_set_channels 1: Invalid argument
 # # default.time2.PCH.0.0.CAPTURE - 8kHz stereo large periods
+# # default.time3.HDMI.8.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.44100.2.22496.202464 sw_params.202464
 # ok 4 # SKIP default.time2.PCH.0.0.CAPTURE
 # # rate mismatch 8000 != 44100
 # # default.time3.PCH.0.0.CAPTURE - 44.1kHz stereo large periods
-# # default.time3.HDMI.8.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.44100.2.22496.202464 sw_params.202464
 # # default.time3.PCH.0.0.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.44100.2.22500.202500 sw_params.22500
-# ok 5 default.time3.HDMI.8.0.PLAYBACK
+# ok 5 default.time1.Loopback.1.7.CAPTURE
+# # default.time2.Loopback.1.7.CAPTURE - 8kHz stereo large periods
+# # default.time2.Loopback.1.7.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.8000.2.8000.32000 sw_params.8000
+# ok 6 default.time3.HDMI.8.0.PLAYBACK
 # # default.time4.HDMI.8.0.PLAYBACK - 48kHz stereo small periods
 # # default.time4.HDMI.8.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.48000.2.512.4096 sw_params.4096
-# ok 6 default.time3.PCH.0.0.CAPTURE
+# ok 7 default.time3.PCH.0.0.CAPTURE
 # # default.time4.PCH.0.0.CAPTURE - 48kHz stereo small periods
 # # default.time4.PCH.0.0.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.48000.2.512.4096 sw_params.512
-# ok 7 default.time4.HDMI.8.0.PLAYBACK
+# ok 8 default.time1.pcmtest.0.7.CAPTURE
+# # default.time2.pcmtest.0.7.CAPTURE - 8kHz stereo large periods
+# # default.time2.pcmtest.0.7.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.8000.2.8000.32000 sw_params.8000
+# ok 9 default.time4.HDMI.8.0.PLAYBACK
 # # default.time5.HDMI.8.0.PLAYBACK - 48kHz stereo large periods
+# ok 10 default.time4.PCH.0.0.CAPTURE
 # # default.time5.HDMI.8.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.48000.2.24000.192000 sw_params.192000
-# ok 8 default.time4.PCH.0.0.CAPTURE
 # # default.time5.PCH.0.0.CAPTURE - 48kHz stereo large periods
 # # default.time5.PCH.0.0.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.48000.2.24000.192000 sw_params.24000
-# ok 9 default.time5.HDMI.8.0.PLAYBACK
+# ok 11 default.time2.Loopback.1.7.CAPTURE
+# # default.time3.Loopback.1.7.CAPTURE - 44.1kHz stereo large periods
+# # default.time3.Loopback.1.7.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.44100.2.22500.202500 sw_params.22500
+# ok 12 default.time2.pcmtest.0.7.CAPTURE
+# # default.time3.pcmtest.0.7.CAPTURE - 44.1kHz stereo large periods
+# # default.time3.pcmtest.0.7.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.44100.2.8192.32768 sw_params.8192
+# ok 13 default.time5.HDMI.8.0.PLAYBACK
 # # default.time6.HDMI.8.0.PLAYBACK - 48kHz 6 channel large periods
-# # default.time6.HDMI.8.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.48000.2.48000.576000 sw_params.576000
-# ok 10 default.time5.PCH.0.0.CAPTURE
+# ok 14 default.time5.PCH.0.0.CAPTURE
 # # default.time6.PCH.0.0.CAPTURE - 48kHz 6 channel large periods
+# # default.time6.HDMI.8.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.48000.2.48000.576000 sw_params.576000
 # # default.time6.PCH.0.0.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.48000.2.48000.576000 sw_params.48000
-# ok 11 default.time6.HDMI.8.0.PLAYBACK
+# ok 15 default.time3.Loopback.1.7.CAPTURE
+# # default.time4.Loopback.1.7.CAPTURE - 48kHz stereo small periods
+# # default.time4.Loopback.1.7.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.48000.2.512.4096 sw_params.512
+# ok 16 default.time3.pcmtest.0.7.CAPTURE
+# # default.time4.pcmtest.0.7.CAPTURE - 48kHz stereo small periods
+# # default.time4.pcmtest.0.7.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.48000.2.1024.4096 sw_params.1024
+# not ok 17 default.time4.pcmtest.0.7.CAPTURE
+# # expected 48000, wrote -5
+# # default.time5.pcmtest.0.7.CAPTURE - 48kHz stereo large periods
+# # default.time5.pcmtest.0.7.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.48000.2.8192.32768 sw_params.8192
+# ok 18 default.time6.HDMI.8.0.PLAYBACK
 # # default.time7.HDMI.8.0.PLAYBACK - 96kHz stereo large periods
-# # default.time7.HDMI.8.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.96000.2.48000.192000 sw_params.192000
-# ok 12 default.time6.PCH.0.0.CAPTURE
+# ok 19 default.time6.PCH.0.0.CAPTURE
 # # default.time7.PCH.0.0.CAPTURE - 96kHz stereo large periods
+# # default.time7.HDMI.8.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.96000.2.48000.192000 sw_params.192000
 # # default.time7.PCH.0.0.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.96000.2.48000.192000 sw_params.48000
-# ok 13 default.time7.HDMI.8.0.PLAYBACK
+# ok 20 default.time4.Loopback.1.7.CAPTURE
+# # default.time5.Loopback.1.7.CAPTURE - 48kHz stereo large periods
+# # default.time5.Loopback.1.7.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.48000.2.24000.192000 sw_params.24000
+# ok 21 default.time5.pcmtest.0.7.CAPTURE
+# # default.time6.pcmtest.0.7.CAPTURE - 48kHz 6 channel large periods
+# # default.time6.pcmtest.0.7.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.48000.2.8192.32768 sw_params.8192
+# ok 22 default.time7.PCH.0.0.CAPTURE
+# # default.time1.PCH.0.0.PLAYBACK - 8kHz mono large periods
+# ok 23 # SKIP default.time1.PCH.0.0.PLAYBACK
+# # snd_pcm_hw_params_set_channels 1: Invalid argument
+# ok 24 default.time7.HDMI.8.0.PLAYBACK
+# # default.time2.PCH.0.0.PLAYBACK - 8kHz stereo large periods
 # # default.time1.HDMI.7.0.PLAYBACK - 8kHz mono large periods
-# ok 14 # SKIP default.time1.HDMI.7.0.PLAYBACK
+# ok 25 # SKIP default.time2.PCH.0.0.PLAYBACK
+# # rate mismatch 8000 != 44100
+# ok 26 # SKIP default.time1.HDMI.7.0.PLAYBACK
 # # snd_pcm_hw_params_set_channels 1: Invalid argument
 # # default.time2.HDMI.7.0.PLAYBACK - 8kHz stereo large periods
-# ok 15 # SKIP default.time2.HDMI.7.0.PLAYBACK
+# # default.time3.PCH.0.0.PLAYBACK - 44.1kHz stereo large periods
+# ok 27 # SKIP default.time2.HDMI.7.0.PLAYBACK
 # # rate mismatch 8000 != 32000
 # # default.time3.HDMI.7.0.PLAYBACK - 44.1kHz stereo large periods
 # # default.time3.HDMI.7.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.44100.2.22496.202464 sw_params.202464
-# ok 16 default.time7.PCH.0.0.CAPTURE
-# # default.time1.PCH.0.0.PLAYBACK - 8kHz mono large periods
-# ok 17 # SKIP default.time1.PCH.0.0.PLAYBACK
-# # snd_pcm_hw_params_set_channels 1: Invalid argument
-# # default.time2.PCH.0.0.PLAYBACK - 8kHz stereo large periods
-# ok 18 # SKIP default.time2.PCH.0.0.PLAYBACK
-# # rate mismatch 8000 != 44100
-# # default.time3.PCH.0.0.PLAYBACK - 44.1kHz stereo large periods
 # # default.time3.PCH.0.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.44100.2.22500.202500 sw_params.202500
-# ok 19 default.time3.HDMI.7.0.PLAYBACK
+# ok 28 default.time5.Loopback.1.7.CAPTURE
+# # default.time6.Loopback.1.7.CAPTURE - 48kHz 6 channel large periods
+# # default.time6.Loopback.1.7.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.48000.2.48000.480000 sw_params.48000
+# ok 29 default.time6.pcmtest.0.7.CAPTURE
+# # default.time7.pcmtest.0.7.CAPTURE - 96kHz stereo large periods
+# ok 30 # SKIP default.time7.pcmtest.0.7.CAPTURE
+# # rate mismatch 96000 != 48000
+# # default.time1.pcmtest.0.6.CAPTURE - 8kHz mono large periods
+# # default.time1.pcmtest.0.6.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.8000.1.8000.32000 sw_params.8000
+# ok 31 default.time3.HDMI.7.0.PLAYBACK
 # # default.time4.HDMI.7.0.PLAYBACK - 48kHz stereo small periods
-# # default.time4.HDMI.7.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.48000.2.512.4096 sw_params.4096
-# ok 20 default.time3.PCH.0.0.PLAYBACK
+# ok 32 default.time3.PCH.0.0.PLAYBACK
 # # default.time4.PCH.0.0.PLAYBACK - 48kHz stereo small periods
+# # default.time4.HDMI.7.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.48000.2.512.4096 sw_params.4096
 # # default.time4.PCH.0.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.48000.2.512.4096 sw_params.4096
-# ok 21 default.time4.HDMI.7.0.PLAYBACK
+# ok 33 default.time6.Loopback.1.7.CAPTURE
+# # default.time7.Loopback.1.7.CAPTURE - 96kHz stereo large periods
+# # default.time7.Loopback.1.7.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.96000.2.48000.192000 sw_params.48000
+# ok 34 default.time1.pcmtest.0.6.CAPTURE
+# # default.time2.pcmtest.0.6.CAPTURE - 8kHz stereo large periods
+# # default.time2.pcmtest.0.6.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.8000.2.8000.32000 sw_params.8000
+# ok 35 default.time4.HDMI.7.0.PLAYBACK
 # # default.time5.HDMI.7.0.PLAYBACK - 48kHz stereo large periods
-# # default.time5.HDMI.7.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.48000.2.24000.192000 sw_params.192000
-# ok 22 default.time4.PCH.0.0.PLAYBACK
+# ok 36 default.time4.PCH.0.0.PLAYBACK
 # # default.time5.PCH.0.0.PLAYBACK - 48kHz stereo large periods
+# # default.time5.HDMI.7.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.48000.2.24000.192000 sw_params.192000
 # # default.time5.PCH.0.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.48000.2.24000.192000 sw_params.192000
-# ok 23 default.time5.HDMI.7.0.PLAYBACK
-# # default.time6.HDMI.7.0.PLAYBACK - 48kHz 6 channel large periods
-# # default.time6.HDMI.7.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.48000.2.48000.576000 sw_params.576000
-# ok 24 default.time5.PCH.0.0.PLAYBACK
+# ok 37 default.time7.Loopback.1.7.CAPTURE
+# # default.time1.Loopback.1.6.CAPTURE - 8kHz mono large periods
+# # default.time1.Loopback.1.6.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.8000.1.8000.32000 sw_params.8000
+# ok 38 default.time2.pcmtest.0.6.CAPTURE
+# # default.time3.pcmtest.0.6.CAPTURE - 44.1kHz stereo large periods
+# # default.time3.pcmtest.0.6.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.44100.2.8192.32768 sw_params.8192
+# ok 39 default.time5.PCH.0.0.PLAYBACK
 # # default.time6.PCH.0.0.PLAYBACK - 48kHz 6 channel large periods
 # # default.time6.PCH.0.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.48000.2.48000.576000 sw_params.576000
-# ok 25 default.time6.HDMI.7.0.PLAYBACK
-# # default.time7.HDMI.7.0.PLAYBACK - 96kHz stereo large periods
-# # default.time7.HDMI.7.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.96000.2.48000.192000 sw_params.192000
-# ok 26 default.time6.PCH.0.0.PLAYBACK
+# ok 40 default.time5.HDMI.7.0.PLAYBACK
+# # default.time6.HDMI.7.0.PLAYBACK - 48kHz 6 channel large periods
+# # default.time6.HDMI.7.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.48000.2.48000.576000 sw_params.576000
+# ok 41 default.time1.Loopback.1.6.CAPTURE
+# # default.time2.Loopback.1.6.CAPTURE - 8kHz stereo large periods
+# # default.time2.Loopback.1.6.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.8000.2.8000.32000 sw_params.8000
+# ok 42 default.time3.pcmtest.0.6.CAPTURE
+# # default.time4.pcmtest.0.6.CAPTURE - 48kHz stereo small periods
+# # default.time4.pcmtest.0.6.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.48000.2.1024.4096 sw_params.1024
+# not ok 43 default.time4.pcmtest.0.6.CAPTURE
+# # expected 48000, wrote -5
+# # default.time5.pcmtest.0.6.CAPTURE - 48kHz stereo large periods
+# # default.time5.pcmtest.0.6.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.48000.2.8192.32768 sw_params.8192
+# ok 44 default.time6.PCH.0.0.PLAYBACK
 # # default.time7.PCH.0.0.PLAYBACK - 96kHz stereo large periods
+# ok 45 default.time6.HDMI.7.0.PLAYBACK
+# # default.time7.HDMI.7.0.PLAYBACK - 96kHz stereo large periods
 # # default.time7.PCH.0.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.96000.2.48000.192000 sw_params.192000
-# ok 27 default.time7.HDMI.7.0.PLAYBACK
+# # default.time7.HDMI.7.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.96000.2.48000.192000 sw_params.192000
+# ok 46 default.time2.Loopback.1.6.CAPTURE
+# # default.time3.Loopback.1.6.CAPTURE - 44.1kHz stereo large periods
+# # default.time3.Loopback.1.6.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.44100.2.22500.202500 sw_params.22500
+# ok 47 default.time5.pcmtest.0.6.CAPTURE
+# # default.time6.pcmtest.0.6.CAPTURE - 48kHz 6 channel large periods
+# # default.time6.pcmtest.0.6.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.48000.2.8192.32768 sw_params.8192
+# ok 48 default.time7.PCH.0.0.PLAYBACK
+# ok 49 default.time7.HDMI.7.0.PLAYBACK
 # # default.time1.HDMI.3.0.PLAYBACK - 8kHz mono large periods
-# ok 28 # SKIP default.time1.HDMI.3.0.PLAYBACK
+# ok 50 # SKIP default.time1.HDMI.3.0.PLAYBACK
 # # snd_pcm_hw_params_set_channels 1: Invalid argument
 # # default.time2.HDMI.3.0.PLAYBACK - 8kHz stereo large periods
-# ok 29 # SKIP default.time2.HDMI.3.0.PLAYBACK
+# ok 51 # SKIP default.time2.HDMI.3.0.PLAYBACK
 # # rate mismatch 8000 != 32000
 # # default.time3.HDMI.3.0.PLAYBACK - 44.1kHz stereo large periods
 # # default.time3.HDMI.3.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.44100.2.22496.202464 sw_params.202464
-# ok 30 default.time7.PCH.0.0.PLAYBACK
-# ok 31 default.time3.HDMI.3.0.PLAYBACK
+# ok 52 default.time3.Loopback.1.6.CAPTURE
+# # default.time4.Loopback.1.6.CAPTURE - 48kHz stereo small periods
+# # default.time4.Loopback.1.6.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.48000.2.512.4096 sw_params.512
+# ok 53 default.time6.pcmtest.0.6.CAPTURE
+# # default.time7.pcmtest.0.6.CAPTURE - 96kHz stereo large periods
+# ok 54 # SKIP default.time7.pcmtest.0.6.CAPTURE
+# # rate mismatch 96000 != 48000
+# # default.time1.pcmtest.0.5.CAPTURE - 8kHz mono large periods
+# # default.time1.pcmtest.0.5.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.8000.1.8000.32000 sw_params.8000
+# ok 55 default.time3.HDMI.3.0.PLAYBACK
 # # default.time4.HDMI.3.0.PLAYBACK - 48kHz stereo small periods
 # # default.time4.HDMI.3.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.48000.2.512.4096 sw_params.4096
-# ok 32 default.time4.HDMI.3.0.PLAYBACK
+# ok 56 default.time4.Loopback.1.6.CAPTURE
+# # default.time5.Loopback.1.6.CAPTURE - 48kHz stereo large periods
+# # default.time5.Loopback.1.6.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.48000.2.24000.192000 sw_params.24000
+# ok 57 default.time1.pcmtest.0.5.CAPTURE
+# # default.time2.pcmtest.0.5.CAPTURE - 8kHz stereo large periods
+# # default.time2.pcmtest.0.5.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.8000.2.8000.32000 sw_params.8000
+# ok 58 default.time4.HDMI.3.0.PLAYBACK
 # # default.time5.HDMI.3.0.PLAYBACK - 48kHz stereo large periods
 # # default.time5.HDMI.3.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.48000.2.24000.192000 sw_params.192000
-# ok 33 default.time5.HDMI.3.0.PLAYBACK
+# ok 59 default.time5.Loopback.1.6.CAPTURE
+# # default.time6.Loopback.1.6.CAPTURE - 48kHz 6 channel large periods
+# # default.time6.Loopback.1.6.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.48000.2.48000.480000 sw_params.48000
+# ok 60 default.time2.pcmtest.0.5.CAPTURE
+# # default.time3.pcmtest.0.5.CAPTURE - 44.1kHz stereo large periods
+# # default.time3.pcmtest.0.5.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.44100.2.8192.32768 sw_params.8192
+# ok 61 default.time5.HDMI.3.0.PLAYBACK
 # # default.time6.HDMI.3.0.PLAYBACK - 48kHz 6 channel large periods
 # # default.time6.HDMI.3.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.48000.2.48000.576000 sw_params.576000
-# ok 34 default.time6.HDMI.3.0.PLAYBACK
+# ok 62 default.time6.Loopback.1.6.CAPTURE
+# # default.time7.Loopback.1.6.CAPTURE - 96kHz stereo large periods
+# # default.time7.Loopback.1.6.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.96000.2.48000.192000 sw_params.48000
+# ok 63 default.time3.pcmtest.0.5.CAPTURE
+# # default.time4.pcmtest.0.5.CAPTURE - 48kHz stereo small periods
+# # default.time4.pcmtest.0.5.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.48000.2.1024.4096 sw_params.1024
+# not ok 64 default.time4.pcmtest.0.5.CAPTURE
+# # expected 48000, wrote -5
+# # default.time5.pcmtest.0.5.CAPTURE - 48kHz stereo large periods
+# # default.time5.pcmtest.0.5.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.48000.2.8192.32768 sw_params.8192
+# ok 65 default.time6.HDMI.3.0.PLAYBACK
 # # default.time7.HDMI.3.0.PLAYBACK - 96kHz stereo large periods
 # # default.time7.HDMI.3.0.PLAYBACK hw_params.RW_INTERLEAVED.S16_LE.96000.2.48000.192000 sw_params.192000
-# ok 35 default.time7.HDMI.3.0.PLAYBACK
-# # Totals: pass:25 fail:0 xfail:0 xpass:0 skip:10 error:0
-ok 2 selftests: alsa: pcm-test
+# ok 66 default.time7.Loopback.1.6.CAPTURE
+# # default.time1.Loopback.1.5.CAPTURE - 8kHz mono large periods
+# # default.time1.Loopback.1.5.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.8000.1.8000.32000 sw_params.8000
+# ok 67 default.time5.pcmtest.0.5.CAPTURE
+# # default.time6.pcmtest.0.5.CAPTURE - 48kHz 6 channel large periods
+# # default.time6.pcmtest.0.5.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.48000.2.8192.32768 sw_params.8192
+# ok 68 default.time7.HDMI.3.0.PLAYBACK
+# ok 69 default.time1.Loopback.1.5.CAPTURE
+# # default.time2.Loopback.1.5.CAPTURE - 8kHz stereo large periods
+# # default.time2.Loopback.1.5.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.8000.2.8000.32000 sw_params.8000
+# ok 70 default.time6.pcmtest.0.5.CAPTURE
+# # default.time7.pcmtest.0.5.CAPTURE - 96kHz stereo large periods
+# ok 71 # SKIP default.time7.pcmtest.0.5.CAPTURE
+# # rate mismatch 96000 != 48000
+# # default.time1.pcmtest.0.4.CAPTURE - 8kHz mono large periods
+# # default.time1.pcmtest.0.4.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.8000.1.8000.32000 sw_params.8000
+# ok 72 default.time2.Loopback.1.5.CAPTURE
+# # default.time3.Loopback.1.5.CAPTURE - 44.1kHz stereo large periods
+# # default.time3.Loopback.1.5.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.44100.2.22500.202500 sw_params.22500
+# ok 73 default.time1.pcmtest.0.4.CAPTURE
+# # default.time2.pcmtest.0.4.CAPTURE - 8kHz stereo large periods
+# # default.time2.pcmtest.0.4.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.8000.2.8000.32000 sw_params.8000
+# ok 74 default.time3.Loopback.1.5.CAPTURE
+# # default.time4.Loopback.1.5.CAPTURE - 48kHz stereo small periods
+# # default.time4.Loopback.1.5.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.48000.2.512.4096 sw_params.512
+# ok 75 default.time2.pcmtest.0.4.CAPTURE
+# # default.time3.pcmtest.0.4.CAPTURE - 44.1kHz stereo large periods
+# # default.time3.pcmtest.0.4.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.44100.2.8192.32768 sw_params.8192
+# ok 76 default.time4.Loopback.1.5.CAPTURE
+# # default.time5.Loopback.1.5.CAPTURE - 48kHz stereo large periods
+# # default.time5.Loopback.1.5.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.48000.2.24000.192000 sw_params.24000
+# ok 77 default.time3.pcmtest.0.4.CAPTURE
+# # default.time4.pcmtest.0.4.CAPTURE - 48kHz stereo small periods
+# # default.time4.pcmtest.0.4.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.48000.2.1024.4096 sw_params.1024
+# not ok 78 default.time4.pcmtest.0.4.CAPTURE
+# # expected 48000, wrote -5
+# # default.time5.pcmtest.0.4.CAPTURE - 48kHz stereo large periods
+# # default.time5.pcmtest.0.4.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.48000.2.8192.32768 sw_params.8192
+# ok 79 default.time5.Loopback.1.5.CAPTURE
+# # default.time6.Loopback.1.5.CAPTURE - 48kHz 6 channel large periods
+# # default.time6.Loopback.1.5.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.48000.2.48000.480000 sw_params.48000
+# ok 80 default.time5.pcmtest.0.4.CAPTURE
+# # default.time6.pcmtest.0.4.CAPTURE - 48kHz 6 channel large periods
+# # default.time6.pcmtest.0.4.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.48000.2.8192.32768 sw_params.8192
+# ok 81 default.time6.Loopback.1.5.CAPTURE
+# # default.time7.Loopback.1.5.CAPTURE - 96kHz stereo large periods
+# # default.time7.Loopback.1.5.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.96000.2.48000.192000 sw_params.48000
+# ok 82 default.time6.pcmtest.0.4.CAPTURE
+# # default.time7.pcmtest.0.4.CAPTURE - 96kHz stereo large periods
+# ok 83 # SKIP default.time7.pcmtest.0.4.CAPTURE
+# # rate mismatch 96000 != 48000
+# # default.time1.pcmtest.0.3.CAPTURE - 8kHz mono large periods
+# # default.time1.pcmtest.0.3.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.8000.1.8000.32000 sw_params.8000
+# ok 84 default.time7.Loopback.1.5.CAPTURE
+# # default.time1.Loopback.1.4.CAPTURE - 8kHz mono large periods
+# # default.time1.Loopback.1.4.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.8000.1.8000.32000 sw_params.8000
+# ok 85 default.time1.pcmtest.0.3.CAPTURE
+# # default.time2.pcmtest.0.3.CAPTURE - 8kHz stereo large periods
+# # default.time2.pcmtest.0.3.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.8000.2.8000.32000 sw_params.8000
+# ok 86 default.time1.Loopback.1.4.CAPTURE
+# # default.time2.Loopback.1.4.CAPTURE - 8kHz stereo large periods
+# # default.time2.Loopback.1.4.CAPTURE hw_params.RW_INTERLEAVED.S16_LE.8000.2.8000.32000 sw_params.8000
+#
+not ok 2 selftests: alsa: pcm-test # TIMEOUT 45 seconds
 # timeout set to 45
 # selftests: alsa: test-pcmtest-driver
 # TAP version 13
 # 1..5
 # # Starting 5 tests from 1 test cases.
 # #  RUN           pcmtest.playback ...
-# #      SKIP      Can't read patterns. Probably, module isn't loaded
 # #            OK  pcmtest.playback
-# ok 1 pcmtest.playback # SKIP Can't read patterns. Probably, module isn't loaded
+# ok 1 pcmtest.playback
 # #  RUN           pcmtest.capture ...
-# #      SKIP      Can't read patterns. Probably, module isn't loaded
 # #            OK  pcmtest.capture
-# ok 2 pcmtest.capture # SKIP Can't read patterns. Probably, module isn't loaded
+# ok 2 pcmtest.capture
 # #  RUN           pcmtest.ni_capture ...
-# #      SKIP      Can't read patterns. Probably, module isn't loaded
 # #            OK  pcmtest.ni_capture
-# ok 3 pcmtest.ni_capture # SKIP Can't read patterns. Probably, module isn't loaded
+# ok 3 pcmtest.ni_capture
 # #  RUN           pcmtest.ni_playback ...
-# #      SKIP      Can't read patterns. Probably, module isn't loaded
 # #            OK  pcmtest.ni_playback
-# ok 4 pcmtest.ni_playback # SKIP Can't read patterns. Probably, module isn't loaded
+# ok 4 pcmtest.ni_playback
 # #  RUN           pcmtest.reset_ioctl ...
-# #      SKIP      Can't read patterns. Probably, module isn't loaded
 # #            OK  pcmtest.reset_ioctl
-# ok 5 pcmtest.reset_ioctl # SKIP Can't read patterns. Probably, module isn't loaded
+# ok 5 pcmtest.reset_ioctl
 # # PASSED: 5 / 5 tests passed.
-# # Totals: pass:0 fail:0 xfail:0 xpass:0 skip:5 error:0
+# # Totals: pass:5 fail:0 xfail:0 xpass:0 skip:0 error:0
 ok 3 selftests: alsa: test-pcmtest-driver
 # timeout set to 45
 # selftests: alsa: utimer-test
@@ -588,12 +1975,10 @@ ok 3 selftests: alsa: test-pcmtest-driver
 # #            OK  global.wrong_timers_test
 # ok 1 global.wrong_timers_test
 # #  RUN           timer_f.utimer ...
-# # utimer-test.c:55:utimer:Expected ioctl(timer_dev_fd, SNDRV_TIMER_IOCTL_CREATE, self->utimer_info) (-1) == 0 (0)
-# # utimer: Test terminated by assertion
-# #          FAIL  timer_f.utimer
-# not ok 2 timer_f.utimer
-# # FAILED: 1 / 2 tests passed.
-# # Totals: pass:1 fail:1 xfail:0 xpass:0 skip:0 error:0
-not ok 4 selftests: alsa: utimer-test # exit=1
+# #            OK  timer_f.utimer
+# ok 2 timer_f.utimer
+# # PASSED: 2 / 2 tests passed.
+# # Totals: pass:2 fail:0 xfail:0 xpass:0 skip:0 error:0
+ok 4 selftests: alsa: utimer-test
 make[1]: Leaving directory '/home/armorer/development/linux/tools/testing/selftests/alsa'
 make: Leaving directory '/home/armorer/development/linux/tools/testing/selftests'
