@@ -1,0 +1,17 @@
+make: Entering directory '/home/armorer/development/linux/tools/testing/selftests'
+make[1]: Entering directory '/home/armorer/development/linux/tools/testing/selftests/tty'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/armorer/development/linux/tools/testing/selftests/tty'
+make[1]: Entering directory '/home/armorer/development/linux/tools/testing/selftests/tty'
+TAP version 13
+1..1
+# timeout set to 45
+# selftests: tty: tty_tstamp_update
+# TAP version 13
+# 1..1
+# # timestamps of terminal '/dev/pts/2' updated after write to /dev/tty
+# ok 1 tty_tstamp_update
+# # Totals: pass:1 fail:0 xfail:0 xpass:0 skip:0 error:0
+ok 1 selftests: tty: tty_tstamp_update
+make[1]: Leaving directory '/home/armorer/development/linux/tools/testing/selftests/tty'
+make: Leaving directory '/home/armorer/development/linux/tools/testing/selftests'
